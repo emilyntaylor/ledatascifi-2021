@@ -31,6 +31,7 @@ main {
 
 /* other text in nav bar that should be white: */
 .bd-sidebar nav ul.nav li a, .bd-sidebar nav ul.nav ul li a {
+    background-color: #502d0e;	
     color: white;
 }
 
