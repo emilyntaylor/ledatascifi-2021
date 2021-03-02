@@ -137,4 +137,12 @@
         - file: "content/03/05c_missingdata"
 #         - file: "content/03/05d_outliers"
      
+  - file: "content/04/00_World_Wide_Data"
+    title: "Accessing the World of Data"
+    sections:
+    - file: "content/04/01_Intro_to_scraping"
+      title: "Getting Data off the Web"
+    - file: "content/04/01a_openingAndParsing"
+    - file: "content/04/01b_spiders"
+      title: "Building a spider" 
       
