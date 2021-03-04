@@ -1,0 +1,233 @@
+# Finishing Merging+Missing, discussing outliers 
+
+## More on Merging
+
+### Validate 
+
+- Always use the "smallest" option! If you're doing a one-1:1, use "one_to_one"
+- Never use M:M!!!!
+- errors are good! tell you something is wrong - either you picked wrong keys, misunderstand their "uniqueness", or the data construction was poor (inserted duplicates that "shouldn't" exist)
+- errors are good: can prvent massive M;M merges
+
+<example from my patent data> 
+
+### Which "how"
+
+Trick / check: If you have a dataset of interest, and you're adding a variable...
+- THE NUMBER OF ROWS OF DATA IN YOUR ANALYSIS DATASET SHOULDN'T CHANGE!
+
+```python
+# a way to check:
+len(df)
+df = df.merge(someNewData)
+len(df)
+```
+
+Trick to ensure:
+1. Make your existing df of interest the "left"
+2. Merge should be "1:1" or "M:1", and how='left'
+
+### Creating variables around a merge
+
+**CREATE VARIABLES IN THE LOWEST LEVEL DATASET THAT APPLIES!**
+
+(Before merging)
+
+	##########################################################################################
+	import pandas as pd
+	import numpy as np
+	import matplotlib.pyplot as plt
+
+	right = pd.DataFrame({
+					   "month":[1,1,1,2,2,2], 
+					   }) 
+	right['x'] = pd.DataFrame(np.random.randint(0,10,size=(6, 1)), columns=list('x'))
+	# display(right)
+	print(right.x.std())
+
+	# if you use this as the right in a M:1 merge,
+	# this gets multiplied (each 1 of this is repeated M times)
+
+	after_merge = right
+	after_merge = after_merge.append(right).append(right).append(right).append(right).append(right)
+	# display(after_merge)
+	print(after_merge.x.std())
+
+	fig, axs = plt.subplots(1, 2,sharey=True)
+	right.x.value_counts().plot(kind='bar',ax=axs[0])
+	after_merge.x.value_counts().plot(kind='bar',ax=axs[1])
+	##########################################################################################
+	
+## Missing values	
+	
+	
+	##########################################################################################
+	import pandas as pd
+	import numpy as np
+
+	df = pd.DataFrame({"A":[12, 4, 5, None, 1], 
+					   "B":[None, 2, 54, 3, None], 
+					   "C":[20, 16, None, 3, 8], 
+					   "D":[14, 3, None, None, 6]}) 
+
+	_df1 = df.copy()
+	_df1['firm'] = 1
+	_df1['date'] = _df1.index
+
+	_df2 = df.copy()
+	_df2['firm'] = 2
+	_df2['date'] = _df2.index
+
+	df2 = _df1.append(_df2)	
+	##########################################################################################
+	
+## Outliers
+
+<discuss while looking at Ascombes quartet>
+
+### Options for dealing with them:
+
+1. Fix (look at the data, correct)
+1. Censor (delete)
+2. Winsorize (change / cheap ad-hoc correction)
+
+### Finding outliers
+
+<poll>
+
+1. Boxplot - Jiaming
+2. KDE for every variable
+1. .describe() + focus on the outer percentiles - Bai
+1. z-scores z = (x-x.mean())/x.std()  --> mean 0, std 1. - Manuel 
+1. mean/median relationship -- more for skew of data/less for outliers
+	
+<
+# kdeplot everything (could even stack them, or facet to a long stack of them)
+    example below # prob --> diff scales
+    # solution: "STANDARDIZE" before plotting (mean zero, std one)
+    example below # prob --> can't tell which cause issue, but we do see some vars have 
+	
+Let's load data and look at KDE quickly:	
+>
+	
+	##########################################################################################
+	# copied from 3.3.4.1
+
+	import pandas as pd
+	import numpy as np
+	import matplotlib.pyplot as plt
+	import seaborn as sns
+	# these three are used to download the file
+	from io import BytesIO
+	from zipfile import ZipFile
+	from urllib.request import urlopen
+
+	url = 'https://github.com/LeDataSciFi/ledatascifi-2021/blob/main/data/CCM_cleaned_for_class.zip?raw=true'
+
+	#firms = pd.read_stata(url)   
+	# <-- that code would work, but GH said it was too big and
+	# forced me to zip it, so here is the work around to download it:
+
+	with urlopen(url) as request:
+		data = BytesIO(request.read())
+
+	with ZipFile(data) as archive:
+		with archive.open(archive.namelist()[0]) as stata:
+			ccm = pd.read_stata(stata)				
+	##########################################################################################
+
+	##########################################################################################		
+	ccm.columns
+	vars_to_check = ['l_a','prof_a', 'mb', 'ppe_a','capx_a']
+
+	# this will stack vars on top of each other
+	for v in vars_to_check:
+		sns.kdeplot(x= (ccm[v]-ccm[v].mean())/ccm[v].std())		
+	##########################################################################################
+	
+<describe with focus on outliers is probably easier to work with >	
+	
+	##########################################################################################
+	vars_to_check = ['l_a', 'l_sale', 'prof_a', 'mb', 'ppe_a', 'capx_a', 'xrd_a', 'cash_a', 'div_d', 'td_a', 'td_mv', 'dltt_a', 'dv_a', 	'invopps_FG09', 'sales_g', 'short_debt', 'long_debt_dum', 'atr', 'smalltaxlosscarry', 'largetaxlosscarry', 'tnic3hhi', 'tnic3tsimm', 'prodmktfluid', 'delaycon', 'equitydelaycon', 'debtdelaycon', 'privdelaycon', 'l_emp', 'l_ppent', 'l_laborratio']
+	
+	std = (ccm[vars_to_check] - ccm[vars_to_check].mean())/ccm[vars_to_check].std()
+	
+<incrementally alter - shows code dev! >	
+	std.describe()
+	std.describe().T
+	std.describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T
+	std.describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T.style.format('{:,.2f}')
+	# std.describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T.style.format('{:,.2f}').sort_values('min')
+	std.describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T.sort_values('min').style.format('{:,.2f}')
+
+	def highlight_extreme(s):
+		'''
+		highlight the maximum in a Series yellow.
+		'''
+		is_extreme = abs(s) > 4
+		return ['background-color: red' if v else '' for v in is_extreme]
+
+	std.describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T.sort_values('min').style.format('{:,.2f}').apply(highlight_extreme)	
+	
+<sort on that...>	
+
+	(# compute z scores
+	 ((ccm[vars_to_check] - ccm[vars_to_check].mean())/ccm[vars_to_check].std())
+	 # output dist of z   
+	 .describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T
+	 # add a new column = highest of min and max column
+	 .assign(max_z_abs = lambda x: x[['min','max']].abs().max(axis=1))
+	 # now sort on it
+	 .sort_values('max_z_abs',ascending = False)
+	 .style.format('{:,.2f}').apply(highlight_extreme)
+	)	
+	
+<codebook has a function that does this :) >	
+	
+### Winsorizing in action:
+
+1. If <p1 --> p1
+2. If >p99 --> p99 
+
+Options:
+- do this once over whole dataset
+- do this over subgroups (winsorize by year)
+	
+< draw two normal dists that are shifted. dist 1 = MTB in 1990, dist 2 = MTB in 1999
+If you winsorize, all >p99 are in 1999, and all <p99 are in 1990.
+>
+	
+	##########################################################################################
+	from scipy.stats.mstats import winsorize
+
+	practice_df = ccm.copy()
+
+	## winsorize - overall
+
+	vars_to_check = ['l_a', 'l_sale', 'prof_a', 'mb', 'ppe_a', 'capx_a', 'xrd_a', 'cash_a', 'div_d', 'td_a', 'td_mv', 'dltt_a', 'dv_a', 	'invopps_FG09', 'sales_g', 'short_debt', 'long_debt_dum', 'atr', 'smalltaxlosscarry', 'largetaxlosscarry', 'tnic3hhi', 'tnic3tsimm', 'prodmktfluid', 'delaycon', 'equitydelaycon', 'debtdelaycon', 'privdelaycon', 'l_emp', 'l_ppent', 'l_laborratio']
+
+	# winsorizse one var at a time 
+	for v in vars_to_check:
+		practice_df[v] = winsorize(practice_df[v],limits=[.01,.99])
+
+	# one line equivalent:
+
+	practice_df[vars_to_check]= practice_df[vars_to_check].apply(lambda x: winsorize(x,limits=[.01,.99]))
+
+	# what if outliers in some years start at "different" points than other years
+	# winsorize BY YEAR
+
+	practice_df[vars_to_check] = practice_df.groupby('fyear')[vars_to_check].transform(lambda x: winsorize(x,limits=[.01,.99]))
+
+	# check
+	(practice_df
+	 .describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T
+	 # add a new column = highest of min and max column
+	 .assign(abs_maxmin = lambda x: x[['min','max']].abs().max(axis=1))
+	 # now sort on it
+	 .sort_values('abs_maxmin',ascending = False)
+	 [['min','1%']]
+	 .style.format('{:,.2f}')#.apply(highlight_extreme)
+	)    
+	##########################################################################################
+	##########################################################################################
