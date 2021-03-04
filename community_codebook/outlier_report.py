@@ -1,4 +1,5 @@
-def outlier_report(df,vars_to_examine=df.columns,color='red',thres=4):
+def outlier_report(df,vars_to_examine=None,color='red',thres=4,
+                   return_df=False,no_print=False):
     '''
     Parameters
     ----------
@@ -10,31 +11,51 @@ def outlier_report(df,vars_to_examine=df.columns,color='red',thres=4):
         Color for cell highlighting. The default is 'red'.
     thres : int, optional
         Highlight cells where z score is above thres. The default is 4.
-
+    return_df : Boolean, optional
+        If true, will return the df obj (without styling) for further use. 
+        The default is False.
+    no_print : Boolean, optional
+        If true, will not print. 
+        The default is False.
     
-    Returns
+    Displays (if no_print=False)
     -------
     Table with distribution of z-scores of variables of interest. 
+    
+    Returns (if return_df=True)
+    -------
+    Table with distribution of z-scores of variables of interest (without styling).     
     '''
         
     def highlight_extreme(s):
         '''
-        highlight the maximum in a Series yellow.
+        Highlight extreme values in a series.
         '''
         is_extreme = abs(s) > thres
         return ['background-color: '+color if v else '' for v in is_extreme]
     
+    if vars_to_examine==None:
+        vars_to_examine=df.columns
     
-    return (# compute z scores
-     ((df[vars_to_examine] - df[vars_to_examine].mean())/df[vars_to_examine].std())
-     # output dist of z   
-     .describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T
-     # add a new column = highest of min and max column
-     .assign(max_z_abs = lambda x: x[['min','max']].abs().max(axis=1))
-     # now sort on it
-     .sort_values('max_z_abs',ascending = False)
-     .style.format('{:,.2f}')
-           .format({"count": '{:,.0f}'})           
-           .apply(highlight_extreme, 
-                  subset=['mean', 'std', 'min', '1%', '5%', '25%', '50%', '75%', '95%','99%', 'max', 'max_z_abs'])
-    ) 
+    _tab = (
+            # compute z scores
+            ((df[vars_to_examine] - df[vars_to_examine].mean())/df[vars_to_examine].std())
+            # output dist of z   
+            .describe(percentiles=[.01,.05,.25,.5,.75,.95,.99]).T
+            # add a new column = highest of min and max column
+            .assign(max_z_abs = lambda x: x[['min','max']].abs().max(axis=1))
+            # now sort on it
+            .sort_values('max_z_abs',ascending = False)
+    )
+    
+    if no_print == False:
+        display(_tab
+             .style.format('{:,.2f}')
+                   .format({"count": '{:,.0f}'})           
+                   .apply(highlight_extreme, 
+                          subset=['mean', 'std', 'min', '1%', '5%', '25%', '50%', '75%', '95%','99%', 'max', 'max_z_abs'])
+        ) 
+    
+    if return_df == True:
+        return _tab
+
