@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
+    <title>Hello everyone! &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -53,6 +53,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -406,6 +408,11 @@
        3.4.2. Dealing with Missing Data
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../content/03/05d_outliers.html">
+       3.4.3. Dealing with Outliers
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -478,7 +485,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/L7_dataviz.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L02_jupyterlab.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -498,10 +505,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L7_dataviz.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L02_jupyterlab.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L7_dataviz.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L02_jupyterlab.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -521,7 +528,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L7_dataviz.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L02_jupyterlab.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -529,7 +536,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L7_dataviz.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L02_jupyterlab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -549,77 +556,81 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignments">
-   Assignments
+  <a class="reference internal nav-link" href="#big-picture">
+   Big picture
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#and-now">
-   “And now…”
+  <a class="reference internal nav-link" href="#a-quick-tour-of-jupyter-lab">
+   A quick tour of Jupyter Lab
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-viz-is-not-this">
-   Data Viz is not this…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#it-s-this">
-   It’s this
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-discussion-before-we-get-into-it">
-   Quick discussion before we get into it
+  <a class="reference internal nav-link" href="#our-first-notebook-file">
+   Our first notebook file
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot">
-     Plot
+    <a class="reference internal nav-link" href="#enough-already-let-s-code">
+     Enough already, let’s “code”!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-create-the-file">
+       Step 1: Create the file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-modifying-our-notebook">
+       Step 2: Modifying our notebook
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stop-let-me-show-you-something-important">
+   Stop! Let me show you something important!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#back-to-using-jupyter-lab">
+     Back to using Jupyter Lab
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickstart">
-   Quickstart:
+  <a class="reference internal nav-link" href="#fin-for-that-walkthrough">
+   FIN for that walkthrough
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#student-demos">
-   Student Demos
+  <a class="reference internal nav-link" href="#tidying-up">
+   Tidying up
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-let-s-practice">
-   Now let’s practice!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#takeaway-tips">
-   Takeaway tips
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-class">
-   Next class
+  <a class="reference internal nav-link" href="#summary-part-1">
+   Summary Part 1
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Student demos
+    <a class="reference internal nav-link" href="#more-practice">
+     More practice:
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+  <a class="reference internal nav-link" href="#before-next-time">
+   Before next time
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
-     Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.
+    <a class="reference internal nav-link" href="#two-great-opportunities">
+     Two great opportunities:
     </a>
    </li>
   </ul>
@@ -635,165 +646,258 @@
         
               <div>
                 
-  <p>Teaching notes</p>
-<p>This year:</p>
-<ul class="simple">
-<li><p>40 minutes on preamble and assignment review</p></li>
-<li><p>30 minutes of plot discussion / demo</p></li>
-<li><p>5 minutes of wrap up</p></li>
-</ul>
-<div class="section" id="hello-today">
-<h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hello-everyone">
+<h1>Hello everyone!<a class="headerlink" href="#hello-everyone" title="Permalink to this headline">¶</a></h1>
+<p>Our plan for the day:</p>
+<ol>
+<li><p>Any issues with the tasks, or questions before we begin?</p>
+<p><em><strong>Reminder: Save code we do in class to your repo for participation credit</strong></em></p>
+</li>
+<li><p>Big picture</p></li>
+<li><p>JLab tour</p></li>
+<li><p>Learning by doing</p>
 <ol class="simple">
-<li><p>Before class:</p>
-<ul class="simple">
-<li><p>Fetch your class notes repo and the lecture repo</p></li>
-<li><p>Open in JLab: your answers for A2, and a ipynb for taking notes</p></li>
-</ul>
-</li>
-<li><p>Understanding assignment 2 - my view + student solutions</p></li>
-<li><p>Plotting with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (<code class="docutils literal notranslate"><span class="pre">df.plot()</span></code>) and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p></li>
+<li><p>Opening Jupyter Lab and exploring the interface</p></li>
+<li><p>Creating our first file and exploring “notebooks”</p></li>
+<li><p>Practice</p></li>
 </ol>
-<p><em>I’m going to record, but remember participation credits</em></p>
-<div class="section" id="assignments">
-<h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
-<p>Assignment 1 grades: 80% avg so far - great!</p>
+</li>
+</ol>
+<div class="section" id="big-picture">
+<h2>Big picture<a class="headerlink" href="#big-picture" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Should post Wednesday</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> is a programming language</p></li>
+<li><p>.<code class="docutils literal notranslate"><span class="pre">py</span></code> files are text files that exclusively contain python code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py</span></code> files can not show results - you have to output any graphs or tables to new files.</p></li>
 </ul>
-<p>Let’s go over my answers for A2. Notes you might take:</p>
+<p>That last feature is a bummer. <strong>There must be a better way!</strong></p>
+<p><img alt="" src="https://media.giphy.com/media/xsATxBQfeKHCg/giphy.gif" /></p>
+<p><img alt="" src="https://media.giphy.com/media/zvYnqgajTM6MU/giphy.gif" /></p>
+<p><img alt="" src="https://media.giphy.com/media/3oEduNF7DlpxgcHVJe/giphy.gif" /></p>
+<p>Put that in the Guggenheim.</p>
+<p><img alt="" src="https://media.giphy.com/media/B4fRSZgj8XUOY/source.gif" /></p>
+<p>Enter notebook files!</p>
 <ul class="simple">
-<li><p>You say “groups” or “for-loop”: I say <code class="docutils literal notranslate"><span class="pre">groupby</span></code> or <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code></p></li>
-<li><p>Pseudo &gt; Convert plan to pandas commands &gt; Code (syntax part by part)</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> (“notebook”) files mix python code with formatted markdown text and the output from code!</p></li>
+<li><p>→ better analysis! (“reproducible, reusable, and shareable”)</p></li>
+</ul>
+<p>And <strong>Jupyter Lab</strong> is how we will make our Jupyter notebooks</p>
+</div>
+<div class="section" id="a-quick-tour-of-jupyter-lab">
+<h2>A quick tour of Jupyter Lab<a class="headerlink" href="#a-quick-tour-of-jupyter-lab" title="Permalink to this headline">¶</a></h2>
+<p>Open Jupyter Lab:</p>
+<ul class="simple">
+<li><p>Windows: Open Anaconda Prompt and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> and hit enter</p></li>
+<li><p>Mac: Open a terminal window and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> and hit enter</p></li>
+</ul>
+<p>OK, what are we looking at?</p>
+<ul class="simple">
+<li><p>This is a browser based editor</p></li>
+<li><p>Notice your prompt/terminal is running in the background</p>
 <ul>
-<li><p>Q9 and Q10 were supposed to use the (daily) portfolio returns you created in Q7</p></li>
-<li><p>Compounding returns in Q9: Anyone think they figured it out?</p></li>
+<li><p><em>HINT</em> : If you need another prompt/terminal to do something else, just open a second one</p></li>
 </ul>
 </li>
-<li><p>Tricks you can steal:</p>
+</ul>
+<p><strong>Now, let me give you a little tour (just watch me!)</strong></p>
+<p>I’ll cover…</p>
+<ul class="simple">
+<li><p>The left sidebar</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">eda.py</span></code> (convenient), <code class="docutils literal notranslate"><span class="pre">.T</span></code> (tiny, but useful!)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.style.format(&quot;{:.2f}&quot;)</span></code> is adaptable syntax to format <code class="docutils literal notranslate"><span class="pre">pd</span></code> tables nice</p></li>
+<li><p><strong>The file browser:</strong> Navigating to my project folder</p></li>
+<li><p>Kernels: A list of running code</p></li>
+<li><p>Commands: Has a lot of actions, and short cuts are listed</p></li>
+<li><p>Extensions: VERY useful to make JLab more powerful</p></li>
+</ul>
+</li>
+<li><p>The main work area</p>
+<ul>
+<li><p>you arrange documents (notebooks, text files, etc.) and other activities (terminals, code consoles, etc.) into panels</p></li>
+<li><p>each panel can have many tabs open</p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="and-now">
-<h2>“And now…”<a class="headerlink" href="#and-now" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="data-viz-is-not-this">
-<h2>Data Viz is not this…<a class="headerlink" href="#data-viz-is-not-this" title="Permalink to this headline">¶</a></h2>
-<p><img alt="" src="https://media.giphy.com/media/pi1u9o9M436Lu/giphy.gif" /></p>
-</div>
-<div class="section" id="it-s-this">
-<h2><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04f-betterplots.html#interactive-plots-plotly">It’s this</a><a class="headerlink" href="#it-s-this" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="quick-discussion-before-we-get-into-it">
-<h2>Quick discussion before we get into it<a class="headerlink" href="#quick-discussion-before-we-get-into-it" title="Permalink to this headline">¶</a></h2>
-<p>Plot to explore data, discover trends/comps/relationship, present results</p>
-<p>PLOT A LOT! A LOT! A LOT!</p>
+<div class="section" id="our-first-notebook-file">
+<h2>Our first notebook file<a class="headerlink" href="#our-first-notebook-file" title="Permalink to this headline">¶</a></h2>
+<p><strong>But first!</strong> Let’s put <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/assignments/howto_do.html#working-on-assignments-projects-taking-notes">tips on working</a> into practice:</p>
 <ul class="simple">
-<li><p>Data viz (and modeling) are iterative: you learn what’s worth looking at only as you go</p></li>
-<li><p>Go to <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/02e_eda_golden.html#eda-of-compustat-firm-accounting-variables">Pandas EDA page</a> &gt; A mystery!</p></li>
+<li><p>Open github desktop</p></li>
+<li><p>“Fetch” your class notes repo (probably nothing changed, but its a good habit!)</p></li>
 </ul>
-<div class="section" id="plot">
-<h3>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
+<p><strong>Now we are ready to code!</strong></p>
+<p>Before each class starts, you should have already</p>
 <ul class="simple">
-<li><p>To find relationships that differ by groups (<code class="docutils literal notranslate"><span class="pre">sns</span></code> options: hue, col, row; <code class="docutils literal notranslate"><span class="pre">sns.catplot</span></code>, <code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code>)</p></li>
+<li><p>“fetched” your class notes repo</p></li>
+<li><p>opened JLab to that folder</p></li>
 </ul>
+<p>And at the end of each class,</p>
 <ul class="simple">
-<li><p>To understand data issues (3.3.4.2) &gt; Solved the mystery!</p></li>
+<li><p>save all open code files,</p></li>
+<li><p>close JLab (and the terminal running it)</p></li>
+<li><p>commit and push your Class Notes repo</p></li>
 </ul>
-<ul class="simple">
-<li><p>B/c summary stats only describe part of distribution (<code class="docutils literal notranslate"><span class="pre">sns</span></code>: distplot, boxplot)</p></li>
-</ul>
-<ul class="simple">
-<li><p>B/c summary stats don’t show relationships (3.3.4.3) (<code class="docutils literal notranslate"><span class="pre">sns</span></code>: pairplot &gt; heatmap &gt; lmplot + jointplot)</p></li>
-</ul>
+<div class="section" id="enough-already-let-s-code">
+<h3>Enough already, let’s “code”!<a class="headerlink" href="#enough-already-let-s-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="step-1-create-the-file">
+<h4>Step 1: Create the file<a class="headerlink" href="#step-1-create-the-file" title="Permalink to this headline">¶</a></h4>
+<ol>
+<li><p>create a folder inside your class notes folder called notes</p>
+<p>right click in file explorer pane and select “New Folder”, then name it “notes”</p>
+</li>
+<li><p>create a “” file</p>
+<p>Hit  the <span class="math notranslate nohighlight">\(+\)</span> button, then under “Notebook”, click on “Python 3”</p>
+</li>
+<li><p>rename that file “Using JupyterLab-Basics”</p>
+<p>right click the file in the file browser, or the tab the file opened in, and pick “rename”</p>
+</li>
+<li><p>save it (CTRL+S on windows, Apple+S on mac)</p></li>
+</ol>
 </div>
-</div>
-<div class="section" id="quickstart">
-<h2>Quickstart:<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>              <span class="c1"># quick and dirty plots</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>            <span class="c1"># most of my plots</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># formatting</span>
+<div class="section" id="step-2-modifying-our-notebook">
+<h4>Step 2: Modifying our notebook<a class="headerlink" href="#step-2-modifying-our-notebook" title="Permalink to this headline">¶</a></h4>
+<p>Let’s type some Python in the notebook:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># define a list with 1-5</span>
+<span class="n">L</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># &quot;pop&quot; removes an element</span>
+<span class="n">L</span>             <span class="c1"># if the last element of a cell is an object</span>
+              <span class="c1"># executing the cell will print it, like this:</span>
 </pre></div>
 </div>
-<p>Key links: <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04d-whichplot.html">this</a> and the links within</p>
-</div>
-<div class="section" id="student-demos">
-<h2>Student Demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h2>
-<p>Copy the last part of the <code class="docutils literal notranslate"><span class="pre">02h_exercises</span></code> into your code</p>
 <ul class="simple">
-<li><p>Morning: Zhongrui (&#64;zhz221) and Chengming (&#64;chw221)</p></li>
-<li><p>Afternoon: Blaise (&#64;blaisemilanek) and Caitlin (&#64;cak320)</p></li>
+<li><p>Do you notice the syntax coloring?</p></li>
+<li><p>The hashtags/pound signs are the “comment signal”. They tell Python to ignore everything to the right of it on that line, so that you can write notes to anyone looking at the code.</p></li>
 </ul>
+<p>Ok, let’s run that code! Hit <kbd> ctrl </kbd>+ <kbd> enter</kbd></p>
+<p>Do you see the number to the left of it? That helps you track the order in which each cell was run.</p>
+<p>Hit <kbd> ctrl </kbd>+ <kbd> enter</kbd>  again. See the number change?</p>
 </div>
-<div class="section" id="now-let-s-practice">
-<h2>Now let’s practice!<a class="headerlink" href="#now-let-s-practice" title="Permalink to this headline">¶</a></h2>
-<p>Explore CCM variables</p>
-<ul class="simple">
-<li><p>distributions (distplot and boxplot)</p>
-<ul>
-<li><p>work through parameters</p></li>
-<li><p>tricks: <code class="docutils literal notranslate"><span class="pre">query</span></code> in <code class="docutils literal notranslate"><span class="pre">data</span></code> argument</p></li>
-</ul>
-</li>
-<li><p>covariances (pairplot and heatmap)</p>
-<ul>
-<li><p>work through parameters</p></li>
-<li><p>not too many variables for pairplot</p></li>
-<li><p>tricks: in any scatter plot: <code class="docutils literal notranslate"><span class="pre">sample</span></code> to avoid oversaturation</p></li>
-</ul>
-</li>
-<li><p>groups</p>
-<ul>
-<li><p>Useful parameters: <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code></p></li>
-<li><p>Bin / cut continuous vars to create discrete groups</p></li>
-</ul>
-</li>
-</ul>
 </div>
-<div class="section" id="takeaway-tips">
-<h2>Takeaway tips<a class="headerlink" href="#takeaway-tips" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="stop-let-me-show-you-something-important">
+<h2>Stop! Let me show you something important!<a class="headerlink" href="#stop-let-me-show-you-something-important" title="Permalink to this headline">¶</a></h2>
+<p><strong>The point of code is that someone can open the file, run it from beginning to end, and get the same results you did!</strong></p>
+<p>You should check that your files work like you think they do every 15-30 minutes and EVERY TIME you think you are done by</p>
 <ol class="simple">
-<li><p><strong>Start with simple graphs</strong>, and then build in and layer on “complications” and features.</p></li>
-<li><p><strong>Really</strong> compare your code with the syntax in the documentation. <strong>Understanding what each parameters does and needs is essential.</strong></p></li>
-<li><p>Triple check for typos, unclosed parentheses and the like</p></li>
-<li><p><a class="reference external" href="https://www.data-to-viz.com">What chart should I use (with <code class="docutils literal notranslate"><span class="pre">sns</span></code> examples)</a> and more help on <a class="reference external" href="https://python-graph-gallery.com">how can I make it</a></p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> tutorial page is excellent: <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">https://seaborn.pydata.org/tutorial.html</a></p></li>
+<li><p>Clicking the “Kernel” menu, then, “Restart Kernel and clear all outputs”.</p></li>
+<li><p>Then rerun the code: Open the “run” menu, then “run all cells”</p></li>
+</ol>
+<p>Let me show you an example of why this is important:</p>
+<p>Let me show you an example of why this is important:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>                                     <span class="c1"># run first</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coffee costs&quot;</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;dollars&quot;</span><span class="p">)</span>     <span class="c1"># run second, run fourth</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">4</span>                                     <span class="c1"># run third</span>
+<span class="c1"># someone opens this file of yours and sees that it says coffee is $7</span>
+<span class="c1"># after running these, the code says coffee is only $5!!!</span>
+<span class="c1"># this is a disaster!</span>
+</pre></div>
+</div>
+<p>This example seems silly, but I saw it on 20-30% of assignments for the first month last year.</p>
+<p>The easiest way to see if this might happen: Just look at all the #s to the left of code blocks. They should be in order from 1 up.</p>
+<div class="section" id="back-to-using-jupyter-lab">
+<h3>Back to using Jupyter Lab<a class="headerlink" href="#back-to-using-jupyter-lab" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Add a new cell below by <em><strong>clicking</strong></em> the plus button on this panel.</p></li>
+<li><p>Add a new cell below by <em><strong>keyboard shortcut</strong></em>. To do that, we need a quick digression on Jupyter’s modal editing system. Let’s look at the textbook.</p></li>
+</ol>
+<p>The modal behavior of the Jupyter notebook is a little tricky at first but very efficient when you get used to it.</p>
+<p>So, click <kbd> ESC </kbd> to switch to command mode, then <kbd> B </kbd> to insert a cell <strong>B</strong> elow.</p>
+ <ol start="3">
+  <li>Switch the inserted cell to markdown (via the markdown/code drop down box) and write several lines.</li>
+  <li>Split the markdown cell in half and insert a cell in the middle of those halves. </li>
+     <ul>
+         <li><s>How do you split a cell in half?</s> Better question: Where do you look for an answer about how to do that? </li>
+         <li><b>This is a good time to explore!</b> Take the "user interface tour" under help, then look through the various menus, check out the Keyboard Shortcuts (under the help menu), and then search through the "command palette" (which looks like a keyboard icon at the right side of the Notebook Toolbar). <b>The command palette is very useful because you can search for commands!</b> Return to the shortcut menu and command palette often!!!</li>
+    </ul>     
+ </ol>
+  <ol start="5">
+  <li>Switch that middle cell to "code" mode via keyboard shortcuts. </li>
+  <li>Add a cell at the bottom of the notebook, and then delete it: <code>ESC</code> to go to command mode and then <code>D</code>,<code>D</code> (hit the "d" button twice).</li>    
+</ol> </div>
+</div>
+<div class="section" id="fin-for-that-walkthrough">
+<h2>FIN for that walkthrough<a class="headerlink" href="#fin-for-that-walkthrough" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How did we do?</p>
+<ul class="simple">
+<li><p>Thumb up emoji if you kept up all the way through</p></li>
+<li><p>Thumb down if you’re quite lost</p></li>
+<li><p>Any other emoji for “in the middle”</p></li>
+</ul>
+</li>
+<li><p>Obviously, we will learn much more going forward, but you have enough to play around with Jupyter now. I <strong>highly</strong> recommend doing some introductory Python tutorials over the weekend. The</p></li>
 </ol>
 </div>
-<div class="section" id="next-class">
-<h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
-<p>More graphing!</p>
-<div class="section" id="id1">
-<h3>Student demos<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tidying-up">
+<h2>Tidying up<a class="headerlink" href="#tidying-up" title="Permalink to this headline">¶</a></h2>
+<p>Earlier, I said to</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Code must run from beginning to end and produce the same thing every time
+- Restart the kernal and clear output
+- Run all cells
+
+And at the end of each class, 
+- save all open code files, 
+- close JLab (and the terminal running it)
+- commit and push your Class Notes repo
+</pre></div>
+</div>
+<p>Let’s do that now!</p>
+</div>
+<div class="section" id="summary-part-1">
+<h2>Summary Part 1<a class="headerlink" href="#summary-part-1" title="Permalink to this headline">¶</a></h2>
+<p>Before each class starts, you should have already</p>
 <ul class="simple">
-<li><p>Task: I’ll email tonight</p></li>
-<li><p>Morning: Andrew (&#64;akz220) and Bai Hao (&#64;baihao44)</p></li>
-<li><p>Afternoon: Carly (&#64;carlydiscolo) and	Connor (&#64;ConnorKressler)</p></li>
+<li><p>“fetched” your class notes repo</p></li>
+<li><p>opened JLab to that folder</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>We covered</p>
+<p>And at the end of each class,</p>
 <ul class="simple">
-<li><p>A “somewhat” standard process of visual EDA:</p>
-<ul>
-<li><p>Explore variation within variables (distributions)</p></li>
-<li><p>Explore covariation between variables</p></li>
-<li><p>Explore how distributions depends on groups</p></li>
-<li><p>Explore how covariation depends on groups</p></li>
+<li><p>save all open code files,</p></li>
+<li><p>close JLab (and the terminal running it)</p></li>
+<li><p>commit and push your Class Notes repo</p></li>
+<li><p>open the <a class="reference external" href="http://GitHub.com">GitHub.com</a> version of the repo</p></li>
+</ul>
+<p>Code must run from beginning to end and produce the same thing every time</p>
+<ul class="simple">
+<li><p>Restart the kernal and clear output</p></li>
+<li><p>Run all cells</p></li>
+</ul>
+<div class="section" id="more-practice">
+<h3>More practice:<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>“Issue demo”: Have student put issue on their Class Note Repo. I’ll reply via email.</p></li>
+<li><p>“Good citizen demo”: Have student suggest a typo fix on the website</p></li>
+<li><p>Highlight “JupyterLab” chapter elements, and have everyone do the walk through of the interface</p></li>
+<li><p>Start everyone’s Notes files with “Practice” and Whirlwind #3</p></li>
+<li><p>A preview of “simple code”</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="before-next-time">
+<h2>Before next time<a class="headerlink" href="#before-next-time" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
+<p>Stuck?</p>
+<ul class="simple">
+<li><p><kbd>shift</kbd> + <kbd>tab</kbd>; help(function); find the documentation via google; stack overflow;</p></li>
+</ul>
+<p>Over the weekend:</p>
+<ul class="simple">
+<li><p>The task page lists reading to cover and coding to try</p></li>
+<li><p>I added a Markdown tutorial to the textbook that people like a lot</p></li>
+<li><p>On Monday, we will be coding together - more updates on that soon</p></li>
+</ul>
+<div class="section" id="two-great-opportunities">
+<h3>Two great opportunities:<a class="headerlink" href="#two-great-opportunities" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>J&amp;J competition (see coursesite)</p></li>
+<li><p>FIN388 - small capstone team looking for teammates. ⭐ ⭐</p>
+<ul class="simple">
+<li><p>Will spend semester developing fun, real-world FinTech project for a firm.</p></li>
+<li><p>Project focuses on credit score products, will have data science component, and examine relevant regulatory factors</p></li>
+<li><p>Must have taken FIN330</p></li>
+<li><p>Let me know ASAP!</p></li>
 </ul>
 </li>
-<li><p>The key plot functions to get started</p></li>
-</ul>
-<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
-<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
-<h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
+</ol>
 </div>
 </div>
 </div>

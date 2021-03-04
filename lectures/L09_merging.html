@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello everyone! &#8212; LeDataSciFi-2021</title>
+    <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -408,6 +408,11 @@
        3.4.2. Dealing with Missing Data
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../content/03/05d_outliers.html">
+       3.4.3. Dealing with Outliers
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -480,7 +485,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/L1_intro_github.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L09_merging.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -500,10 +505,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L1_intro_github.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L09_merging.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L1_intro_github.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L09_merging.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -523,7 +528,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L1_intro_github.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L09_merging.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -531,7 +536,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L1_intro_github.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L09_merging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -551,60 +556,84 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
+  <a class="reference internal nav-link" href="#today">
+   Today
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-do-an-icebreaker">
-   Let’s do an icebreaker!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expectations-and-norms">
-   Expectations and norms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#enough-already-let-s-get-going">
-   Enough already! Let’s get going!
+  <a class="reference internal nav-link" href="#viz">
+   Viz
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#let-s-practice-all-that">
-     Let’s practice all that!
+    <a class="reference internal nav-link" href="#warmup-thinking-about-viz">
+     Warmup - thinking about viz
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#well-how-did-we-do">
-     Well, how did we do?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-save-all-your-notes-from-class-aside-from-the-usual-learning-reasons">
-     Why save all your notes from class (aside from the usual “learning” reasons)?
+    <a class="reference internal nav-link" href="#good-visuals">
+     Good visuals
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navigating-the-website-site-and-gh-org">
-   Navigating the website site and GH org
+  <a class="reference internal nav-link" href="#merging">
+   Merging
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-merge-function">
+   The merge function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-left-v-right-v-inner-v-outer">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     how
+    </span>
+   </code>
+   : left v. right v. inner v. outer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-tips">
+   Merging tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values">
+   Missing values
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#which-option-should-i-choose-to-deal-with-my-missing-values">
+     Which option should I choose to deal with my missing values?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-class">
+   Next class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-demos">
+     Student demos
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#before-next-time">
-   Before next time
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-great-opportunities">
-     Two great opportunities:
+    <a class="reference internal nav-link" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+     Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.
     </a>
    </li>
   </ul>
@@ -620,241 +649,219 @@
         
               <div>
                 
-  <div class="section" id="hello-everyone">
-<h1>Hello everyone!<a class="headerlink" href="#hello-everyone" title="Permalink to this headline">¶</a></h1>
-<p>Our plan for the day:</p>
+  <p>Teaching notes</p>
+<p>This year:</p>
+<div class="section" id="hello-today">
+<h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
-<li><p>Motivation</p></li>
-<li><p>Icebreaker</p></li>
-<li><p>Expectations and norms</p></li>
-<li><p>Github - jump in head first</p></li>
-<li><p>Navigating the website site and GH org</p></li>
-<li><p>Before next time…</p></li>
-</ol>
-<div class="section" id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p>You’re here, so I’m guessing you know how buzzy “Big Data” and “Machine Learning” are.</p>
-<p>At the end of this class, the goal is that you’ll be able to confidently add some skills to the bottom of your resume and benefit from that.</p>
-<p><img alt="" src="https://media.giphy.com/media/znSg4sT0ivRdu/giphy.gif" /></p>
-<p><img alt="" src="https://media.giphy.com/media/HPMTb7m5ehAUE/giphy.gif" /></p>
-<p><em>I hope you’re a fan of bad gif humor… You’ll have to deal with it - I live in this basement now, gif humor is all I have left.</em></p>
-<p>But even if you don’t ever code again, we are going to learn skills that are valuable anyways:</p>
+<li><p>Before class:</p>
 <ul class="simple">
-<li><p>Defining problems clearly</p></li>
-<li><p>Working collaboratively</p></li>
-<li><p>Delivering work product</p></li>
-<li><p>Having a baseline to detect Gold from Fool’s Gold when someone pitches something as “Big Data”</p></li>
+<li><p>Fetch your class notes repo and the lecture repo</p></li>
+<li><p>Open in JLab: ipynb for taking notes</p></li>
 </ul>
+</li>
+<li><p>Announcements</p>
+<ul class="simple">
+<li><p>ASGN: A2 grades posted, A3 reviews started, A4 posting today</p></li>
+<li><p>A2: 80%, no shenanigans needed <strong>A tribute to hard work - bravo</strong></p></li>
+<li><p>Readme, gitignore, etc: Important good habits, near 100% avg</p></li>
+<li><p>How many of you are using chains as you code? <code class="docutils literal notranslate"><span class="pre">.pipe(csnap)</span></code> trick</p></li>
+</ul>
+</li>
+</ol>
+<p><em>I’m going to record, but remember participation credits</em></p>
+<div class="section" id="today">
+<h2>Today<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Finishing up visualizations</p></li>
+<li><p>Merging</p></li>
+<li><p>Missing values</p></li>
+</ol>
 </div>
-<div class="section" id="let-s-do-an-icebreaker">
-<h2>Let’s do an icebreaker!<a class="headerlink" href="#let-s-do-an-icebreaker" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>First: My thanks to everyone that set up their GH, added a photo, and filled out the survey</p>
-<ul>
-<li><p>If you haven’t joined the org yet: please do so now: <a class="reference external" href="https://classroom.github.com/a/ktlJQNlI">https://classroom.github.com/a/ktlJQNlI</a></p></li>
-<li><p>After you join it, I’ll invite you to the org as a member, and to the “classmates” team. Make sure you get in!</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Second: Let’s run a poll!</p></li>
-</ul>
-<ul class="simple">
-<li><p>Third: Well, let’s come back to this</p></li>
-</ul>
+<div class="section" id="viz">
+<h2>Viz<a class="headerlink" href="#viz" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="warmup-thinking-about-viz">
+<h3>Warmup - thinking about viz<a class="headerlink" href="#warmup-thinking-about-viz" title="Permalink to this headline">¶</a></h3>
+<p>How would you improve the catplot/pandas count of <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04e-visualEDA.html#distributions">industries on 3.3.4 of the website</a></p>
 </div>
-<div class="section" id="expectations-and-norms">
-<h2>Expectations and norms<a class="headerlink" href="#expectations-and-norms" title="Permalink to this headline">¶</a></h2>
-<p>I’m going to work hard to make this as close to “normal” as pandemicollege can be</p>
+<div class="section" id="good-visuals">
+<h3>Good visuals<a class="headerlink" href="#good-visuals" title="Permalink to this headline">¶</a></h3>
+<p>3.3.5 and the <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/about/resources.html#resources-tutorials-and-data">resource page’s Visualization references</a></p>
+<p>Check out</p>
+<ol class="simple">
+<li><p>A quick hit of Do’s and Don’ts (would have helped on the warmup)</p></li>
+<li><p>The fixer upper</p></li>
+</ol>
+<p><strong>Context - starting point:</strong> Remember, the class’s <span class="xref myst">first two objectives</span> are to:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>obtain, explore, groom, visualize, and analyze data</p></li>
+<li><p>make all of that reproducible, reusable, and shareable</p></li>
+</ol>
+</div></blockquote>
+<p><img alt="" src="https://media.giphy.com/media/R2m2NzVxQ3pbG/giphy.gif" /></p>
+<p><strong>Context - right now:</strong> At this point, we’ve covered/added skills</p>
 <ul class="simple">
-<li><p>In person sessions (TBA later)</p></li>
-<li><p>Lots of office hours</p></li>
-<li><p>I’ll be on Zoom at least 10 min before and after class - please drop in to say hi and “Whoa, you see $GME today? RIP my loans.” (or whatever…)</p></li>
-<li><p>A few other tricks up my sleeve</p></li>
+<li><p>GitHub for collaboration and sharing</p></li>
+<li><p>GitHub for project management/development and version control</p></li>
+<li><p>Python: numpy, pandas, seaborn</p></li>
+<li><p>Datasets: CRSP (stock prices), Compustat (firm financial statements), FRED (macroeconomic and regional time series data)</p></li>
+<li><p>Data scraping: Yes, you’ve done this already!</p></li>
+<li><p>Finance: Downloading stock prices and compounding returns over arbitrary time spans</p></li>
 </ul>
-<p><strong>Please turn your webcams on at all times.</strong></p>
-<p>You can still wear pajamas, NP.</p>
-<p>But it really makes a difference.</p>
-<p><em>Related note on grades: I’ll take “screenshot attendance” randomly during the semester - if your camera is on, points. If you have a strong reason you don’t want it on, please let me know. But seeing everyone helps a ton!</em></p>
-<p>Zoom style:</p>
-<ul class="simple">
-<li><p>Please interrupt when you have a question!</p></li>
-<li><p>You can chat at me if you want to type it out, and chat amongst yourselves if you are working through a problem together</p></li>
-</ul>
-<p>The website and notes are not comprehensive - this is on purpose, to encourage you to look around the web for answers.</p>
-<p>The “help &amp; resources” page has good suggestions for high quality places to look for answers when you get stuck.</p>
-<p>It also has tips for asking better questions to get <em>better</em> help.</p>
+<p>We need to talk about a few more issues before we get properly ambitious.</p>
+<p><img alt="" src="https://media.giphy.com/media/kdFujikoYAdfgQQVrs/giphy.gif" /></p>
+<p><strong>Context - going forward:</strong> We need to introduce a few more skills before we start <em>really</em> running analytical models.</p>
+<ol class="simple">
+<li><p>Merging datasets</p></li>
+<li><p>What to do with missing values?</p></li>
+<li><p>What to do with outliers?</p></li>
+<li><p>How to get a world of data off the world wide web</p></li>
+<li><p>Working with string data</p></li>
+</ol>
+<p>This week: 1-3</p>
+<p>Next three weks: 4-5</p>
 </div>
-<div class="section" id="enough-already-let-s-get-going">
-<h2>Enough already! Let’s get going!<a class="headerlink" href="#enough-already-let-s-get-going" title="Permalink to this headline">¶</a></h2>
-<p>This class depends heavily on GitHub, so let’s jump in.</p>
-<p>GitHub is good for</p>
-<ul class="simple">
-<li><p>cloud storage</p></li>
-<li><p>collaboration</p></li>
-<li><p>version control</p></li>
-</ul>
-<p>It’s like Word’s Track Changes had a baby with Dropbox, and it was marketed to and designed for software developers.</p>
-<p><img alt="" src="../_images/weirdbaby.png" /></p>
-<p>We need to know how to</p>
+</div>
+<div class="section" id="merging">
+<h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Create a repo</p></li>
-<li><p>Clone it to our computer to work on it</p></li>
-<li><p>Work in the cloud (sometimes it is quicker)</p></li>
-<li><p>Fetch updates from the cloud before you start working (avoid disaster!)</p></li>
-<li><p>Work on your computer</p></li>
-<li><p>Push changes from your computer to the cloud.</p></li>
+<li><p>Parameters of the merge function+ practice</p></li>
+<li><p>Tips / best practices</p></li>
 </ol>
-<p><a class="reference external" href="http://phdcomics.com/comics/archive/phd101212s.gif">The usual form of collaboration disaster:</a></p>
-<img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phdcomic" height="300"/>
-<div class="section" id="let-s-practice-all-that">
-<h3>Let’s practice all that!<a class="headerlink" href="#let-s-practice-all-that" title="Permalink to this headline">¶</a></h3>
-<p>Again, the plan is:</p>
-<ol class="simple">
-<li><p>Create a repo</p></li>
-<li><p>Clone it to our computer to work on it</p></li>
-<li><p>Work in the cloud (sometimes it is quicker)</p></li>
-<li><p>Fetch updates from the cloud before you start working (avoid disaster!)</p></li>
-<li><p>Work on your computer</p></li>
-<li><p>Push changes from your computer to the cloud.</p></li>
-</ol>
-<p>ONE: Make a participation repo called “Class Notes”</p>
-<ul class="simple">
-<li><p>Make it private, and initialize with a README file</p></li>
-<li><p>The repo on <a class="reference external" href="http://GitHub.com">GitHub.com</a> is called the “master” or “origin” repo.</p></li>
-</ul>
-<p>TWO: “Clone” that to your computer.</p>
-<ul class="simple">
-<li><p>The folder and files on your computer are called the “remote” repo.</p></li>
-</ul>
-<p>THREE: Modify the repo <strong>in the cloud</strong> and, then, “fetch” those changes to your computer. Think of “fetch” as syncing your computer to catch up with any changes in the master.</p>
-<ul class="simple">
-<li><p>In the cloud:</p>
-<ol class="simple">
-<li><p>Go to the webpage of the repo, and click on the pencil next to the readme</p></li>
-<li><p>This is the “front page” of your repo, so let’s make it useful to visitors (including future you!)</p></li>
-<li><p>Let’s add: Name, class, semester, major, graduation date (demo headers, bold and italics)</p></li>
-<li><p>“Commit” the changes to “save” it. Make a basic note of what your changes are.</p></li>
-</ol>
-</li>
-<li><p>On your computer:</p>
-<ol class="simple">
-<li><p>Look at the folder for this. The README hasn’t changed yet!</p></li>
-<li><p>Open GitHub Desktop, select that repo (in the upper left), and “fetch origin”</p></li>
-</ol>
-</li>
-</ul>
-<p>FOUR: Modify the repo <strong>on your computer</strong>, and then, “push” those changes to the cloud. Think of “push” as syncing the master to catch up with any changes from your computer.</p>
-<ul class="simple">
-<li><p>Open the <a class="reference external" href="http://README.md">README.md</a> in a text editor, and add your dream job.</p></li>
-<li><p>Let’s call this bio section “About me”, and add a section for “About this repo and class” below it.</p></li>
-<li><p>That text formatting I just did is called “markdown” (thus the filetype is MD)</p></li>
-<li><p><em><strong>There are some good resources on the website in the text book section about markdown formatting.</strong></em></p></li>
-<li><p>Let’s make a commit.</p>
-<ul>
-<li><p>Save the text file, then open GH Desktop.</p></li>
-<li><p>Type “sectioned readme” in the Summary box, and click commit. (But don’t “push” it yet!)</p></li>
-</ul>
-</li>
-<li><p>Now, go back to the file, and add some more info to the “About this repo and class section” from the next slide:</p></li>
-</ul>
-<p>I’ll copy this into the chat, you can paste it into your file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Key</span> <span class="n">links</span><span class="p">:</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">The</span> <span class="n">main</span> <span class="n">website</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ledatascifi</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">The</span> <span class="n">dashboard</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ledatascifi</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ledatascifi</span><span class="o">-</span><span class="mi">2021</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">about</span><span class="o">/</span><span class="n">schedule</span><span class="o">.</span><span class="n">html</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">Tips</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ledatascifi</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ledatascifi</span><span class="o">-</span><span class="mi">2021</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">about</span><span class="o">/</span><span class="n">tips</span><span class="o">.</span><span class="n">html</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">Help</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ledatascifi</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ledatascifi</span><span class="o">-</span><span class="mi">2021</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">about</span><span class="o">/</span><span class="n">resources</span><span class="o">.</span><span class="n">html</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">The</span> <span class="n">LDSF</span> <span class="n">org</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">orgs</span><span class="o">/</span><span class="n">LeDataSciFi</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">Announcements</span><span class="p">,</span> <span class="n">discussions</span><span class="p">,</span> <span class="ow">and</span> <span class="n">help</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">orgs</span><span class="o">/</span><span class="n">LeDataSciFi</span><span class="o">/</span><span class="n">teams</span><span class="o">/</span><span class="n">classmates</span><span class="p">)</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">Lecture</span> <span class="n">files</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s2">&quot;powerpoints&quot;</span><span class="p">)](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">LeDataSciFi</span><span class="o">/</span><span class="n">ledatascifi</span><span class="o">-</span><span class="mi">2021</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">lectures</span><span class="p">)</span>
+</div>
+<div class="section" id="the-merge-function">
+<h2>The merge function<a class="headerlink" href="#the-merge-function" title="Permalink to this headline">¶</a></h2>
+<p>In your notebook:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">left_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s1">&#39;firm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accenture&#39;</span><span class="p">,</span><span class="s1">&#39;Citi&#39;</span><span class="p">,</span><span class="s1">&#39;GS&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;varA&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">]})</span>
+
+<span class="n">right_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s1">&#39;firm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;GS&#39;</span><span class="p">,</span><span class="s1">&#39;Chase&#39;</span><span class="p">,</span><span class="s1">&#39;WF&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;varB&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;varc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">]})</span>    
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Then, in GH Desktop, summarize this commit as “key links”</p></li>
-<li><p>Now, push that by clicking the blue button</p></li>
-<li><p>Now refresh the repo on the website… :)</p></li>
-</ul>
+<p>Let use shift+tab to talk about the parameters. (Except how is next slide)</p>
 </div>
-<div class="section" id="well-how-did-we-do">
-<h3>Well, how did we do?<a class="headerlink" href="#well-how-did-we-do" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>If you made it through that, awesome!</p></li>
-<li><p>If not, you can find this lecture in the <code class="docutils literal notranslate"><span class="pre">LeDataSciFi/ledatascifi-2021</span></code> repo, inside the “lectures” folder, to help you replicate it.</p></li>
-<li><p>REGARDLESS: Keep all the files you work on during class inside this <code class="docutils literal notranslate"><span class="pre">Class</span> <span class="pre">Notes</span></code> repo</p></li>
-</ul>
+<div class="section" id="how-left-v-right-v-inner-v-outer">
+<h2><code class="docutils literal notranslate"><span class="pre">how</span></code> : left v. right v. inner v. outer<a class="headerlink" href="#how-left-v-right-v-inner-v-outer" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>option</p></th>
+<th class="text-align:left head"><p>observations in resulting dataset</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;inner&quot;</span></code></p></td>
+<td class="text-align:left"><p>Keys (<code class="docutils literal notranslate"><span class="pre">on</span></code> variables) that are in both datasets</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;left&quot;</span></code></p></td>
+<td class="text-align:left"><p>“inner” + all unmatched obs in left</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;right&quot;</span></code></p></td>
+<td class="text-align:left"><p>“inner” + all unmatched obs in right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;outer&quot;</span></code></p></td>
+<td class="text-align:left"><p>“inner” + all unmatched obs in left and right</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s practice on our left and right datasets</p>
+<p>Reading: Tips, Categories of Joins</p>
 </div>
-<div class="section" id="why-save-all-your-notes-from-class-aside-from-the-usual-learning-reasons">
-<h3>Why save all your notes from class (aside from the usual “learning” reasons)?<a class="headerlink" href="#why-save-all-your-notes-from-class-aside-from-the-usual-learning-reasons" title="Permalink to this headline">¶</a></h3>
-<p>Because in class coding files are an <em>“effort”</em> part of the participation grade.</p>
-<p>Just work in class as much as you can, take notes, try the exercises, and that portion of the grade will be good.</p>
-</div>
-</div>
-<div class="section" id="navigating-the-website-site-and-gh-org">
-<h2>Navigating the website site and GH org<a class="headerlink" href="#navigating-the-website-site-and-gh-org" title="Permalink to this headline">¶</a></h2>
-<p>Let’s finish by going over a few things:</p>
+<div class="section" id="merging-tips">
+<h2>Merging tips<a class="headerlink" href="#merging-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>You can flip through the website with arrow keys, and the search bar “mostly” works.</p>
+<li><p><strong>Pick the “keys” you’ll merge on</strong></p>
 <ul class="simple">
-<li><p>Notice the icons at the top of the pages!</p></li>
+<li><p>what are the obs levels in each data</p></li>
+<li><p>Ex: firm  merge, or firm-year merge?</p></li>
 </ul>
 </li>
-<li><p>Please click on the links in your “key links” section and explore the site and the GH org and repos.</p>
-<ul class="simple">
-<li><p>dashboard page is especially ⭐</p></li>
-<li><p>In the org repo, notice the “issues” tab</p></li>
-</ul>
-</li>
-<li><p>The classmate team ⭐ ⭐ - <a class="reference external" href="https://github.com/orgs/LeDataSciFi/teams/classmates">https://github.com/orgs/LeDataSciFi/teams/classmates</a></p>
-<ul class="simple">
-<li><p>Very useful for getting help from each other via tagging &#64;classmates</p></li>
-<li><p>Go to that page, and click <code class="docutils literal notranslate"><span class="pre">Watch</span></code> to ensure you get announcements!</p></li>
-<li><p>You should now get an email notification whenever an Issue is posted by myself, the TA, or if your classmates ask a question.</p></li>
-<li><p>If you don’t get any email announcements by next Monday, email me - something is wrong!</p></li>
-</ul>
-</li>
-<li><p>Pentultimate thing: Icebreaker #3</p>
-<ul class="simple">
-<li><p>Post 2 truths and a lie</p></li>
-<li><p><em>Notice in the grade section of the website: Posts and replies to the discussion board will help your grade.</em></p></li>
-<li><p>Let’s do a poll now to see what the class thinks my lie is</p></li>
-</ul>
-</li>
+<li><p><strong>Before (before!) your merge, examine the keys</strong></p></li>
+<li><p><strong>Always specify <code class="docutils literal notranslate"><span class="pre">how</span></code>, <code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">indicator</span></code>, and <code class="docutils literal notranslate"><span class="pre">validate</span></code> inside <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code></strong></p></li>
+<li><p><strong>After the merge</strong>, check that it did what you expected, and give the resulting dataframe a <em>good</em> name. <strong>Don’t name it “merged”!!!</strong></p></li>
 </ol>
+</div>
+<div class="section" id="missing-values">
+<h2>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
+<p>These pandas functions can be very useful:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fillna</span></code> - any value (strings included) you want, back fill, forward, fill, and more</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dropna</span></code> - might not be explicitly needed, some functions ignore NaNs, but some don’t. I tend to drop only as needed for a given estimation, and only temporarily.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace</span></code> - some datasets use a certain number to indicate missing data (i.e. -99). Convert these to NaN with this function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpolate</span></code> - e.g. use values in surrounding time periods to fill in gaps</p></li>
+<li><p>Deduce. Suppose PPE this year is missing. <span class="math notranslate nohighlight">\(PPE_t = PPE_{t-1} + CAPX_t - DP_t \)</span></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+                   <span class="s2">&quot;B&quot;</span><span class="p">:[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> 
+                   <span class="s2">&quot;C&quot;</span><span class="p">:[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> 
+                   <span class="s2">&quot;D&quot;</span><span class="p">:[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span> 
+
+<span class="n">_df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">_df1</span><span class="p">[</span><span class="s1">&#39;firm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">_df1</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df1</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">_df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">_df2</span><span class="p">[</span><span class="s1">&#39;firm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">_df2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df2</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="n">_df1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_df2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Questions for <code class="docutils literal notranslate"><span class="pre">df</span></code></strong>:</p>
+<ol class="simple">
+<li><p>Fill all missing values with -1</p></li>
+<li><p>Fill missing values for variable “B” with -1</p></li>
+<li><p>Fill all values with the mean for the variable</p></li>
+<li><p>Fill all values with the median for the variable</p></li>
+<li><p>Fill values by taking the most recent non-missing prior value</p></li>
+</ol>
+<p><strong>Questions for <code class="docutils literal notranslate"><span class="pre">df2</span></code></strong>:</p>
+<ul class="simple">
+<li><p>Carry missing values forward without carrying values from firm 1 to firm 2</p></li>
+<li><p>Fill missing values with the average for firms on that date</p></li>
+</ul>
+<div class="section" id="which-option-should-i-choose-to-deal-with-my-missing-values">
+<h3>Which option should I choose to deal with my missing values?<a class="headerlink" href="#which-option-should-i-choose-to-deal-with-my-missing-values" title="Permalink to this headline">¶</a></h3>
+<p><strong>You should focus on the whys and hows of dealing with missing data rather than mechanics.</strong></p>
+<p>Example: With firm level data that investment analysts deal with, the most common approach is</p>
+<ul class="simple">
+<li><p>to keep all valid data throughout</p></li>
+<li><p>for each test you run, use all observations that have no missing values for the variables of interest</p></li>
+</ul>
+<p>I rarely impute missing data</p>
+</div>
+</div>
+<div class="section" id="next-class">
+<h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
+<p>Data wrangling outro</p>
+<div class="section" id="student-demos">
+<h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Task: I’ll email after class</p></li>
+<li><p>Morning: Madison (&#64;madisonlsmith) and Linh (&#64;Linhphung411)</p></li>
+<li><p>Afternoon: Fernando (&#64;fernandotamayog) and Deven (&#64;dea222)</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>You know how to</p>
-<ol class="simple">
-<li><p>Create a repo</p></li>
-<li><p>Clone it to our computer to work on it</p></li>
-<li><p>Work in the cloud (sometimes it is quicker)</p></li>
-<li><p>Fetch updates from the cloud before you start working (avoid disaster!)</p></li>
-<li><p>Work on your computer</p></li>
-<li><p>Push changes from your computer to the cloud.</p></li>
-</ol>
-<p>Now, anytime your do any work: <strong>Fetch early, commit frequently, push often!</strong> ⭐ ⭐ ⭐</p>
-<p>For more on this process, see <a class="reference external" href="../assignments/howto_do.html#working-on-assignments-projects-taking-notes">the github workflow</a>. ⭐ ⭐ ⭐</p>
-</div>
-<div class="section" id="before-next-time">
-<h2>Before next time<a class="headerlink" href="#before-next-time" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Finish all the tasks on the dashboard page</p></li>
-<li><p>Read the GitHub page of the textbook to learn about GitHub issues, why Git <span class="math notranslate nohighlight">\(\neq\)</span> GitHub <span class="math notranslate nohighlight">\(\neq\)</span> GitHub Desktop, and how to use GitHub to see changes to a project (the “version control” section of the page)</p></li>
-<li><p>Any questions you want to cover in the next class? Please let me know via the form (link on the.. you guessed it! The dashboard page.</p></li>
-</ol>
-<div class="section" id="two-great-opportunities">
-<h3>Two great opportunities:<a class="headerlink" href="#two-great-opportunities" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>J&amp;J competition (see coursesite)</p></li>
-<li><p>FIN388 - small capstone team looking for teammates. ⭐ ⭐</p>
+<p>We covered</p>
 <ul class="simple">
-<li><p>Will spend semester developing fun, real-world FinTech project for a firm.</p></li>
-<li><p>Project focuses on credit score products, will have data science component, and examine relevant regulatory factors</p></li>
-<li><p>Must have taken FIN330</p></li>
-<li><p>Let me know ASAP!</p></li>
+<li><p>Time permitting: Some high level tips for good viz</p></li>
+<li><p>Merging intro</p></li>
+<li><p>Missing values</p></li>
 </ul>
-</li>
-</ol>
+<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
+<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+<h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

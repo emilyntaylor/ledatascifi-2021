@@ -53,8 +53,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -408,6 +406,11 @@
        3.4.2. Dealing with Missing Data
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../content/03/05d_outliers.html">
+       3.4.3. Dealing with Outliers
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -480,7 +483,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/L9_merging.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L06_pandas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -500,10 +503,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L9_merging.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L06_pandas.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L9_merging.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L06_pandas.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -523,7 +526,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L9_merging.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L06_pandas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -531,7 +534,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L9_merging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L06_pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -551,69 +554,35 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#today">
-   Today
+  <a class="reference internal nav-link" href="#notes">
+   Notes:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viz">
-   Viz
+  <a class="reference internal nav-link" href="#peer-reviews">
+   Peer reviews
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#and-now">
+   “And now…”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today-pandas">
+   Today: Pandas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warmup-thinking-about-viz">
-     Warmup - thinking about viz
+    <a class="reference internal nav-link" href="#next-class">
+     Next class
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#good-visuals">
-     Good visuals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging">
-   Merging
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-merge-function">
-   The merge function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-left-v-right-v-inner-v-outer">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     how
-    </span>
-   </code>
-   : left v. right v. inner v. outer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging-tips">
-   Merging tips
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#missing-values">
-   Missing values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-option-should-i-choose-to-deal-with-my-missing-values">
-     Which option should I choose to deal with my missing values?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-class">
-   Next class
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#student-demos">
      Student demos
@@ -645,204 +614,138 @@
               <div>
                 
   <p>Teaching notes</p>
-<p>This year:</p>
+<ol class="simple">
+<li><p>20 minutes: Q0-Q3</p>
+<ul class="simple">
+<li><p>Ask: Some students will know to use the EDA guide on site.</p></li>
+<li><p>Talk through things to look for in output</p></li>
+</ul>
+</li>
+<li><p>35 minutes: Q4-Q5</p>
+<ul class="simple">
+<li><p>Let students that pre-solved show/contrast their solutions</p>
+<ul>
+<li><p>look at data source! here GDPCA is real, and annual</p></li>
+</ul>
+</li>
+<li><p>Build on their answers by showing alt solution framework:</p>
+<ul>
+<li><p>emphasize pseudo coding</p></li>
+<li><p>Q4 –&gt; chains, lambdas (bc v useful in chains), assign</p></li>
+<li><p>Q5 –&gt; reset_index, dt, groupby=loops, pivot_table</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>20 min: Q6-Q7 and outro</p>
+<ul class="simple">
+<li><p>from pseudo code to implementation</p></li>
+<li><p>working with wide data is a pain –&gt; reshape</p></li>
+</ul>
+</li>
+</ol>
+<p>When I have &lt;20 minutes for the last batch, it will be a bit short</p>
 <div class="section" id="hello-today">
 <h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>Before class:</p>
 <ul class="simple">
 <li><p>Fetch your class notes repo and the lecture repo</p></li>
-<li><p>Open in JLab: ipynb for taking notes</p></li>
+<li><p>Copy pandas exercises from lectures (<code class="docutils literal notranslate"><span class="pre">content/03/02h_exercises.ipynb</span></code>) to your notes folder</p></li>
+<li><p>Open in JLab: exercises, a ipynb for taking notes, and a ipynb inside <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">notes/codebook</span></code> to save a “recipe” today</p></li>
 </ul>
 </li>
-<li><p>Announcements</p>
+<li><p>Getting dirty with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+</ol>
+<div class="section" id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>ASGN: A2 grades posted, A3 reviews started, A4 posting today</p></li>
-<li><p>A2: 80%, no shenanigans needed <strong>A tribute to hard work - bravo</strong></p></li>
-<li><p>Readme, gitignore, etc: Important good habits, near 100% avg</p></li>
-<li><p>How many of you are using chains as you code? <code class="docutils literal notranslate"><span class="pre">.pipe(csnap)</span></code> trick</p></li>
+<li><p>Please fill out a short check in survey: <a class="reference external" href="https://forms.gle/3C56TPPJsWukKw318">https://forms.gle/3C56TPPJsWukKw318</a></p></li>
+<li><p>Popular request: I’m going to record, but remember participation credits</p></li>
+</ul>
+</div>
+<div class="section" id="peer-reviews">
+<h2>Peer reviews<a class="headerlink" href="#peer-reviews" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Tweaked instructioons:</p>
+<ul class="simple">
+<li><p>Go to <span class="xref myst">github.com</span></p></li>
+<li><p>On the left side of the page, under repositories, you’ll see that you have access to assignments for two peers</p></li>
 </ul>
 </li>
-</ol>
-<p><em>I’m going to record, but remember participation credits</em></p>
-<div class="section" id="today">
-<h2>Today<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Finishing up visualizations</p></li>
-<li><p>Merging</p></li>
-<li><p>Missing values</p></li>
+<li><p>Review progress: 37/96 (great!)</p></li>
 </ol>
 </div>
-<div class="section" id="viz">
-<h2>Viz<a class="headerlink" href="#viz" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="warmup-thinking-about-viz">
-<h3>Warmup - thinking about viz<a class="headerlink" href="#warmup-thinking-about-viz" title="Permalink to this headline">¶</a></h3>
-<p>How would you improve the catplot/pandas count of <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04e-visualEDA.html#distributions">industries on 3.3.4 of the website</a></p>
+<div class="section" id="and-now">
+<h2>“And now…”<a class="headerlink" href="#and-now" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="good-visuals">
-<h3>Good visuals<a class="headerlink" href="#good-visuals" title="Permalink to this headline">¶</a></h3>
-<p>3.3.5 and the <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/about/resources.html#resources-tutorials-and-data">resource page’s Visualization references</a></p>
-<p>Check out</p>
-<ol class="simple">
-<li><p>A quick hit of Do’s and Don’ts (would have helped on the warmup)</p></li>
-<li><p>The fixer upper</p></li>
-</ol>
-<p><strong>Context - starting point:</strong> Remember, the class’s <span class="xref myst">first two objectives</span> are to:</p>
+<div class="section" id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://media.giphy.com/media/KyBX9ektgXWve/source.gif" /></p>
+</div>
+<div class="section" id="today-pandas">
+<h2>Today: Pandas<a class="headerlink" href="#today-pandas" title="Permalink to this headline">¶</a></h2>
+<p>From last class:</p>
 <blockquote>
-<div><ol class="simple">
-<li><p>obtain, explore, groom, visualize, and analyze data</p></li>
-<li><p>make all of that reproducible, reusable, and shareable</p></li>
-</ol>
+<div><p>Exploring the incredible FRED dataset: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
+<ul>
+<li><p>Unreal repository of data:</p>
+<blockquote>
+<div><p>Download, graph, and track <strong>786,000 US and international time series from 103 sources.</strong></p>
 </div></blockquote>
-<p><img alt="" src="https://media.giphy.com/media/R2m2NzVxQ3pbG/giphy.gif" /></p>
-<p><strong>Context - right now:</strong> At this point, we’ve covered/added skills</p>
-<ul class="simple">
-<li><p>GitHub for collaboration and sharing</p></li>
-<li><p>GitHub for project management/development and version control</p></li>
-<li><p>Python: numpy, pandas, seaborn</p></li>
-<li><p>Datasets: CRSP (stock prices), Compustat (firm financial statements), FRED (macroeconomic and regional time series data)</p></li>
-<li><p>Data scraping: Yes, you’ve done this already!</p></li>
-<li><p>Finance: Downloading stock prices and compounding returns over arbitrary time spans</p></li>
+</li>
+<li><p>Check out “at a glance” and “popular series”</p></li>
+<li><p>Usable in other classes: easy to download, clean, modify, analyze, plot all that in seconds of coding!</p></li>
 </ul>
-<p>We need to talk about a few more issues before we get properly ambitious.</p>
-<p><img alt="" src="https://media.giphy.com/media/kdFujikoYAdfgQQVrs/giphy.gif" /></p>
-<p><strong>Context - going forward:</strong> We need to introduce a few more skills before we start <em>really</em> running analytical models.</p>
-<ol class="simple">
-<li><p>Merging datasets</p></li>
-<li><p>What to do with missing values?</p></li>
-<li><p>What to do with outliers?</p></li>
-<li><p>How to get a world of data off the world wide web</p></li>
-<li><p>Working with string data</p></li>
-</ol>
-<p>This week: 1-3</p>
-<p>Next three weks: 4-5</p>
-</div>
-</div>
-<div class="section" id="merging">
-<h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Parameters of the merge function+ practice</p></li>
-<li><p>Tips / best practices</p></li>
-</ol>
-</div>
-<div class="section" id="the-merge-function">
-<h2>The merge function<a class="headerlink" href="#the-merge-function" title="Permalink to this headline">¶</a></h2>
-<p>In your notebook:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">left_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-                    <span class="s1">&#39;firm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accenture&#39;</span><span class="p">,</span><span class="s1">&#39;Citi&#39;</span><span class="p">,</span><span class="s1">&#39;GS&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;varA&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">]})</span>
-
-<span class="n">right_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-                    <span class="s1">&#39;firm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;GS&#39;</span><span class="p">,</span><span class="s1">&#39;Chase&#39;</span><span class="p">,</span><span class="s1">&#39;WF&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;varB&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;varc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">]})</span>    
+</div></blockquote>
+<p>Today we will cover:</p>
+<ul>
+<li><p>EDA (disc, and a simple recipe!)</p></li>
+<li><p>pseudo coding and dev’ing code</p></li>
+<li><p>pandas functions: assign, pivot_tables, …</p></li>
+<li><p>“for-loops” –&gt; groupby</p></li>
+<li><p>chaining (3.2.6!) / lambda functions</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="c1"># anything between these parens</span>
+<span class="c1"># is &quot;one&quot; line of code</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Let use shift+tab to talk about the parameters. (Except how is next slide)</p>
-</div>
-<div class="section" id="how-left-v-right-v-inner-v-outer">
-<h2><code class="docutils literal notranslate"><span class="pre">how</span></code> : left v. right v. inner v. outer<a class="headerlink" href="#how-left-v-right-v-inner-v-outer" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>option</p></th>
-<th class="text-align:left head"><p>observations in resulting dataset</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;inner&quot;</span></code></p></td>
-<td class="text-align:left"><p>Keys (<code class="docutils literal notranslate"><span class="pre">on</span></code> variables) that are in both datasets</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;left&quot;</span></code></p></td>
-<td class="text-align:left"><p>“inner” + all unmatched obs in left</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;right&quot;</span></code></p></td>
-<td class="text-align:left"><p>“inner” + all unmatched obs in right</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">&quot;outer&quot;</span></code></p></td>
-<td class="text-align:left"><p>“inner” + all unmatched obs in left and right</p></td>
-</tr>
-</tbody>
-</table>
-<p>Let’s practice on our left and right datasets</p>
-<p>Reading: Tips, Categories of Joins</p>
-</div>
-<div class="section" id="merging-tips">
-<h2>Merging tips<a class="headerlink" href="#merging-tips" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p><strong>Pick the “keys” you’ll merge on</strong></p>
+</li>
+</ul>
+<p>Now, let’s practice the exercises in 3.2.8.</p>
 <ul class="simple">
-<li><p>what are the obs levels in each data</p></li>
-<li><p>Ex: firm  merge, or firm-year merge?</p></li>
+<li><p>Q0-Q3: breakout rooms, then call/response</p>
+<ul>
+<li><p>An “EDA recipe”</p></li>
 </ul>
 </li>
-<li><p><strong>Before (before!) your merge, examine the keys</strong></p></li>
-<li><p><strong>Always specify <code class="docutils literal notranslate"><span class="pre">how</span></code>, <code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">indicator</span></code>, and <code class="docutils literal notranslate"><span class="pre">validate</span></code> inside <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code></strong></p></li>
-<li><p><strong>After the merge</strong>, check that it did what you expected, and give the resulting dataframe a <em>good</em> name. <strong>Don’t name it “merged”!!!</strong></p></li>
-</ol>
-</div>
-<div class="section" id="missing-values">
-<h2>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
-<p>These pandas functions can be very useful:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fillna</span></code> - any value (strings included) you want, back fill, forward, fill, and more</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dropna</span></code> - might not be explicitly needed, some functions ignore NaNs, but some don’t. I tend to drop only as needed for a given estimation, and only temporarily.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">replace</span></code> - some datasets use a certain number to indicate missing data (i.e. -99). Convert these to NaN with this function.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">interpolate</span></code> - e.g. use values in surrounding time periods to fill in gaps</p></li>
-<li><p>Deduce. Suppose PPE this year is missing. <span class="math notranslate nohighlight">\(PPE_t = PPE_{t-1} + CAPX_t - DP_t \)</span></p></li>
+<li><p>Q4 (+Q5?):</p>
+<ul>
+<li><p>Demos: Natalie and Christian; Alina and Anders</p></li>
+<li><p>Build on this to show: chaining, assign, lambda, groupby</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
-                   <span class="s2">&quot;B&quot;</span><span class="p">:[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> 
-                   <span class="s2">&quot;C&quot;</span><span class="p">:[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> 
-                   <span class="s2">&quot;D&quot;</span><span class="p">:[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span> 
-
-<span class="n">_df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">_df1</span><span class="p">[</span><span class="s1">&#39;firm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">_df1</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df1</span><span class="o">.</span><span class="n">index</span>
-
-<span class="n">_df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">_df2</span><span class="p">[</span><span class="s1">&#39;firm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">_df2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df2</span><span class="o">.</span><span class="n">index</span>
-
-<span class="n">df2</span> <span class="o">=</span> <span class="n">_df1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_df2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Questions for <code class="docutils literal notranslate"><span class="pre">df</span></code></strong>:</p>
-<ol class="simple">
-<li><p>Fill all missing values with -1</p></li>
-<li><p>Fill missing values for variable “B” with -1</p></li>
-<li><p>Fill all values with the mean for the variable</p></li>
-<li><p>Fill all values with the median for the variable</p></li>
-<li><p>Fill values by taking the most recent non-missing prior value</p></li>
-</ol>
-<p><strong>Questions for <code class="docutils literal notranslate"><span class="pre">df2</span></code></strong>:</p>
-<ul class="simple">
-<li><p>Carry missing values forward without carrying values from firm 1 to firm 2</p></li>
-<li><p>Fill missing values with the average for firms on that date</p></li>
+</li>
+<li><p>Q6+Q7</p>
+<ul>
+<li><p>Reshaping+index (important to solving problems!)</p></li>
 </ul>
-<div class="section" id="which-option-should-i-choose-to-deal-with-my-missing-values">
-<h3>Which option should I choose to deal with my missing values?<a class="headerlink" href="#which-option-should-i-choose-to-deal-with-my-missing-values" title="Permalink to this headline">¶</a></h3>
-<p><strong>You should focus on the whys and hows of dealing with missing data rather than mechanics.</strong></p>
-<p>Example: With firm level data that investment analysts deal with, the most common approach is</p>
-<ul class="simple">
-<li><p>to keep all valid data throughout</p></li>
-<li><p>for each test you run, use all observations that have no missing values for the variables of interest</p></li>
+</li>
 </ul>
-<p>I rarely impute missing data</p>
-</div>
-</div>
 <div class="section" id="next-class">
-<h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
-<p>Data wrangling outro</p>
+<h3>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h3>
+<p>We start graphing!</p>
+</div>
 <div class="section" id="student-demos">
 <h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Task: I’ll email after class</p></li>
-<li><p>Morning: Madison (&#64;madisonlsmith) and Linh (&#64;Linhphung411)</p></li>
-<li><p>Afternoon: Fernando (&#64;fernandotamayog) and Deven (&#64;dea222)</p></li>
+<li><p>Task: plot how median income has evolved over time for PA</p>
+<ul>
+<li><p>Bonus: plot CA, PA, and MI on one graph (arguably easier than just one!)</p></li>
+<li><p>HINT: Use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code> to make the plot</p></li>
+</ul>
+</li>
+<li><p>Morning: Zhongrui (&#64;zhz221) and Chengming (&#64;chw221)</p></li>
+<li><p>Afternoon: Blaise (&#64;blaisemilanek) and Caitlin (&#64;cak320)</p></li>
 </ul>
 </div>
 </div>
@@ -850,9 +753,11 @@
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>We covered</p>
 <ul class="simple">
-<li><p>Time permitting: Some high level tips for good viz</p></li>
-<li><p>Merging intro</p></li>
-<li><p>Missing values</p></li>
+<li><p>Planning/pseudo code</p></li>
+<li><p>EDA: some of the things to look for + a recipe</p></li>
+<li><p>Pandas: reshaping, creating vars, summarizing data</p></li>
+<li><p>Remember: In pandas “for-loops” = groupby (usually)</p></li>
+<li><p>Panda pros: chaining</p></li>
 </ul>
 <p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
 <div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
