@@ -53,5 +53,5 @@
 - data science skills are no exception: be wary of using DS/ML/big data outside areas with domain skill and contextual understanding
     - this applies to other people: e.g. beware of amateur epidemiologists in a pandemic forecasting with 3rd degree polynomials in Excel
     - bad algos abound
-- &#rightarrow; applying our new skills in our expertise area (finance, duh!)
+- &rarr; applying our new skills in our expertise area (finance, duh!)
 
