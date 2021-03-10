@@ -37,6 +37,8 @@
     title: "How to start and turn in assignments"
   - file: content/assignments/howto_review 
     title: "How to do your peer reviews"
+  - file: content/assignments/asgn_5 
+    title: "ASGN 5: Our first full data science assignment"
 
 #  - file: content/assignments/particip_header
 #    sections:
