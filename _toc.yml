@@ -147,4 +147,9 @@
     - file: "content/04/01a_openingAndParsing"
     - file: "content/04/01b_spiders"
       title: "Building a spider" 
-      
+    - file: "content/04/02_strings"
+      sections:
+        - file: "content/04/02a_Python Strings"
+        - file: "content/04/02b_regex"
+        - file: "content/04/02c_developing a regex"
+        - file: "content/04/02d_RegexApplication"
