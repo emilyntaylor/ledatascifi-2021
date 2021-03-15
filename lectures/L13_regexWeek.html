@@ -588,6 +588,56 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-were-we">
+   Where were we…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-wiki-pages-py">
+   download_wiki_pages.py
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-get-the-url-to-the-s-p-500-firms">
+   Step 1: Get the URL to the S&amp;P 500 firms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-download-their-wiki-pages">
+   Step 2: Download their wiki pages…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-are-we-going-this-week">
+   Where are we going this week?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-power">
+   Data = power
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-figuring-out-how-to-put-structure-on-that-text-data-is-powerful">
+   SO: Figuring out how to put structure on that text data is POWERFUL.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#again-the-goal-this-week">
+   Again - the goal this week
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ok">
+   Ok,
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-class">
    Next class
   </a>
@@ -602,11 +652,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#we-covered">
-   We covered
   </a>
  </li>
 </ul>
@@ -624,29 +669,204 @@
 <div class="section" id="hello-today">
 <h1>Hello! Today<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>10min:</p></li>
-<li></li>
+<li><p>Where we are</p></li>
+<li><p>Where we are going</p></li>
+<li><p>But why go there?</p></li>
+<li><p>Ok, I’m convinced, let’s learn that…</p></li>
 </ul>
 <p><em>I’m going to record, but remember participation credits</em></p>
+<div class="section" id="where-were-we">
+<h2>Where were we…<a class="headerlink" href="#where-were-we" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>1. download_wiki_pages.py
+
+    1a. where am i going to put the files? create it.
+    1b. get a list of files (urls) to download
+    for each url in urls:
+        1c. download(url,to_some_place)
+        **4.3.2 and 4.3.3** will be very helpful
+        
+    1d. &lt;don&#39;t push all these files to github! --&gt; gitignore&gt;    
+
+2. measure_risk.py
+
+3. analysis.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-wiki-pages-py">
+<h2>download_wiki_pages.py<a class="headerlink" href="#download-wiki-pages-py" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">requests_html</span> <span class="kn">import</span> <span class="n">HTMLSession</span> <span class="c1"># HTMLSession is how requests_html loads requests</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">HTMLSession</span><span class="p">()</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/List_of_S%26P_500_companies&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-get-the-url-to-the-s-p-500-firms">
+<h2>Step 1: Get the URL to the S&amp;P 500 firms<a class="headerlink" href="#step-1-get-the-url-to-the-s-p-500-firms" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;#constituents&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="n">a_url</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">absolute_links</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_url</span><span class="p">)</span>
+<span class="c1">#     grab the link in the second column?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-download-their-wiki-pages">
+<h2>Step 2: Download their wiki pages…<a class="headerlink" href="#step-2-download-their-wiki-pages" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the files go here:</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;text_files&#39;</span><span class="p">,</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">to_some_place</span><span class="p">):</span>
+    <span class="c1"># need to figure this out (4.3.2 and 4.3.3)</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="s1">&#39;text_files/&#39;</span><span class="o">+</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">firm</span><span class="o">...</span>
+    <span class="c1"># deciding on a text string for the location of the </span>
+    <span class="c1"># file is logic/planning/OS knowledge + using python strings</span>
+    <span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="where-are-we-going-this-week">
+<h2>Where are we going this week?<a class="headerlink" href="#where-are-we-going-this-week" title="Permalink to this headline">¶</a></h2>
+<p>The main challenge: How can we “create a risk variable”?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">download_wiki_pages</span><span class="o">.</span><span class="n">py</span>
+
+<span class="mf">2.</span> <span class="n">measure_risk</span><span class="o">.</span><span class="n">py</span>
+    <span class="mi">2</span><span class="n">a</span><span class="o">.</span> <span class="n">create</span> <span class="n">empty</span> <span class="n">data</span><span class="p">,</span> <span class="ow">or</span> <span class="n">load</span> <span class="n">the</span> <span class="n">wiki</span> <span class="n">table</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="mi">2</span><span class="n">b</span><span class="o">.</span> <span class="nb">open</span> <span class="n">file</span><span class="p">,</span> <span class="n">create</span> <span class="n">risk</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">add</span> <span class="n">to</span> <span class="n">dataset</span>
+    <span class="mi">2</span><span class="n">c</span><span class="o">.</span> <span class="n">save</span> <span class="n">dataset</span>
+    
+<span class="mf">3.</span> <span class="n">analysis</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We have access to text files discussing the firms.</p></li>
+<li><p>Those discussions are in a basic python object type called a string.</p></li>
+</ul>
+<ul class="simple">
+<li><p>So you’ll need to have a sense of working with strings.</p></li>
+<li><p>And “regex” is how we will search those strings</p></li>
+</ul>
+</div>
+<div class="section" id="data-power">
+<h2>Data = power<a class="headerlink" href="#data-power" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>New personal computers usually have 1TB+ of hard drive space</p></li>
+<li><p>As of 2017, IBM estimated 2.5 MILLION TERABYTES of data were created everyday</p></li>
+<li><p>Now: probably at least a billion more regular internet user</p>
+<ul>
+<li><p>Posts, texts, likes, searches, emails, location data</p></li>
+<li><p>2020: 40 ZETTABYTES of web data (1ZB = 1billion TB = #stars are in the observable universe)</p></li>
+<li><p>80% of that is unstructured text data</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="so-figuring-out-how-to-put-structure-on-that-text-data-is-powerful">
+<h2>SO: Figuring out how to put structure on that text data is POWERFUL.<a class="headerlink" href="#so-figuring-out-how-to-put-structure-on-that-text-data-is-powerful" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Google is one example</p></li>
+<li><p>One common task: identifying topics in unstructured text (does the document discuss it at aOne very common task is identifying topics in unstructured text: Does the document discuss topic X?</p></li>
+</ul>
+<p>That’s the #BigPicture of this 3 week section of class:</p>
+<ul class="simple">
+<li><p>**3 seemingly “too simple” files = assignment 5</p></li>
+<li><p>asgn 5 = most of the foundation for powerful analysis (easy to adapt and extend!)</p></li>
+</ul>
+</div>
+<div class="section" id="again-the-goal-this-week">
+<h2>Again - the goal this week<a class="headerlink" href="#again-the-goal-this-week" title="Permalink to this headline">¶</a></h2>
+<p>The main challenge: How can we “create a risk variable”?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">download_wiki_pages</span><span class="o">.</span><span class="n">py</span>
+
+<span class="mf">2.</span> <span class="n">measure_risk</span><span class="o">.</span><span class="n">py</span>
+    <span class="mi">2</span><span class="n">a</span><span class="o">.</span> <span class="n">create</span> <span class="n">empty</span> <span class="n">data</span><span class="p">,</span> <span class="ow">or</span> <span class="n">load</span> <span class="n">the</span> <span class="n">wiki</span> <span class="n">table</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="mi">2</span><span class="n">b</span><span class="o">.</span> <span class="nb">open</span> <span class="n">file</span><span class="p">,</span> <span class="n">create</span> <span class="n">risk</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">add</span> <span class="n">to</span> <span class="n">dataset</span>
+    <span class="mi">2</span><span class="n">c</span><span class="o">.</span> <span class="n">save</span> <span class="n">dataset</span>
+    
+<span class="mf">3.</span> <span class="n">analysis</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ok">
+<h2>Ok,<a class="headerlink" href="#ok" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Open this <a class="reference external" href="https://www.sec.gov/Archives/edgar/data/1318605/000156459019003165/0001564590-19-003165.txt">2019 TSLA 10-K</a></p></li>
+<li><p><strong>As a group:</strong> Discuss how we can identify a topic in a text file**</p>
+<ul class="simple">
+<li><p>let’s pick a topic as a class…</p></li>
+<li><p>read it to see if the firm discusses it and what you learn about (no/small/large exposure)</p></li>
+<li><p>Q1: how can we translate the way we looked for that risk in the document into steps/rules a computer can follow?</p></li>
+<li><p>Q2: how can we try to encode the “size” of exposure?</p></li>
+</ul>
+</li>
+</ol>
+<ol class="simple">
+<li><p>Implementation via near_regex</p>
+<ul class="simple">
+<li><p>simple practice on TSLA</p></li>
+<li><p>simple practice on default strings</p></li>
+<li><p>try on a wiki page</p></li>
+<li><p>what do you need to know to improve the use of this function?</p>
+<ul>
+<li><p>some string and regex background (homework or next time? TBD)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
 <div class="section" id="next-class">
 <h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li></li>
+<li><p>Push our use of near_regex (string and regex games?)</p></li>
+<li><p>Discuss conceptual issues with <code class="docutils literal notranslate"><span class="pre">measure_risk.py</span></code></p></li>
+<li><p>Discuss expectations for analysis file and the “break” week</p></li>
 </ul>
 <div class="section" id="student-demos">
 <h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Task: Will be a continuation of something from today</p></li>
-<li></li>
-<li></li>
+<li><p>Morning: Kristen (&#64;KristenGong) and Sella (&#64;sellalin)</p></li>
+<li><p>Afternoon: Leo (&#64;lpawlika) and Luke (&#64;LukeRes21)</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="we-covered">
-<h2>We covered<a class="headerlink" href="#we-covered" title="Permalink to this headline">¶</a></h2>
+<p>We covered</p>
+<ul class="simple">
+<li><p>So much data!!!</p></li>
+<li><p>One way to harness it (regex searches)</p></li>
+</ul>
 <p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
 </div>
 </div>
