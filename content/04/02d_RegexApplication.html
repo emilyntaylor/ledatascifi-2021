@@ -651,10 +651,22 @@
 <span class="sd">        </span>
 <span class="sd">        The default is True.</span>
 <span class="sd">     </span>
-<span class="sd">        </span>
-<span class="sd">    Warning / Feature</span>
+<span class="sd">    Warning</span>
 <span class="sd">    -------</span>
-<span class="sd">    This WILL NOT ... (missing documentation!)</span>
+<span class="sd">    See the last example. The regex is minimally greedy. </span>
+<span class="sd">    </span>
+<span class="sd">       </span>
+<span class="sd">    Feature Requests (participation credit available)</span>
+<span class="sd">    -------</span>
+<span class="sd">    1. A wrapper that takes the above inputs, the string to search, and a variable=count|text, and</span>
+<span class="sd">    returns either the number of hits or the text of the matching elements. (See the examples below.)</span>
+<span class="sd">    </span>
+<span class="sd">    2. Optionally clean the string before the regex stuff happens.</span>
+<span class="sd">    </span>
+<span class="sd">    3. Optionally ignore line breaks. </span>
+<span class="sd">    </span>
+<span class="sd">    4. Make it maximally greedy (unclear ~exactly~ what that means: in the last example,</span>
+<span class="sd">    the &quot;correct&quot; answer is probably 2, but one ~could~ argue it is 4.)</span>
 <span class="sd">    </span>
 <span class="sd">        </span>
 <span class="sd">    Unsure about speed</span>
@@ -664,23 +676,27 @@
 <span class="sd">    </span>
 <span class="sd">    Suggested use</span>
 <span class="sd">    -------</span>
-<span class="sd">    a_string_you_have = &#39;Jack and Jill went up the hill&#39;</span>
+<span class="sd">    # clean your starting string </span>
+<span class="sd">    a_string_you_have = &#39;jack and jill went up the hill&#39;</span>
 <span class="sd">    </span>
 <span class="sd">    # 1. define words and set up the regex</span>
 <span class="sd">    words = [&#39;jack&#39;,&#39;hill&#39;]                         </span>
 <span class="sd">    rgx = NEAR_regex(words)                       </span>
 <span class="sd">    </span>
-<span class="sd">    # 2. convert the string to lowercase before searching!</span>
-<span class="sd">    a_string_you_have = a_string_you_have.lower()   </span>
+<span class="sd">    # 2a. count the number of times the word groups are in the text near each other</span>
+<span class="sd">    count = len(re.findall(rgx,a_string_you_have))              </span>
+<span class="sd">    print(count)  </span>
 <span class="sd">    </span>
-<span class="sd">    # 3. len+findall+rgx = counts the number of times the word groups are close</span>
-<span class="sd">    count = len(re.findall(rgx,test))              </span>
-<span class="sd">    print(count)                                 </span>
+<span class="sd">    # 2b. print the actual text matches &lt;-- great for checking!</span>
+<span class="sd">    text_of_matches = [m.group(0) for m in re.finditer(rgx,a_string_you_have)]</span>
+<span class="sd">    print(text_of_matches)</span>
+
 <span class="sd">    </span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    A string which is a regex that can be used to look for cases where all the </span>
 <span class="sd">    input words are near each other.</span>
+
 <span class="sd">    &#39;&#39;&#39;</span>
                
     <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
@@ -827,6 +843,37 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span>  <span class="o">=</span> <span class="s1">&#39;hey jimmy                      hey james&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hey&#39;</span><span class="p">,</span><span class="s1">&#39;(jimmy|james)&#39;</span><span class="p">]</span>             <span class="c1"># search for one word near EITHER of two others</span>
+<span class="n">rgx</span> <span class="o">=</span> <span class="n">NEAR_regex</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="n">max_words_between</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span><span class="n">test</span><span class="p">)))</span>            <span class="c1"># both are caught</span>
+<span class="n">rgx</span> <span class="o">=</span> <span class="n">NEAR_regex</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="n">max_words_between</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span><span class="n">test</span><span class="p">)))</span>            <span class="c1"># the regex isn&#39;t greedy - it misses inner matches!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rgx</span> <span class="o">=</span> <span class="n">NEAR_regex</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="n">max_words_between</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span><span class="n">test</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hey jimmy&#39;, &#39;hey james&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="practice">
 <h2><span class="section-number">4.4.4.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 <p>Let’s use Telsa:</p>
@@ -834,6 +881,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.sec.gov/Archives/edgar/data/1318605/000156459019003165/0001564590-19-003165.txt&#39;</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
