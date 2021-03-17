@@ -40,7 +40,7 @@ So, here's how I would build this code up:
     - If any of your variables are always really high, consider if your search thinks too many things are that risk. Searching for "risk" for example is too vague. 
     
 ## Some more pointers on how to measure risk 
-- Risks you could look to measure include, but are not limited to: antitrust; litigation - e.g. patent, consumer, class action; real estate; inflation; commodity; supply chain; natural disasters; weather; employees (fraud, compensation, departure); changes in tax policy; currency rates; regulatory approval; reputation; refinancing
+- Risks you could look to measure include, but are not limited to: antitrust; litigation - e.g. patent, consumer, class action; real estate; inflation; commodity; supply chain; natural disasters; weather; employees (fraud, compensation, departure); changes in tax policy; currency rates; regulatory approval; reputation; refinancing; 
 - Prof. Kathleen Hanley [has a recent paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2792943) on risks. It focuses on financial firms, which isn't our sample, but nevertheless, it contains a long list of risks in Table 5 you might find interesting.
 
 ```{tip}
