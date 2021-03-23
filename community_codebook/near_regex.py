@@ -113,7 +113,9 @@ def NEAR_regex(list_of_words,max_words_between=5,partial=False,cases_matter=Fals
 
 
 
-
+##########################################################################
+# These are just examples, you can delete them when you download this file
+##########################################################################
 
 import re
 
