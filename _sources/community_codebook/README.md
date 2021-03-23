@@ -10,6 +10,8 @@ If you are up for a tiny challenge, here is one slightly more elegant option:
 3. In the section with your import statements, add `from eda import insufficient_but_starting_eda`
 4. You can now use that function in your program!
 
+The generic syntax is `from <name of file> import <function>`. Make sure you spell the name of the file and functions **exactly** correct (capitalization matters!).
+
 ## Bug fixes, feature improvements, and new recipe suggestions are "participation" for the purposes of grades 
 
 We will put any functions or recipes we develop here, when we find ourselves doing stuff repeatedly.
