@@ -770,6 +770,10 @@
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="card-text">First compute the returns for the 3/9-3/13 week. This will give you a dataset with one row per firm, and one number per row (the return for that week). Then merge this into the analysis dataset. Rinse and repeat if you try for the other measures.</p>
+</div>
 <ol class="simple">
 <li><p class="card-text">Load <code class="docutils literal notranslate"><span class="pre">output/sp500_accting_plus_textrisks.csv</span></code></p></li>
 <li><p class="card-text">Explain and describe to readers your risk measurements</p>
@@ -832,6 +836,17 @@
 <li><p class="card-text">Change the title of it (not the filename, the title at the top)</p></li>
 <li><p class="card-text">Describe the purpose of this repo (what this repo is analyzing) and the key inputs</p></li>
 <li><p class="card-text">List any necessary packages (might a reader need to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> anything?) or steps a visitor will need to run to make it work on their computer</p></li>
+</ul>
+<p class="card-text"><strong>The analysis file should be written and formatted like an executive report.</strong></p>
+<ul class="simple">
+<li><p class="card-text">There is no “page expectation” or “page limit”. Aim to provide sufficient analysis and explanation, but in a concise and clear way. Bullet points are fine in places, but you should have a few places with paragraph-style discussion, especially where you explain why you chose the specific risks, the way you defined them, and what issues you think they have (which points the way forward on “extensions”).</p></li>
+<li><p class="card-text">In other words: You will be graded on how much this looks like a professional report. Just “dumping” endless printouts is not as valuable as well-tailored tables and figures. High quality and concise reporting is an A1 emphasis. <strong>Here, pretty, smart, and effective tables and visualizations will receive higher grades.</strong></p></li>
+<li><p class="card-text"><strong>The teaching team will <em>not</em> read your measure_risk file other than to comment on code style.</strong> So:</p>
+<ol class="simple">
+<li><p class="card-text">Any details in that file on search terms and descriptive information on your text-based measures should be copied into your analysis file (with appropriate adjustments to suit how a report would be presented).</p></li>
+<li><p class="card-text">Make the masurement code easy to read, because we will grade the code style.</p></li>
+</ol>
+</li>
 </ul>
 </div>
 </details></div>
