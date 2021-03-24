@@ -1,6 +1,8 @@
 def download_file_from_google_drive(id, destination):
     '''
-    Author: Harry Hawkes (GH: @hph220), Lehigh Class of 2020
+    Function Author: @turdus-merula, from https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive/39225039#39225039
+    
+    Docstring Author: Harry Hawkes (GH: @hph220), Lehigh Class of 2020
     
     Purpose: A solution for sharing large files with your group or future users.
     
