@@ -483,6 +483,83 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../05/00_intro.html">
+   5. Data Science for Finance
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../05/01_bigpicture.html">
+     5.1. Modeling and Teamwork
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/01a_MLgonewrong.html">
+       5.1.1. Machine Learning Gone Wrong
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/01b_model_process.html">
+       5.1.2. The modeling process
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/01c_teams.html">
+       5.1.3. Coding in Teams
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/01d_sharingBigFiles.html">
+       5.1.4. Sharing large files
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../05/02_reg.html">
+     5.2. Regression
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02a_basics.html">
+       5.2.1. Basics and Notation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02b_mechanics.html">
+       5.2.2. Mechanics of running regressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02c_goodnessOfFit.html">
+       5.2.3. Goodness of Fit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02d_interpretingCoefs.html">
+       5.2.4. Interpreting regression coefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02e_statisticalSig.html">
+       5.2.5. Statistical significance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05/02g_summary.html">
+       5.2.6. Summary and Resources
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -595,14 +672,14 @@
 <h1><span class="section-number">3.2. </span>Powerful Pandas<a class="headerlink" href="#powerful-pandas" title="Permalink to this headline">¶</a></h1>
 <p>It’s time to learn <code class="docutils literal notranslate"><span class="pre">pandas</span></code>!</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="29bd141f-d941-414a-8282-848005b08b55" name="a021aee0-a83e-4bc2-8a43-53684ffcd526" type="radio">
-</input><label class="tabbed-label" for="29bd141f-d941-414a-8282-848005b08b55">
+<input checked="checked" id="bb057d7e-e0e9-4807-89cb-815113ca28a8" name="bc657cff-d469-4bdd-80b3-7c96bee76919" type="radio">
+</input><label class="tabbed-label" for="bb057d7e-e0e9-4807-89cb-815113ca28a8">
 Pandas=$</label><div class="tabbed-content docutils">
 <p>Pandas is worth the overhead.</p>
 <p>Pandas is the #1 way that professionals use tabular data in Python. (Read: Pandas get paid.)</p>
 </div>
-<input id="be193ec9-1405-49b5-8fc6-7d8283367780" name="a021aee0-a83e-4bc2-8a43-53684ffcd526" type="radio">
-</input><label class="tabbed-label" for="be193ec9-1405-49b5-8fc6-7d8283367780">
+<input id="4129bacb-3908-4105-ba67-8af36b01c4d8" name="bc657cff-d469-4bdd-80b3-7c96bee76919" type="radio">
+</input><label class="tabbed-label" for="4129bacb-3908-4105-ba67-8af36b01c4d8">
 Pandas is Fat</label><div class="tabbed-content docutils">
 <p><strong>Do not fret the size of Pandas</strong></p>
 <p><img alt="" src="https://media.giphy.com/media/nXwhk6k5R97Da/giphy.gif" />
@@ -615,19 +692,19 @@ Pandas is Fat</label><div class="tabbed-content docutils">
 <p>On top of trying to memorize (well, sort of) the available methods, a tough part of data science is conceptualizing how to shape and format and construct datasets so that algos you want to run can run and so that plots can plot.</p>
 <p>So I’m going to try to reduce it to the most common operations, and make you aware of things you can do. By the end of the semester, your Pandas proficiency will have you feeling like <a class="reference external" href="https://media.giphy.com/media/3o84sq21TxDH6PyYms/giphy.gif">Sheev Palpy</a>.</p>
 </div>
-<input id="0835d986-9d5d-43ff-9576-d997ea9af9c7" name="a021aee0-a83e-4bc2-8a43-53684ffcd526" type="radio">
-</input><label class="tabbed-label" for="0835d986-9d5d-43ff-9576-d997ea9af9c7">
+<input id="050e88b0-6bf1-45d4-b291-bfc8b76dbe7d" name="bc657cff-d469-4bdd-80b3-7c96bee76919" type="radio">
+</input><label class="tabbed-label" for="050e88b0-6bf1-45d4-b291-bfc8b76dbe7d">
 Not happening</label><div class="tabbed-content docutils">
 <p>I promise it will go better than this</p>
 <p><img alt="" src="https://media.giphy.com/media/EPcvhM28ER9XW/giphy.gif" /></p>
 </div>
-<input id="be812e6f-085c-46d0-9d3d-16a3c8b9464b" name="a021aee0-a83e-4bc2-8a43-53684ffcd526" type="radio">
-</input><label class="tabbed-label" for="be812e6f-085c-46d0-9d3d-16a3c8b9464b">
+<input id="c3f85060-4f20-471c-856d-013d8593ae93" name="bc657cff-d469-4bdd-80b3-7c96bee76919" type="radio">
+</input><label class="tabbed-label" for="c3f85060-4f20-471c-856d-013d8593ae93">
 Cue the montage</label><div class="tabbed-content docutils">
 <p><img alt="" src="https://media.giphy.com/media/QxZ0nbcVgMlPlnfZos/giphy.gif" /></p>
 </div>
-<input id="85b6dc2d-1e43-4af5-b540-b8e6343c3c27" name="a021aee0-a83e-4bc2-8a43-53684ffcd526" type="radio">
-</input><label class="tabbed-label" for="85b6dc2d-1e43-4af5-b540-b8e6343c3c27">
+<input id="865edbf6-ca3d-4955-91b3-d5121433db93" name="bc657cff-d469-4bdd-80b3-7c96bee76919" type="radio">
+</input><label class="tabbed-label" for="865edbf6-ca3d-4955-91b3-d5121433db93">
 Soon</label><div class="tabbed-content docutils">
 <p><img alt="" src="https://media.giphy.com/media/fUSX3E4imAn9WHwrCV/giphy.gif" /></p>
 </div>
