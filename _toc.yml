@@ -39,17 +39,6 @@
     title: "How to do your peer reviews"
   - file: content/assignments/asgn_5 
     title: "ASGN 5: Our first full data science assignment"
-
-#  - file: content/assignments/particip_header
-#    sections:
-#    - file: content/assignments/particip_part1
-    
-#  - file: content/assignments/asgn01_header
-#    sections:
-#    - file: content/assignments/asgn01_part1
-#    - file: content/assignments/asgn01_part2
-#    - file: content/assignments/asgn01_part3
-  
   
 - part: Textbook 
   numbered: true # will number the chapters and sections INSIDE the part(s) below
@@ -153,3 +142,34 @@
         - file: "content/04/02b_regex"
         - file: "content/04/02c_developing a regex"
         - file: "content/04/02d_RegexApplication"
+
+  - file: "content/05/00_intro"
+    title: "Data Science for Finance"    
+    sections:
+    - file: "content/05/01_bigpicture"
+      sections:
+        - file: "content/05/01a_MLgonewrong"    
+        - file: "content/05/01b_model_process"
+        - file: "content/05/01c_teams"
+        - file: "content/05/01d_sharingBigFiles"
+    - file: "content/05/02_reg"
+      sections:
+        - file: "content/05/02a_basics"    
+        - file: "content/05/02b_mechanics"
+        - file: "content/05/02c_goodnessOfFit"      
+        - file: "content/05/02d_interpretingCoefs" 
+        - file: "content/05/02e_statisticalSig"     
+        # (opt, future?) selection, measurement, omitted variables (HIGH level)        
+        # (opt, future?) exercises (and answers)
+        - file: "content/05/02g_summary"            ################ todo QUICK.
+    
+    
+# ML prediction modeling (process chart)
+#    The ML objective --> key tradeoff --> Solutions to that tradeoff (list, hyperlinks to external resources, and link to the next page for mine)
+#    Model evaluation (CV)
+#    Which statistic to maximize in CV?
+#    Model selection: A SHORT menu of models you can try (emphasis here is on thinking through the process of biz prob -> approach -> data -> set up code)
+#    "Leakage disasters"
+#        yahoo download 200 days of returns for a firm, create returns, then create predictive model (simple lags). then evaluate OOS
+#        then do REAL exercise without future info - OOS will be WAY worse
+#    pipeline solution
