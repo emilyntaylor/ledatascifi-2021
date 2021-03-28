@@ -159,17 +159,33 @@
         - file: "content/05/02c_goodnessOfFit"      
         - file: "content/05/02d_interpretingCoefs" 
         - file: "content/05/02e_statisticalSig"     
-        # (opt, future?) selection, measurement, omitted variables (HIGH level)        
+        # (opt, future?) selection, measurement, omitted variables (HIGH level)
         # (opt, future?) exercises (and answers)
-        - file: "content/05/02g_summary"            ################ todo QUICK.
+        - file: "content/05/02g_summary"           
+    - file: "content/05/03_ML"
+      sections:
+        - file: "content/05/03a_ML_obj_and_tradeoff"    
+        - file: "content/05/03c_ModelEval" 
+        - file: "content/05/03c1_OOS"  
+        - file: "content/05/03d_whatToMax"   # need auc/roc
+        - file: "content/05/03e_whichModel"  # need lots more!
+        #- file: "content/05/03f_whichParams"  gridsearch
+        
+        # sklearn basics - the process of using it (pdsh)
+        # sklearn mechanics for ONE model (regression, predict next day stock returns)
     
     
-# ML prediction modeling (process chart)
 #    The ML objective --> key tradeoff --> Solutions to that tradeoff (list, hyperlinks to external resources, and link to the next page for mine)
-#    Model evaluation (CV)
-#    Which statistic to maximize in CV?
 #    Model selection: A SHORT menu of models you can try (emphasis here is on thinking through the process of biz prob -> approach -> data -> set up code)
 #    "Leakage disasters"
 #        yahoo download 200 days of returns for a firm, create returns, then create predictive model (simple lags). then evaluate OOS
 #        then do REAL exercise without future info - OOS will be WAY worse
 #    pipeline solution
+
+#**The general rule is to never call fit on the test data**
+# putting this together
+    # import statements
+    # test, train = <decide how to split>
+    # pipeline = <data transforms, model estimation steps>
+    # set up cv (can set up iterable to do OOS! or TimeSeriesSplit, or Snows(?))
+    # scores = cross_validate(<>)    # i like this more than cross_val_scores (more info)
