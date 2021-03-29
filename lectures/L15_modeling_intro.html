@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; LeDataSciFi-2021</title>
+    <title>Hello! Today… &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -53,6 +53,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -628,7 +630,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/L14-last before break.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L15_modeling_intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -648,10 +650,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L14-last before break.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L15_modeling_intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L14-last before break.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L15_modeling_intro.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -671,7 +673,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L14-last before break.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L15_modeling_intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -679,7 +681,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L14-last before break.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L15_modeling_intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -697,7 +699,41 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#powering-up">
+   Powering up
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#this-will-be-fun">
+     This will be fun!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-discussion">
+   Modelling discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-class">
+   Next class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-demos">
+     Student demos
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -709,7 +745,85 @@
         
               <div>
                 
-  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">day</span><span class="p">:</span>
+    <span class="n">cover</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hello-today">
+<h1>Hello! Today…<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>(QUICKLY) ASGN 5 Q&amp;A - general, no code talk</p></li>
+<li><p>Remainder: Start talking about modeling</p></li>
+</ul>
+<p><em>I’m going to record, but remember participation credits</em></p>
+<div class="section" id="powering-up">
+<h2>Powering up<a class="headerlink" href="#powering-up" title="Permalink to this headline">¶</a></h2>
+<p><em>You are nearly done with a your first farm-to-table analysis. One big question for your findings: Are the correlations <em>real?</em> Will the they hold up to more rigorous scrutiny?</em></p>
+<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/about/schedule.html">Over the next month</a>, we going to look at</p>
+<ul class="simple">
+<li><p>putting possible relationships under more scrutiny</p></li>
+<li><p>building prediction models</p></li>
+<li><p>working as a team</p></li>
+</ul>
+<div class="section" id="this-will-be-fun">
+<h3>This will be fun!<a class="headerlink" href="#this-will-be-fun" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="https://media.giphy.com/media/LW4nOT7mAVaZq/giphy.gif" /></p>
+</div>
+<div class="section" id="methods">
+<h3>Methods:<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>regression (how-to, why-to, and what it “means”)</p></li>
+<li><p>logit, and some quick passes at other algorithms</p></li>
+<li><p>A grab bag of ML algos… but less focus on these than “WHY” we are doing what we are doing</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="modelling-discussion">
+<h2>Modelling discussion<a class="headerlink" href="#modelling-discussion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Read and discuss: 5.1.1</p></li>
+<li><p>5.2.1 - 5.2.3</p>
+<ul>
+<li><p>Let me lead us through this a bit, highlighting key pieces</p></li>
+<li><p>Case discussion: Aire (work through the summary steps, no record)</p></li>
+<li><p>Team exercise: Work through the summary steps while discussing A5</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>KEY takeaways</strong></p>
+<ol class="simple">
+<li><p>Modelling is not: <code class="docutils literal notranslate"><span class="pre">&lt;model&gt;.fit(X_train,y_train)</span></code> and then <code class="docutils literal notranslate"><span class="pre">&lt;model&gt;.predict(X_test,y_test)</span></code></p></li>
+<li><p>Is your Q about relationships or prediction? Answer determines if</p>
+<ul class="simple">
+<li><p>you care about <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> or  <span class="math notranslate nohighlight">\(\hat{y}\)</span>?</p></li>
+<li><p>a black box model works for you or not?</p></li>
+<li><p>preference for parsimony, need for data summation</p></li>
+</ul>
+</li>
+<li><p>Estimating a model:  <code class="docutils literal notranslate"><span class="pre">&lt;model&gt;(&lt;model</span> <span class="pre">parameters&gt;).fit(X,y)</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="next-class">
+<h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The mechanics of running regressions</p></li>
+</ul>
+<div class="section" id="student-demos">
+<h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Task: I’ll send data and a regression to do tomorrow morning</p></li>
+<li><p>Morning: Manuel (&#64;ManuelHerrera15) and Emily B. (&#64;epb322)</p></li>
+<li><p>Afternoon: Molly (&#64;mom222) and Pierre (&#64;pek221)</p></li>
+</ul>
+<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
+</div>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
