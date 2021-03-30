@@ -710,11 +710,18 @@
    </em>
    warnings about “statistical significance”
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers">
-   5.2.5.2. The focus on p-values can be dangerous because it distorts the incentives of researchers
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers">
+     5.2.5.1.1. The focus on p-values can be dangerous because it distorts the incentives of researchers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-analytical-errors">
+     5.2.5.1.2. Common analytical errors
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -841,8 +848,8 @@
 <tr class="row-odd"><td class="text-align:left"><p>“t”</p></td>
 <td class="text-align:left"><p>The <em><strong>“t-stat”</strong></em> = <span class="math notranslate nohighlight">\(\beta\)</span> divided by its standard error</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>“P&gt;</p></td>
-<td class="text-align:left"><p>t</p></td>
+<tr class="row-even"><td class="text-align:left"><p>“P&gt;t”</p></td>
+<td class="text-align:left"><p>The <em><strong>“p-value”</strong></em> is the probability that the coefficient is different than zero by random chance.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>“[0.025 	0.975]”</p></td>
 <td class="text-align:left"><p>The 95% confidence interval for the coefficient.</p></td>
@@ -859,11 +866,11 @@
 </ul>
 </div>
 <p>The “classical” approach to assess whether X is related to y is to see if the t-stat on X is above 1.96. These thresholds are important and part of a sensible approach to learning from data, but…</p>
-<p>When people say a “relationship is statistically significant”, what they can mean is
-<br><br></p>
+<p>When people say a “relationship is statistically significant”, what they often mean is
+<br></p>
 <center>"LOOK YONDER, I HAVE FOUND A NEW, MEANINGFUL  <br>
     CORRELATION THAT IS TRUE <br> (TRULY!) (VERILY!)  <br>
-    AND KNOWING IT WILL CHANGE THE WORLD!"</center>
+    AND KNOWING IT ... <br> WILL CHANGE THE WORLD!"</center>
 <p>Which leads me to the next section.</p>
 <div class="section" id="significant-warnings-about-statistical-significance">
 <h2><span class="section-number">5.2.5.1. </span><em>Significant</em> warnings about “statistical significance”<a class="headerlink" href="#significant-warnings-about-statistical-significance" title="Permalink to this headline">¶</a></h2>
@@ -884,9 +891,8 @@
 <li><p>**And if you play with a dataset long enough, you’ll find “results”… ***</p></li>
 </ol>
 </div>
-</div>
 <div class="section" id="the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers">
-<h2><span class="section-number">5.2.5.2. </span>The focus on p-values can be dangerous because it distorts the incentives of researchers<a class="headerlink" href="#the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">5.2.5.1.1. </span>The focus on p-values can be dangerous because it distorts the incentives of researchers<a class="headerlink" href="#the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Again: <strong>If you torture the data, it will confess (regardless of whether you or it wanted to)</strong></p></li>
 <li><p><strong>Motivated reasoning/cognitive dissonance/confirmation bias</strong>: Analysis like <a class="reference external" href="https://fivethirtyeight.com/features/science-isnt-broken/#part1">the game above</a> is fraught with temptations for humans. That 538 article mentions that about 2/3 of retractions are due to misconduct.</p></li>
@@ -905,6 +911,12 @@
 </ul>
 </li>
 </ol>
+</div>
+</div>
+<div class="section" id="common-analytical-errors">
+<h3><span class="section-number">5.2.5.1.2. </span>Common analytical errors<a class="headerlink" href="#common-analytical-errors" title="Permalink to this headline">¶</a></h3>
+<p>Let me repost this figure from <a class="reference internal" href="01a_MLgonewrong.html"><span class="doc std std-doc">an earlier page</span></a>. Notice how a focus on finding significant results can incentivize or subtly lead you towards several of these:</p>
+<a class="reference internal image-reference" href="../../_images/data_fallacies_to_avoid.jpg"><img alt="flowchart" src="../../_images/data_fallacies_to_avoid.jpg" style="width: 800px;" /></a>
 </div>
 </div>
 </div>
