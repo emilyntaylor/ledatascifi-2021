@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.2.7. Common tasks &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -801,10 +800,10 @@
         
               <div>
                 
-  <section id="common-tasks">
+  <div class="section" id="common-tasks">
 <h1><span class="section-number">3.2.7. </span>Common tasks<a class="headerlink" href="#common-tasks" title="Permalink to this headline">¶</a></h1>
 <p>This page is kind of long. (It’s got a lot of useful info!) Use the page’s table of contents to the right to jump to what you’re looking for.</p>
-<section id="reshaping-data">
+<div class="section" id="reshaping-data">
 <h2><span class="section-number">3.2.7.1. </span>Reshaping data<a class="headerlink" href="#reshaping-data" title="Permalink to this headline">¶</a></h2>
 <p>In the <a class="reference internal" href="02b_pandasVocab.html"><span class="doc std std-doc">shape of data</span></a> page, I explained the concept of wide vs. tall data with this example:</p>
 <div class="cell docutils container">
@@ -921,7 +920,7 @@
 </div>
 </div>
 </div>
-<section id="to-convert-a-tall-dataframe-to-wide-df-unstack">
+<div class="section" id="to-convert-a-tall-dataframe-to-wide-df-unstack">
 <h3><span class="section-number">3.2.7.1.1. </span>To convert a tall dataframe to wide: <code class="docutils literal notranslate"><span class="pre">df.unstack()</span></code>.<a class="headerlink" href="#to-convert-a-tall-dataframe-to-wide-df-unstack" title="Permalink to this headline">¶</a></h3>
 <p>If your index has multiple levels, the level parameter is used to pick which to unstack. “0” is the innermost level of the index.</p>
 <div class="cell docutils container">
@@ -1056,8 +1055,8 @@
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="to-convert-a-wide-dataframe-to-tall-long-df-stack">
+</div>
+<div class="section" id="to-convert-a-wide-dataframe-to-tall-long-df-stack">
 <h3><span class="section-number">3.2.7.1.2. </span>To convert a wide dataframe to tall/long: <code class="docutils literal notranslate"><span class="pre">df.stack()</span></code>.<a class="headerlink" href="#to-convert-a-wide-dataframe-to-tall-long-df-stack" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1292,9 +1291,9 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 </div></div></div>
 </div>
 <p><strong>Beautiful!</strong></p>
-</section>
-</section>
-<section id="lambda-in-assign-or-after-groupby">
+</div>
+</div>
+<div class="section" id="lambda-in-assign-or-after-groupby">
 <h2><span class="section-number">3.2.7.2. </span>Lambda (in <code class="docutils literal notranslate"><span class="pre">assign</span></code> or after <code class="docutils literal notranslate"><span class="pre">groupby</span></code>)<a class="headerlink" href="#lambda-in-assign-or-after-groupby" title="Permalink to this headline">¶</a></h2>
 <p>You will see this inside pandas chains a lot: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">someFunc(x)</span></code>, e.g.:</p>
 <ul class="simple">
@@ -1320,8 +1319,8 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 <p class="admonition-title">Note</p>
 <p>It turns out that lambda functions are very useful in python programming, and not just within pandas. But pandas is where we will use them most in this class.</p>
 </div>
-</section>
-<section id="transform-after-groupby">
+</div>
+<div class="section" id="transform-after-groupby">
 <h2><span class="section-number">3.2.7.3. </span><code class="docutils literal notranslate"><span class="pre">.transform()</span></code> after groupby<a class="headerlink" href="#transform-after-groupby" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes you get a statistic for a group, but you want that statistic in every single row of your original dataset.</p>
 <p>But <code class="docutils literal notranslate"><span class="pre">groupby</span></code> creates a new dataframe that is smaller, with only one row per row.</p>
@@ -1581,8 +1580,8 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="pipe">
+</div>
+<div class="section" id="pipe">
 <h2><span class="section-number">3.2.7.4. </span><code class="docutils literal notranslate"><span class="pre">.pipe()</span></code><a class="headerlink" href="#pipe" title="Permalink to this headline">¶</a></h2>
 <p>One problem with chains on dataframes is that you can only use methods that work on the object (a dataframe) that is getting chained.</p>
 <p>So for example, you’ve formatted dataframe to plot. You can’t directly add a seaborn function to the chain: <em>Seaborn functions are methods of the package seaborn, not the dataframe.</em> (It’s <code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code>, not <code class="docutils literal notranslate"><span class="pre">df.lmplot</span></code>.)</p>
@@ -1597,7 +1596,7 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 </div>
 <p>Note that the object after the pipe command is run might not be a dataframe anymore! It’s whatever object the piped function produces!</p>
 </div>
-<section id="example-1">
+<div class="section" id="example-1">
 <h3><span class="section-number">3.2.7.4.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://tomaugspurger.github.io/method-chaining">From one of the pandas devs:</a></p>
 <blockquote>
@@ -1613,8 +1612,8 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 <p>This really is just right-to-left function execution. The first argument to pipe, a callable, is called with the DataFrame on the left as its first argument, and any additional arguments you specify.</p>
 <p>I hope the analogy to data analysis code is clear. Code is read more often than it is written. When you or your coworkers or research partners have to go back in two months to update your script, having the story of raw data to results be told as clearly as possible will save you time.</p>
 </div></blockquote>
-</section>
-<section id="example-2">
+</div>
+<div class="section" id="example-2">
 <h3><span class="section-number">3.2.7.4.2. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://stmorse.github.io/journal/tidyverse-style-pandas.html">From Steven Morse:</a></p>
 <blockquote>
@@ -1632,9 +1631,9 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-</section>
-<section id="printing-inside-of-chains">
+</div>
+</div>
+<div class="section" id="printing-inside-of-chains">
 <h2><span class="section-number">3.2.7.5. </span>Printing inside of chains<a class="headerlink" href="#printing-inside-of-chains" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1815,8 +1814,8 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="prettier-pandas-output">
+</div>
+<div class="section" id="prettier-pandas-output">
 <h2><span class="section-number">3.2.7.6. </span>Prettier pandas output<a class="headerlink" href="#prettier-pandas-output" title="Permalink to this headline">¶</a></h2>
 <p>A few random things:</p>
 <ul class="simple">
@@ -1841,8 +1840,8 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
 <dd><p>(This figure is yet another resource I’m borrowing from the awesome <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook">PythonDataScienceHandbook</a>.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

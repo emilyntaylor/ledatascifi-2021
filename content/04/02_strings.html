@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4.4. Strings &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -703,15 +702,15 @@
         
               <div>
                 
-  <section id="strings">
+  <div class="section" id="strings">
 <h1><span class="section-number">4.4. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
 <p>This section of the textbook is only a small appetizer of what can and should be done when working with textual data and python <code class="docutils literal notranslate"><span class="pre">string</span></code> objects. I mostly cover the essential stuff needed <em>for this class, for this semester.</em></p>
 <p>But it’s important to provide this overview and cover this topic! The web is awash with (mostly unstructured) text data. Twitter is one obvious site where scraping the text could yield insights, but as of 2020, there are 40 ZETTABYTES of  data across the web. A zettabyte is a billion terabytes. A zettabyte is about how many stars are in the observable universe.</p>
 <p>Something like 80% of that data is unstructured text. <strong>Figuring out how to put structure on that data is POWERFUL.</strong></p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Google is the most famous example - they figured one way to structure that data, which was to rank documents and then give you the ranked list based on whether your search words were in the document.</p>
-</aside>
+</div>
 <p>One very common task is identifying topics in unstructured text: Does the document discuss topic X?</p>
 <p>This section of class tries to show you how to implement a seemingly simple approach to do just that. What you’ll see is that the “basic” code we construct is the foundation for a very powerful framework! After this, you will have code that can be adapted quickly to other text sources and extended to implement more sophisticated methods!</p>
  <p style="font-size:1.5em">Some good ideas when parsing text files</p> 
@@ -740,7 +739,7 @@
 </ol>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

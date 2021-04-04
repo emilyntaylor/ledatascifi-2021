@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.2.5. (Golden Rules for) Exploratory Data Analysis (EDA) &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -739,15 +738,13 @@
         
               <div>
                 
-  <section id="golden-rules-for-exploratory-data-analysis-eda">
+  <div class="section" id="golden-rules-for-exploratory-data-analysis-eda">
 <h1><span class="section-number">3.2.5. </span>(Golden Rules for) Exploratory Data Analysis (EDA)<a class="headerlink" href="#golden-rules-for-exploratory-data-analysis-eda" title="Permalink to this headline">¶</a></h1>
 <p>What’s below is some hard earned wisdom. Please accept this into your heart and go forth such that data never harms you as it has so many before you.</p>
-<figure class="align-default" id="baby-yodsssss">
+<div class="figure align-default" id="baby-yodsssss">
 <a class="reference internal image-reference" href="https://media.giphy.com/media/Wn74RUT0vjnoU98Hnt/source.gif"><img alt="https://media.giphy.com/media/Wn74RUT0vjnoU98Hnt/source.gif" src="https://media.giphy.com/media/Wn74RUT0vjnoU98Hnt/source.gif" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">You, soon to be wise</span><a class="headerlink" href="#baby-yodsssss" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">You, soon to be wise</span><a class="headerlink" href="#baby-yodsssss" title="Permalink to this image">¶</a></p>
+</div>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 1. <strong>GOLDEN RULES for EDA</strong><div class="summary-down docutils">
@@ -855,7 +852,7 @@
 </ul>
 <p class="card-text">Remember, <strong>data exploration</strong> and <strong>data cleaning</strong> are interrelated and you’ll go back and forth from one to the other.</p>
 </div>
-</details><section id="toy-eda">
+</details><div class="section" id="toy-eda">
 <h2><span class="section-number">3.2.5.1. </span>Toy EDA<a class="headerlink" href="#toy-eda" title="Permalink to this headline">¶</a></h2>
 <p>I do all of suggested steps here. The output isn’t pretty, and I’d clean it up if I was writing a report. But this gets the ball rolling.</p>
 <div class="admonition note">
@@ -935,8 +932,8 @@ Name: species, dtype: int64
 </div>
 </div>
 </div>
-</section>
-<section id="eda-of-compustat-firm-accounting-variables">
+</div>
+<div class="section" id="eda-of-compustat-firm-accounting-variables">
 <h2><span class="section-number">3.2.5.2. </span>EDA of Compustat (Firm accounting variables)<a class="headerlink" href="#eda-of-compustat-firm-accounting-variables" title="Permalink to this headline">¶</a></h2>
 <p>Compustat is a professional grade dataset that contains accounting data from SEC filings. I use it a lot in my work. Let’s explore it!</p>
 <p>First, let’s download our slice of it. The variables are listed and described in a csv file in the <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2021/tree/main/data">repo’s data folder.</a></p>
@@ -1406,7 +1403,7 @@ Name: species, dtype: int64
             </tr>
     </tbody></table></div></div>
 </div>
-<section id="observations">
+<div class="section" id="observations">
 <h3><span class="section-number">3.2.5.2.1. </span>Observations<a class="headerlink" href="#observations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>There are a lot of missing variables! Worthy of <a class="reference internal" href="04e-visualEDA.html"><span class="doc std std-doc">more investigation…</span></a></p></li>
@@ -1415,8 +1412,8 @@ Name: species, dtype: int64
 <li><p>Tax rates range from 0 to 1!</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Taxlosscarry</span></code> variables are booleans (1 or 0) as is <code class="docutils literal notranslate"><span class="pre">longdebtdum</span></code></p></li>
 </ul>
-</section>
-<section id="looking-for-outliers">
+</div>
+<div class="section" id="looking-for-outliers">
 <h3><span class="section-number">3.2.5.2.2. </span>Looking for outliers<a class="headerlink" href="#looking-for-outliers" title="Permalink to this headline">¶</a></h3>
 <p>There are a lot of ways to go about this.</p>
 <ul class="simple">
@@ -1951,8 +1948,8 @@ Name: species, dtype: int64
             </tr>
     </tbody></table></div></div>
 </div>
-</section>
-<section id="missing-values">
+</div>
+<div class="section" id="missing-values">
 <h3><span class="section-number">3.2.5.2.3. </span>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
 <p>Below is a list of variables that are missing values for more than 10% of the dataset. Future work will need to understand why there are missing values and understand whether and how we should deal with them.</p>
 <div class="cell tag_hide_input docutils container">
@@ -2037,9 +2034,9 @@ Name: species, dtype: int64
 <dd><p><a class="reference external" href="../01/07_debugging.html#seriously-print-your-data-and-objects-often">Remember this?</a></p>
 </dd>
 </dl>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.3.2. Model evaluation via cross validation (CV) &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -739,7 +738,7 @@
         
               <div>
                 
-  <section id="model-evaluation-via-cross-validation-cv">
+  <div class="section" id="model-evaluation-via-cross-validation-cv">
 <h1><span class="section-number">5.3.2. </span>Model evaluation via cross validation (CV)<a class="headerlink" href="#model-evaluation-via-cross-validation-cv" title="Permalink to this headline">¶</a></h1>
 <p>We want to develop a model that performs well in the real world. To do that,</p>
 <ol class="simple">
@@ -749,7 +748,7 @@
 <li><p>Pick your preferred model.</p></li>
 <li><p>One time only: Apply your preferred model to the holdout sample to see if it performs as well.</p></li>
 </ol>
-<section id="holdout-sample">
+<div class="section" id="holdout-sample">
 <h2><span class="section-number">5.3.2.1. </span>Holdout sample<a class="headerlink" href="#holdout-sample" title="Permalink to this headline">¶</a></h2>
 <p>So we need a way to estimate the test error. The way we do that is by creating a <strong>holdout sample</strong> (step #2 in the <a class="reference internal" href="03_ML.html"><span class="doc std std-doc">machine learning workflow</span></a>) to test the model at step #6, after our model development process is completed.</p>
 <div class="warning admonition">
@@ -757,8 +756,8 @@
 <p><strong>If you use the holdout during the iterative training/evaluation process (steps 3-5), it stops being a a holdout sample and effectively becomes part of the training set.</strong></p>
 </div>
 <p>After we create the holdout sample in step #2, we enter the grey box where all the ML magic happens, and pre-process the data (step #3).</p>
-</section>
-<section id="training-sample">
+</div>
+<div class="section" id="training-sample">
 <h2><span class="section-number">5.3.2.2. </span>Training sample<a class="headerlink" href="#training-sample" title="Permalink to this headline">¶</a></h2>
 <p>So, we are at step #3. We have the holdout sample isolated on the side, and will develop our model on the training sample.</p>
 <p>If we fit the model on the training sample, and then examine its performance against the same sample, the error will be misleadingly low. (Duh! We fit the model on it!)</p>
@@ -771,12 +770,12 @@
 <li><p>We estimate make predictions in the validation sample using our fit model, and measure the “accuracy” of the prediction.</p></li>
 </ul>
 </div>
-</section>
-<section id="train-validate-holdout-how-big-should-they-be">
+</div>
+<div class="section" id="train-validate-holdout-how-big-should-they-be">
 <h2><span class="section-number">5.3.2.3. </span>Train-validate-holdout: How big should they be?<a class="headerlink" href="#train-validate-holdout-how-big-should-they-be" title="Permalink to this headline">¶</a></h2>
 <p>Depends. Commonly, it’s 70%-15%-15%.</p>
-</section>
-<section id="k-fold-cross-validation">
+</div>
+<div class="section" id="k-fold-cross-validation">
 <h2><span class="section-number">5.3.2.4. </span>K-Fold Cross-Validation<a class="headerlink" href="#k-fold-cross-validation" title="Permalink to this headline">¶</a></h2>
 <p>Problem: 70% and 15% might not be enough to train and evaluate your candidate models. What if your 15% validation sample just randomly happens to work very well with your model in a way that doesn’t replicate beyond it?</p>
 <div class="admonition-a-ha admonition">
@@ -787,8 +786,8 @@
 <p><strong>K-Fold Cross-Validation:</strong>  Take the training data (85% of the original sample) and split it up into a training and validation sample, fit the model on the smaller training sample, and test it on the validation sample. Then repeat this by dividing the data into a different training/validation split. And repeat this <span class="math notranslate nohighlight">\(k\)</span> times to get <span class="math notranslate nohighlight">\(k\)</span> validation samples.</p>
 <p>Here, it looks like this:</p>
 <p><img alt="From DS100" src="../../_images/feature_5_fold_cv.jpg" /></p>
-</section>
-<section id="summary-of-cv">
+</div>
+<div class="section" id="summary-of-cv">
 <h2><span class="section-number">5.3.2.5. </span>Summary of CV<a class="headerlink" href="#summary-of-cv" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Separate out part of the dataset as a “holdout” or “test” set. The rest of the data is the “training set”.</p></li>
@@ -804,8 +803,8 @@
 </li>
 <li><p>Test the model against the holdout test sample and compute your final “test error”. You are done, and forbidden from tweaking the model now.</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

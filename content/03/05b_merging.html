@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.4.1. Merging &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -777,10 +776,10 @@
         
               <div>
                 
-  <section id="merging">
+  <div class="section" id="merging">
 <h1><span class="section-number">3.4.1. </span>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h1>
 <p>You’ve already merged datasets. But so far, our examples have been “well-behaved” so it was easy to just proceed. But real world datasets are messy (bad variable names, poor documentation) and big, and so merging isn’t always as easy as “just do it”.</p>
-<section id="important-parameters-of-pd-merge">
+<div class="section" id="important-parameters-of-pd-merge">
 <h2><span class="section-number">3.4.1.1. </span>Important parameters of <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code><a class="headerlink" href="#important-parameters-of-pd-merge" title="Permalink to this headline">¶</a></h2>
 <p>Read through the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html">parameters of the function here</a>.</p>
 <ul class="simple">
@@ -816,8 +815,8 @@
 <li><p>NEVER USE THE MANY TO MANY OPTION (unless you’re super sure it’s correct for your application)</p></li>
 </ul>
 </div>
-</section>
-<section id="categories-of-joins">
+</div>
+<div class="section" id="categories-of-joins">
 <h2><span class="section-number">3.4.1.2. </span>Categories of joins<a class="headerlink" href="#categories-of-joins" title="Permalink to this headline">¶</a></h2>
 <p>An important concept in merging is about how the keys you’re merging on are unique or not. You should be prepared that your merge might be:</p>
 <ul class="simple">
@@ -1101,8 +1100,8 @@
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="indicator-true">
+</div>
+<div class="section" id="indicator-true">
 <h2><span class="section-number">3.4.1.3. </span><code class="docutils literal notranslate"><span class="pre">indicator=True</span></code><a class="headerlink" href="#indicator-true" title="Permalink to this headline">¶</a></h2>
 <p>The post-merge variable created by <code class="docutils literal notranslate"><span class="pre">indicator=True</span></code> can be very useful to have around. After a merge, you can count the number of rows from each dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_informative_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">df1</span><span class="p">,</span><span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1129,8 +1128,8 @@ Name: _merge, dtype: int64
 </div>
 </div>
 </div>
-</section>
-<section id="how-left-v-right-v-inner-v-outer">
+</div>
+<div class="section" id="how-left-v-right-v-inner-v-outer">
 <h2><span class="section-number">3.4.1.4. </span><code class="docutils literal notranslate"><span class="pre">how</span></code> : left v. right v. inner v. outer<a class="headerlink" href="#how-left-v-right-v-inner-v-outer" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
@@ -1155,7 +1154,7 @@ Name: _merge, dtype: int64
 </table>
 <p>Let’s illustrate that:</p>
 <p><img alt="" src="../../_images/merges.png" /></p>
-<section id="practice">
+<div class="section" id="practice">
 <h3><span class="section-number">3.4.1.4.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h3>
 <p>Do a left, right, inner, and outer merge on these datasets to confirm the illustration on <code class="docutils literal notranslate"><span class="pre">how</span></code>:</p>
 <div class="cell docutils container">
@@ -1172,9 +1171,9 @@ Name: _merge, dtype: int64
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="merging-in-new-variables-to-your-analysis">
+</div>
+</div>
+<div class="section" id="merging-in-new-variables-to-your-analysis">
 <h2><span class="section-number">3.4.1.5. </span>Merging in new variables to your analysis<a class="headerlink" href="#merging-in-new-variables-to-your-analysis" title="Permalink to this headline">¶</a></h2>
 <p>A typical “use case” for merging: Working on some data you want to analyze (let’s call this the “left” data), and want to merge in another dataset (the “right” data) in order to add a variable to your analysis.</p>
 <div class="tip admonition">
@@ -1203,7 +1202,7 @@ Name: _merge, dtype: int64
 <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="creating-variables-around-a-merge">
+<div class="section" id="creating-variables-around-a-merge">
 <h3><span class="section-number">3.4.1.5.1. </span>Creating variables around a merge<a class="headerlink" href="#creating-variables-around-a-merge" title="Permalink to this headline">¶</a></h3>
 <p>Suppose you want to merge in a new variable. The variable is a function of a variable in another dataset. Should we create the variable before the merge or after the merge?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># before </span>
@@ -1311,9 +1310,9 @@ Name: _merge, dtype: int64
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="tips-and-best-practices">
+</div>
+</div>
+<div class="section" id="tips-and-best-practices">
 <h2><span class="section-number">3.4.1.6. </span>Tips and best practices<a class="headerlink" href="#tips-and-best-practices" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1358,12 +1357,12 @@ Name: _merge, dtype: int64
 <p class="admonition-title">Warning</p>
 <p>If I see assignments with a line like <code class="docutils literal notranslate"><span class="pre">merged=pd.merge()</span></code>, I’ll mark that down automatically.</p>
 </div>
-</section>
-<section id="a-nice-overview">
+</div>
+<div class="section" id="a-nice-overview">
 <h2><span class="section-number">3.4.1.7. </span>A nice overview<a class="headerlink" href="#a-nice-overview" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html">Python Data Science Handbook</a> has a wonderful breakdown of the mechanics of merging. You should read it!</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.2.2. Mechanics of running regressions &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -769,13 +768,13 @@
         
               <div>
                 
-  <section id="mechanics-of-running-regressions">
+  <div class="section" id="mechanics-of-running-regressions">
 <h1><span class="section-number">5.2.2. </span>Mechanics of running regressions<a class="headerlink" href="#mechanics-of-running-regressions" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These next few pages use a classic dataset called “diamonds” to introduce the regression methods. In lectures, we will use finance oriented data.</p>
 </div>
-<section id="objectives">
+<div class="section" id="objectives">
 <h2><span class="section-number">5.2.2.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>After this page,</p>
 <ol class="simple">
@@ -811,8 +810,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="our-first-regression-with-statsmodels">
+</div>
+<div class="section" id="our-first-regression-with-statsmodels">
 <h2><span class="section-number">5.2.2.2. </span>Our first regression with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#our-first-regression-with-statsmodels" title="Permalink to this headline">¶</a></h2>
 <p>You’ll see these steps repeated a lot for the rest of the class:</p>
 <ol class="simple">
@@ -878,8 +877,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</section>
-<section id="a-better-way-to-regress-with-statsmodels">
+</div>
+<div class="section" id="a-better-way-to-regress-with-statsmodels">
 <h2><span class="section-number">5.2.2.3. </span>A better way to regress with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#a-better-way-to-regress-with-statsmodels" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -962,8 +961,8 @@ dtype: float64
 <p class="admonition-title">Note</p>
 <p>We will cover what all these numbers mean later, but this page is focusing on the how-to.</p>
 </div>
-</section>
-<section id="regression-with-sklearn">
+</div>
+<div class="section" id="regression-with-sklearn">
 <h2><span class="section-number">5.2.2.4. </span>Regression with  <code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#regression-with-sklearn" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sklearn</span></code> is pretty similar but</p>
 <ul class="simple">
@@ -1004,8 +1003,8 @@ COEFS: [0.         1.68193567]
 <li><p>The “Linear Regression” section <a class="reference external" href="https://becominghuman.ai/linear-regression-in-python-with-pandas-scikit-learn-72574a2ec1a5">here</a> shows how you can run regressions on training samples and test them out of sample</p></li>
 </ul>
 </div>
-</section>
-<section id="plotting-the-regression-fit">
+</div>
+<div class="section" id="plotting-the-regression-fit">
 <h2><span class="section-number">5.2.2.5. </span>Plotting the regression fit<a class="headerlink" href="#plotting-the-regression-fit" title="Permalink to this headline">¶</a></h2>
 <p>Once you save the predicted values (<span class="math notranslate nohighlight">\(\hat{y}\)</span>), it’s easy to add it to a plot:</p>
 <div class="cell docutils container">
@@ -1032,8 +1031,8 @@ COEFS: [0.         1.68193567]
 <p><code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code> and <code class="docutils literal notranslate"><span class="pre">sns.regplot</span></code> will put a regression line on a scatterplot without having to set up and run a regression, but they also overplot the points when you have a lot of data. That’s why I used the approach above - scatterplot a subsample of the data and then overlay the regression line.</p>
 <p>One other alternative is to use <code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code> and <code class="docutils literal notranslate"><span class="pre">sns.regplot</span></code>, but use the <code class="docutils literal notranslate"><span class="pre">x_bins</span></code> parameter to report a “binned scatterplot”. Check it out if you’re curious.</p>
 </div>
-</section>
-<section id="including-dummy-variables">
+</div>
+<div class="section" id="including-dummy-variables">
 <h2><span class="section-number">5.2.2.6. </span>Including dummy variables<a class="headerlink" href="#including-dummy-variables" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you started by estimating the price of diamonds as a function of carats</p>
 <div class="math notranslate nohighlight">
@@ -1093,8 +1092,8 @@ Notes:
 </div>
 </div>
 <img src=https://media.giphy.com/media/zcCGBRQshGdt6/source.gif width="400">
-</section>
-<section id="including-categorical-variables">
+</div>
+<div class="section" id="including-categorical-variables">
 <h2><span class="section-number">5.2.2.7. </span>Including categorical variables<a class="headerlink" href="#including-categorical-variables" title="Permalink to this headline">¶</a></h2>
 <p>Dummy variables take on two values (on/off, True/False, 0/1). Categorical variables can take on many levels. “Industry” and “State” are a typical categorical variables in finance applications.</p>
 <div class="math notranslate nohighlight">
@@ -1164,8 +1163,8 @@ Notes:
 </div>
 </div>
 <img src=https://media.giphy.com/media/NaboQwhxK3gMU/source.gif width="400">
-</section>
-<section id="including-interaction-terms">
+</div>
+<div class="section" id="including-interaction-terms">
 <h2><span class="section-number">5.2.2.8. </span>Including interaction terms<a class="headerlink" href="#including-interaction-terms" title="Permalink to this headline">¶</a></h2>
 <p>Suppose that an ideal cut diamond doesn’t just add a fixed dollar value to the diamond. Perhaps it also changes the value of having a larger diamond. You might say that</p>
 <ul class="simple">
@@ -1290,8 +1289,8 @@ Notes:
 </div>
 <p>This shows that a 1% increase in carats is associated with a 1.52% increase in price for fair diamonds, but a 1.71% increase for ideal diamonds (1.52+0.18).</p>
 <p>Thus: The return on carats is different (and higher) for better cut diamonds!</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

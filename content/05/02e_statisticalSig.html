@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.2.5. Statistical significance &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -735,7 +734,7 @@
         
               <div>
                 
-  <section id="statistical-significance">
+  <div class="section" id="statistical-significance">
 <h1><span class="section-number">5.2.5. </span>Statistical significance<a class="headerlink" href="#statistical-significance" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="02b_mechanics.html#including-interaction-terms">Previously,</a> we estimated</p>
 <div class="math notranslate nohighlight">
@@ -743,10 +742,10 @@
 \log(\text{price})= 8.2+ 1.53 *\log(\text{carat}) + 0.33* \text{Ideal} + 0.18* \log(\text{carat})\cdot \text{Ideal}
 \]</div>
 <p>Those coefficients are <em>estimates</em>, not gospel. There is some uncertainty about what the “true” value should be.</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <img src=https://media.giphy.com/media/TIjVQiwWQFDMzjk4gU/giphy.gif width="150">
-</aside>
+</div>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load some data to practice regressions</span>
@@ -873,7 +872,7 @@
     CORRELATION THAT IS TRUE <br> (TRULY!) (VERILY!)  <br>
     AND KNOWING IT ... <br> WILL CHANGE THE WORLD!"</center>
 <p>Which leads me to the next section.</p>
-<section id="significant-warnings-about-statistical-significance">
+<div class="section" id="significant-warnings-about-statistical-significance">
 <h2><span class="section-number">5.2.5.1. </span><em>Significant</em> warnings about “statistical significance”<a class="headerlink" href="#significant-warnings-about-statistical-significance" title="Permalink to this headline">¶</a></h2>
 <p>The focus on t-stats p-values can be dangerous. As it turns out, “p-hacking” (finding a significant relationship) is easy for a number of reasons:</p>
 <ul class="simple">
@@ -892,7 +891,7 @@
 <li><p>**And if you play with a dataset long enough, you’ll find “results”… ***</p></li>
 </ol>
 </div>
-<section id="the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers">
+<div class="section" id="the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers">
 <h3><span class="section-number">5.2.5.1.1. </span>The focus on p-values can be dangerous because it distorts the incentives of researchers<a class="headerlink" href="#the-focus-on-p-values-can-be-dangerous-because-it-distorts-the-incentives-of-researchers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Again: <strong>If you torture the data, it will confess (regardless of whether you or it wanted to)</strong></p></li>
@@ -913,14 +912,14 @@
 </li>
 </ol>
 </div>
-</section>
-<section id="common-analytical-errors">
+</div>
+<div class="section" id="common-analytical-errors">
 <h3><span class="section-number">5.2.5.1.2. </span>Common analytical errors<a class="headerlink" href="#common-analytical-errors" title="Permalink to this headline">¶</a></h3>
 <p>Let me repost this figure from <a class="reference internal" href="01a_MLgonewrong.html"><span class="doc std std-doc">an earlier page</span></a>. Notice how a focus on finding significant results can incentivize or subtly lead you towards several of these:</p>
 <a class="reference internal image-reference" href="../../_images/data_fallacies_to_avoid.jpg"><img alt="flowchart" src="../../_images/data_fallacies_to_avoid.jpg" style="width: 800px;" /></a>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

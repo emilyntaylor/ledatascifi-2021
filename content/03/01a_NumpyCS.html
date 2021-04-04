@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.1.1. Numpy, Python, and Scientific Computing &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -732,7 +731,7 @@
         
               <div>
                 
-  <section id="numpy-python-and-scientific-computing">
+  <div class="section" id="numpy-python-and-scientific-computing">
 <h1><span class="section-number">3.1.1. </span>Numpy, Python, and Scientific Computing<a class="headerlink" href="#numpy-python-and-scientific-computing" title="Permalink to this headline">¶</a></h1>
 <p>This page covers two things you’ll want to think about in the background as we develop code:</p>
 <ol class="simple">
@@ -829,7 +828,7 @@ py is good
 <p>Oye, that seems slow!</p>
 <p><img alt="" src="https://media.giphy.com/media/26AHLNr8en8J3ovOo/giphy.gif" /></p>
 <p>We haven’t earned that high five yet, Ghostrider.</p>
-<section id="the-speed-solution">
+<div class="section" id="the-speed-solution">
 <h2><span class="section-number">3.1.1.1. </span>The speed solution<a class="headerlink" href="#the-speed-solution" title="Permalink to this headline">¶</a></h2>
 <p><strong>Vectorization.</strong> Send commands on arrays to the computer pre-compiled, with efficient native machine code.</p>
 <p>Let’s redo the code above:</p>
@@ -850,20 +849,20 @@ py is good
 </div>
 <p>Bam! That is muuuuuch faster. I think we earned that five…</p>
 <p><img alt="" src="https://media.giphy.com/media/26AHCgWcYM1xSqMaA/giphy.gif" /></p>
-</section>
-<section id="why-did-that-work">
+</div>
+<div class="section" id="why-did-that-work">
 <h2><span class="section-number">3.1.1.2. </span>Why did that work?<a class="headerlink" href="#why-did-that-work" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>In the slow version, we effectively sent the computer 3m commands: draw a number, square it, then add to prior.</p></li>
 <li><p>In the fast version, we sent those 3m commands embedded into just 3 array commands: draw an array of numbers, square all the elements of the array, sum the array. The array functions are optimized to use native machine code and don’t have to check each element for type.</p></li>
 </ul>
 <p><strong>Verdict: arrays and vectorization are great*! And in Python, we implement them using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</strong></p>
-</section>
-<section id="does-this-talk-of-vectorization-confuse-you">
+</div>
+<div class="section" id="does-this-talk-of-vectorization-confuse-you">
 <h2><span class="section-number">3.1.1.3. </span>Does this talk of vectorization confuse you?<a class="headerlink" href="#does-this-talk-of-vectorization-confuse-you" title="Permalink to this headline">¶</a></h2>
 <p>That’s ok! This isn’t a computer science class! Here are the takeaways of this page:</p>
-</section>
-<section id="the-takeaways">
+</div>
+<div class="section" id="the-takeaways">
 <h2><span class="section-number">3.1.1.4. </span>The takeaways:<a class="headerlink" href="#the-takeaways" title="Permalink to this headline">¶</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Main takeaways</p>
@@ -875,8 +874,8 @@ py is good
 </div>
 <p>Ok, with that covered…</p>
 <p>So let’s learn some <code class="docutils literal notranslate"><span class="pre">numpy</span></code>!</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

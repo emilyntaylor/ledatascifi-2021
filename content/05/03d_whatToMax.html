@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.3.4. Evaluating models &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -705,19 +704,19 @@
         
               <div>
                 
-  <section id="evaluating-models">
+  <div class="section" id="evaluating-models">
 <h1><span class="section-number">5.3.4. </span>Evaluating models<a class="headerlink" href="#evaluating-models" title="Permalink to this headline">¶</a></h1>
 <p>On the <a class="reference internal" href="03c_ModelEval.html"><span class="doc std std-doc">cross validation page</span></a>, we said you choose the model that produces the “lowest average validation error” when you do your cross validation tests.</p>
 <p>But wait! How do you measure accuracy of predictions or the model’s fit?</p>
 <p>You need to pick a scoring metric!</p>
 <p>Below, I list the most common statistics to report and consider. <a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html">scikit-learn</a>’s documentation lists the full menu.</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>If you’re a visual person, the figures below might help.</p>
 <p>In each figure below, a machine learning classifier calls the data points inside the circle positive, the left half are true positives, and the right half are true negatives.</p>
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/e/e7/Sensitivity_and_specificity.svg"><img alt="Sensitivity_and_specificity" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Sensitivity_and_specificity.svg" width="300px" /></a>
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png"><img alt="Precisionrecall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png" style="width: 300px;" /></a>
-</aside>
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Measurement name</p></th>
@@ -776,7 +775,7 @@
 <li><p>In the legal field, false positives (imprisoning an innocent person) are considered worse than false negatives.</p></li>
 <li><p>Identifying terrorists? You might want to maximize the detection rate (“recall”). Of course, simply saying “everyone is a terrorist” is guaranteed to generate a recall rate of 100%! But this rule would have a precision of about 0%! So you also should think about “precision” too. Maybe F1 is the metric for you.</p></li>
 </ul>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

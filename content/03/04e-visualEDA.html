@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.3.4. Visual EDA &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -764,7 +763,7 @@
         
               <div>
                 
-  <section id="visual-eda">
+  <div class="section" id="visual-eda">
 <h1><span class="section-number">3.3.4. </span>Visual EDA<a class="headerlink" href="#visual-eda" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="04b-whyplot.html"><span class="doc std std-doc">first page of this chapter</span></a> discussed the reasons we plot our data.</p>
 <ol class="simple">
@@ -772,7 +771,7 @@
 <li><p>Data exploration: Learning about each of the variables, how they covary, and what further questions you can ask of the data</p></li>
 <li><p>Analysis and presentation</p></li>
 </ol>
-<section id="eda-on-a-classic-firm-financial-dataset">
+<div class="section" id="eda-on-a-classic-firm-financial-dataset">
 <h2><span class="section-number">3.3.4.1. </span>EDA on a classic firm financial dataset<a class="headerlink" href="#eda-on-a-classic-firm-financial-dataset" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference internal" href="02e_eda_golden.html"><span class="doc std std-doc">the Pandas EDA</span></a> page, I explored Compustat by producing summary stats to get a sense of the variables involved, look for missing values, and look for problematic outliers. We noted that some variables, like <span class="math notranslate nohighlight">\(delaycon\)</span>, had a lot of missing values and decided we’d look into it.</p>
 <p>Let’s continue exploring that dataset. First, let’s download our slice of it. The variables are listed and described in a csv file in the <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2021/tree/main/data">repo’s data folder.</a></p>
@@ -803,8 +802,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="the-mystery-of-the-poorly-populated-variables">
+</div>
+<div class="section" id="the-mystery-of-the-poorly-populated-variables">
 <h2><span class="section-number">3.3.4.2. </span>The mystery of the poorly populated variables<a class="headerlink" href="#the-mystery-of-the-poorly-populated-variables" title="Permalink to this headline">¶</a></h2>
 <p>Again, there are some variables with lots of missing values.</p>
 <div class="cell docutils container">
@@ -905,8 +904,8 @@
 <img alt="../../_images/04e-visualEDA_5_0.png" src="../../_images/04e-visualEDA_5_0.png" />
 </div>
 </div>
-</section>
-<section id="distributions">
+</div>
+<div class="section" id="distributions">
 <h2><span class="section-number">3.3.4.3. </span>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
 <p>Among the first things I do with new data, besides the statistical EDA <a class="reference internal" href="02e_eda_golden.html"><span class="doc std std-doc">we covered in the Pandas section</span></a>, is plot the distribution of each variable to get a sense of the data.</p>
 <p>I generally want to know</p>
@@ -1013,11 +1012,11 @@
 </div>
 </div>
 <p>But <code class="docutils literal notranslate"><span class="pre">sns.catplot</span></code> is a really useful function to look at other distributional statistics for different groups!</p>
-</section>
-<section id="covariances-relationships-between-variables">
+</div>
+<div class="section" id="covariances-relationships-between-variables">
 <h2><span class="section-number">3.3.4.4. </span>Covariances/relationships between variables<a class="headerlink" href="#covariances-relationships-between-variables" title="Permalink to this headline">¶</a></h2>
 <p>To get a quick sense of relationships, I like to use I like to use <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> and <code class="docutils literal notranslate"><span class="pre">heatmap</span></code> to get a quick since of relationships.</p>
-<section id="getting-the-big-picture-with-pairplot">
+<div class="section" id="getting-the-big-picture-with-pairplot">
 <h3><span class="section-number">3.3.4.4.1. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Pairplot</strong></a><a class="headerlink" href="#getting-the-big-picture-with-pairplot" title="Permalink to this headline">¶</a></h3>
 <p>I like passing <code class="docutils literal notranslate"><span class="pre">corner=True</span></code> or using the <code class="docutils literal notranslate"><span class="pre">x_vars</span></code> and <code class="docutils literal notranslate"><span class="pre">y_vars</span></code> parameters to make the info shown more usable.</p>
 <div class="admonition warning">
@@ -1047,8 +1046,8 @@
 <img alt="../../_images/04e-visualEDA_14_1.png" src="../../_images/04e-visualEDA_14_1.png" />
 </div>
 </div>
-</section>
-<section id="getting-the-big-picture-with-heatmap-with-correlations">
+</div>
+<div class="section" id="getting-the-big-picture-with-heatmap-with-correlations">
 <h3><span class="section-number">3.3.4.4.2. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Heatmap with correlations</strong></a><a class="headerlink" href="#getting-the-big-picture-with-heatmap-with-correlations" title="Permalink to this headline">¶</a></h3>
 <p>After some pairplots (and often before), I like to look at correlations.</p>
 <div class="admonition warning">
@@ -2095,8 +2094,8 @@
 <p>If you’re feeling frisky, and your data is in good shape, you can push this farther by using <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.clustermap.html"><code class="docutils literal notranslate"><span class="pre">sns.clustermap</span></code></a> to find clusters of similar variables.</p>
 </div>
 <p>Also - don’t take these correlations as gospel yet: They should <em>point</em> you towards further relationships to explore, which you should do one plot at a time.</p>
-</section>
-<section id="digging-in-with-lmplot-and-jointplot">
+</div>
+<div class="section" id="digging-in-with-lmplot-and-jointplot">
 <h3><span class="section-number">3.3.4.4.3. </span>Digging in with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html"><strong>lmplot</strong></a> and <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html"><strong>Jointplot</strong></a><a class="headerlink" href="#digging-in-with-lmplot-and-jointplot" title="Permalink to this headline">¶</a></h3>
 <p>These are good for digging into the relationships between two continuous variables.</p>
 <p>Let’s dig into a strong correlation suggested by our heatmap.</p>
@@ -2142,9 +2141,9 @@
 <img alt="../../_images/04e-visualEDA_25_1.png" src="../../_images/04e-visualEDA_25_1.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

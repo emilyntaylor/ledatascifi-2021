@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.6. Digging into Py(thon) &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -816,11 +815,11 @@
         
               <div>
                 
-  <section id="digging-into-py-thon">
+  <div class="section" id="digging-into-py-thon">
 <h1><span class="section-number">1.6. </span>Digging into Py(thon)<a class="headerlink" href="#digging-into-py-thon" title="Permalink to this headline">¶</a></h1>
 <p>Hopefully this goes better than Chrissy Teigen’s experience:</p>
 <p><img alt="" src="https://media.giphy.com/media/zlXkHKnCXAe9a/giphy.gif" /></p>
-<section id="tutorials">
+<div class="section" id="tutorials">
 <h2><span class="section-number">1.6.1. </span>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
 <p>You can’t learn programmatic material during class sessions, try though I might to make it possible. You can only learn through practice. You should be checking out tutorials and lessons online in your free time.</p>
 <p>Two great options:</p>
@@ -838,8 +837,8 @@
 <li><p>(That’s how I learned python! I built solvers for Sudoku and the Cracker Barrel golf tee game… Both taught me a LOT about programming in python, problem solving strategies, and data structures.)</p></li>
 <li><p><a class="reference external" href="https://edabit.com/">Edabit</a> has a bunch of games. If you log in, you can search for python challenges that take from 1 minute to … longer… For example, <a class="reference external" href="https://edabit.com/challenge/cx7eFvQBzjauLgwgZ">the Museum of Dull Things</a>. If you find any games illuminating, please let me know via the class discussions repo!</p></li>
 </ul>
-</section>
-<section id="python-essentials">
+</div>
+<div class="section" id="python-essentials">
 <h2><span class="section-number">1.6.2. </span>Python essentials<a class="headerlink" href="#python-essentials" title="Permalink to this headline">¶</a></h2>
 <p>Ok, now we are going to live code a bunch together. I want you to get comfortable typing commands yourself rather than copy-pasting. This is slightly more painful in the beginning, but much better payoff in the long-run.</p>
 <div class="admonition tip">
@@ -847,14 +846,14 @@
 <p>Copy all of these code blocks to your own notebook file inside your notes folder and try to run them. Make sure Jupyter Lab calls the cells “code” cells instead of markdown cells, and then use <kbd> CTRL </kbd> + <kbd> ENTER </kbd> to run them.</p>
 <p><strong>HINT:</strong> You can copy <em>code</em> cells on this website by clicking the “copy” symbol in the upper-right corner of code blocks. If you want to copy chunks of files that includes sections of Markdown, watch <a class="reference internal" href="#content-chunkcopy"><span class="std std-ref">this video</span></a>.</p>
 </div>
-<section id="comments">
+<div class="section" id="comments">
 <h3><span class="section-number">1.6.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
 <p>In python code blocks, the “#” character tells python to ignore the rest of the line.</p>
 <p><strong>Leaving GOOD comments in the code is important!</strong> <a class="reference external" href="https://web.stanford.edu/~gentzkow/research/CodeAndData.xhtml#magicparlabel-1130">Good, smart code</a> tries to reduce the use of comments by writing code so obvious that it is “self-documenting” (I’ll explain why later),</p>
 <p><strong>But for now… you should err on the side of adding MORE comments</strong>. Why? If you need to take a break and come back at a later point, comments will help to quickly bring you up to speed if you forgot why you put in a particular line of code. Getting in the habit of using comments is smart.</p>
 <p>You’ll become more discerning about comments as you progress. Two articles about how and when to use comments: <a class="reference external" href="https://realpython.com/python-comments-guide/#why-commenting-your-code-is-so-important">this link</a> and <a class="reference external" href="https://realpython.com/documenting-python-code/#why-documenting-your-code-is-so-important">this link</a></p>
-</section>
-<section id="arithmetic">
+</div>
+<div class="section" id="arithmetic">
 <h3><span class="section-number">1.6.2.2. </span>Arithmetic<a class="headerlink" href="#arithmetic" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -885,12 +884,12 @@
 </div>
 </div>
 </div>
-</section>
-<section id="parentheses-grouping-and-calling">
+</div>
+<div class="section" id="parentheses-grouping-and-calling">
 <h3><span class="section-number">1.6.2.3. </span>Parentheses - Grouping and Calling<a class="headerlink" href="#parentheses-grouping-and-calling" title="Permalink to this headline">¶</a></h3>
 <p>As the above example shows, parentheses are for <strong>grouping</strong> (<code class="docutils literal notranslate"><span class="pre">(4+15)/3</span></code> forces addition before division) and <strong>calling</strong> a function (e.g. <code class="docutils literal notranslate"><span class="pre">print()</span></code> means the <code class="docutils literal notranslate"><span class="pre">print</span></code> function is called on the inputs inside the parentheses).</p>
-</section>
-<section id="logic-and-comparisons">
+</div>
+<div class="section" id="logic-and-comparisons">
 <h3><span class="section-number">1.6.2.4. </span>Logic and comparisons<a class="headerlink" href="#logic-and-comparisons" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>comparison operators</strong> are <code class="docutils literal notranslate"><span class="pre">==</span></code> (equals), <code class="docutils literal notranslate"><span class="pre">!=</span></code> (Not equal), <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (greater than), <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (equal or greater than), <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>. Each of these prompts Python to <strong>evaluate the truth</strong> of the comparison and return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are booleans, meaning <code class="docutils literal notranslate"><span class="pre">True</span></code> is equal to 1, and <code class="docutils literal notranslate"><span class="pre">False</span></code> is equal to 0.</p>
@@ -968,8 +967,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="variables-are-pointers">
+</div>
+<div class="section" id="variables-are-pointers">
 <h3><span class="section-number">1.6.2.5. </span>Variables are pointers<a class="headerlink" href="#variables-are-pointers" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/03-Semantics-Variables.ipynb">Read this page!</a></p>
 <p>I’ll simply provide the following <strong>warning: Unless you read and understand the link above,</strong> any time you write <code class="docutils literal notranslate"><span class="pre">x=y</span></code>, you might be creating a secret bug in your code that will cause potentially enormous errors!</p>
@@ -993,8 +992,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="everything-is-an-object">
+</div>
+<div class="section" id="everything-is-an-object">
 <h3><span class="section-number">1.6.2.6. </span>Everything is an object<a class="headerlink" href="#everything-is-an-object" title="Permalink to this headline">¶</a></h3>
 <p>Referring again to <a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/03-Semantics-Variables.ipynb">Whirlwind of Python</a>,</p>
 <blockquote>
@@ -1013,8 +1012,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="common-object-types">
+</div>
+<div class="section" id="common-object-types">
 <h3><span class="section-number">1.6.2.7. </span>Common object types<a class="headerlink" href="#common-object-types" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Boolean</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code> were covered above.</p>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code>. <a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/05-Built-in-Scalar-Types.ipynb#None-Type">See here</a>.</p>
@@ -1053,8 +1052,8 @@ False
 </div>
 </div>
 </div>
-</section>
-<section id="built-in-data-structures">
+</div>
+<div class="section" id="built-in-data-structures">
 <h3><span class="section-number">1.6.2.8. </span>Built in data structures<a class="headerlink" href="#built-in-data-structures" title="Permalink to this headline">¶</a></h3>
 <p>Python has <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, and <code class="docutils literal notranslate"><span class="pre">set</span></code>. Beginners typically rely on lists extensively, but as you progress, you will find that all four are extremely useful, because their unique traits solve different needs.</p>
 <p><a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/06-Built-in-Data-Structures.ipynb">After class, you should absolutely read this</a> and as you do, try the examples, and throw them into your growing personal cheat sheet.</p>
@@ -1092,8 +1091,8 @@ False
 <li><p>Returns the odd numbered elements (i.e. [8,6,7].</p></li>
 </ol>
 <p>I’d suggest putting what you just learned about how python indexes an object and how to slice a list into your personal cheat sheet until you have it memorized thoroughly.</p>
-</section>
-<section id="for-loops">
+</div>
+<div class="section" id="for-loops">
 <h3><span class="section-number">1.6.2.9. </span>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
 <p>Python loops are very intuitive:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
@@ -1171,8 +1170,8 @@ False
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="if-elif-else">
+</div>
+<div class="section" id="if-elif-else">
 <h3><span class="section-number">1.6.2.10. </span>If, elif, else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">¶</a></h3>
 <p>Syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">:</span>                         <span class="c1"># you must use the colon!</span>
@@ -1190,8 +1189,8 @@ False
 <li><p>Whatever is in <code class="docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code> must evaluate to True or False or 1 or 0</p></li>
 <li><p>See the <strong>“Logic and comparisons”</strong> section above on how Python evaluates conditions</p></li>
 </ul>
-</section>
-<section id="while">
+</div>
+<div class="section" id="while">
 <h3><span class="section-number">1.6.2.11. </span>While<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h3>
 <p>Syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span><span class="p">:</span>
@@ -1223,8 +1222,8 @@ False
 </div>
 <p>I have one important comment about <code class="docutils literal notranslate"><span class="pre">while</span></code> loops: <strong>Every time through the loop, there must be a chance for the condition to become False. If not, your code will loop forever!</strong></p>
 <p>We won’t use while loops in this class. But if you ever write one, and it is stuck in an infinite loop, you can stop the kernel by typing <kbd>i</kbd>, <kbd>i</kbd>. Or click the “Terminals and Kernels” tab in the left sidebar and “shutdown” next to your code’s filename.</p>
-</section>
-<section id="writing-your-own-functions">
+</div>
+<div class="section" id="writing-your-own-functions">
 <h3><span class="section-number">1.6.2.12. </span>Writing your own functions<a class="headerlink" href="#writing-your-own-functions" title="Permalink to this headline">¶</a></h3>
 <p>Writing your own functions is important for improving the clarity of your code  because it</p>
 <ul class="simple">
@@ -1297,8 +1296,8 @@ f(x, a=1, b=1)
 </div>
 </div>
 </div>
-</section>
-<section id="scope">
+</div>
+<div class="section" id="scope">
 <h3><span class="section-number">1.6.2.13. </span>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h3>
 <p>I want you to be generally aware of the concept of “global” and “local” scope. Generally, python objects are available only within the region they are defined and subregions therein. Put differently, objects are available downstream, but not upstream.</p>
 <div class="cell docutils container">
@@ -1353,9 +1352,9 @@ f(x, a=1, b=1)
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="popular-nay-essential-packages">
+</div>
+</div>
+<div class="section" id="popular-nay-essential-packages">
 <h2><span class="section-number">1.6.3. </span>Popular, nay, essential packages<a class="headerlink" href="#popular-nay-essential-packages" title="Permalink to this headline">¶</a></h2>
 <p>As the semester proceeds, you will surely need to learn (to some degree) the following packages. <strong>For each, you might note the most common and useful functions, and copy “cookbook” uses of the packages which you can paste into new programs.</strong> (E.g. how to open a csv file.)</p>
 <p><em>Note: I do not personally, nor do many programmers, commit to memory many functions of many packages. We simply <strong>know what can be done</strong> and when needed, we search (tab completion/google/stack overflow) for the command/recipe for that function.</em></p>
@@ -1382,22 +1381,22 @@ f(x, a=1, b=1)
 </ul>
 </li>
 </ul>
-</section>
-<section id="clear-output-and-rerun-from-the-start">
+</div>
+<div class="section" id="clear-output-and-rerun-from-the-start">
 <h2><span class="section-number">1.6.4. </span>Clear output and rerun from the start!<a class="headerlink" href="#clear-output-and-rerun-from-the-start" title="Permalink to this headline">¶</a></h2>
 <p>Code must run from beginning to end and produce the same thing every time</p>
 <ul class="simple">
 <li><p>Restart the kernal and clear output</p></li>
 <li><p>Run all cells</p></li>
 </ul>
-</section>
-<section id="how-do-i">
+</div>
+<div class="section" id="how-do-i">
 <h2><span class="section-number">1.6.5. </span>How do I…?<a class="headerlink" href="#how-do-i" title="Permalink to this headline">¶</a></h2>
-<section id="stuck-on-syntax-issues-for-a-function">
+<div class="section" id="stuck-on-syntax-issues-for-a-function">
 <h3><span class="section-number">1.6.5.1. </span>Stuck on syntax issues for a function?<a class="headerlink" href="#stuck-on-syntax-issues-for-a-function" title="Permalink to this headline">¶</a></h3>
 <p>See the tips in the <a class="reference external" href="05_jupyterlab#resources">Jupyter Lab</a> page.</p>
-</section>
-<section id="copy-chunks-of-lecture-files-into-my-own-code">
+</div>
+<div class="section" id="copy-chunks-of-lecture-files-into-my-own-code">
 <span id="content-chunkcopy"></span><h3><span class="section-number">1.6.5.2. </span>Copy chunks of lecture files into my own code?<a class="headerlink" href="#copy-chunks-of-lecture-files-into-my-own-code" title="Permalink to this headline">¶</a></h3>
 <p>I think this is the easiest way:</p>
 <ol class="simple">
@@ -1414,9 +1413,9 @@ f(x, a=1, b=1)
 <p>Want another amateur youtube video? Here’s one of me showing those steps!</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0XtS-pI9tR8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <hr class="docutils" />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLgqMhkNZHFJdeew7q2aAk5crzNdMss_NZ4vC4LKluUuo_pg/viewform?embedded=true" width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></section>
-</section>
-</section>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLgqMhkNZHFJdeew7q2aAk5crzNdMss_NZ4vC4LKluUuo_pg/viewform?embedded=true" width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

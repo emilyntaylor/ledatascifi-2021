@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.2.4. Temporary vs. Permanent Methods &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -722,13 +721,13 @@
         
               <div>
                 
-  <section id="temporary-vs-permanent-methods">
+  <div class="section" id="temporary-vs-permanent-methods">
 <h1><span class="section-number">3.2.4. </span>Temporary vs. Permanent Methods<a class="headerlink" href="#temporary-vs-permanent-methods" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This page is especially useful in the context of developing code. While I’m figuring out a step, I rarely save the output to my original data - I use temporary methods and print the output. Once I know it’s right, I make the changes permanent and proceed.</p>
 </div>
-<section id="temporary-methods">
+<div class="section" id="temporary-methods">
 <h2><span class="section-number">3.2.4.1. </span>Temporary Methods<a class="headerlink" href="#temporary-methods" title="Permalink to this headline">¶</a></h2>
 <p>When you use a method on an object (e.g. a DataFrame) in python, <code class="docutils literal notranslate"><span class="pre">&lt;object&gt;.&lt;method&gt;(&lt;args&gt;)</span></code> performs the method on the object and returns the modified object, as you can see here:</p>
 <div class="cell docutils container">
@@ -814,8 +813,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="permanent-changes">
+</div>
+<div class="section" id="permanent-changes">
 <h2><span class="section-number">3.2.4.2. </span>Permanent changes<a class="headerlink" href="#permanent-changes" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -850,8 +849,8 @@
 <dd><p>You can also do some pandas operations “in place”, without explicitly writing <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> </code> at the start of the line. However, I discourage this for reasons I won’t belabor here.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

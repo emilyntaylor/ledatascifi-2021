@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.1.2. The modeling process &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -89,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -126,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -148,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -170,7 +169,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -734,7 +733,7 @@
         
               <div>
                 
-  <section id="the-modeling-process">
+  <div class="section" id="the-modeling-process">
 <h1><span class="section-number">5.1.2. </span>The modeling process<a class="headerlink" href="#the-modeling-process" title="Permalink to this headline">¶</a></h1>
 <p style="font-size:2em"> Or: How to define a project and structure the process </p> 
 <div class="admonition-summary admonition">
@@ -763,12 +762,12 @@
 </div></blockquote>
 <hr class="docutils" />
 <p>So, we will build up the requisite skills to do the mechanical stuff, but honestly, most interesting applied problems don’t hinge on the ability to type <code class="docutils literal notranslate"><span class="pre">knn.fit(y,X)</span></code>. It’s all the stuff around it, that led you to the dataset you have, and how you’re using it to estimate some model, and how you’ll use the estimated model.</p>
-<section id="what-type-of-question-are-you-asking">
+<div class="section" id="what-type-of-question-are-you-asking">
 <h2><span class="section-number">5.1.2.1. </span>What type of question are you asking?<a class="headerlink" href="#what-type-of-question-are-you-asking" title="Permalink to this headline">¶</a></h2>
 <p>Most analyses fall into one of two camps, based on the type of question:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="009ec8ce-5ef0-4eee-9c54-e97433eabe71" name="320ce3bc-3f55-49b8-8582-f872d098410c" type="radio">
-</input><label class="tabbed-label" for="009ec8ce-5ef0-4eee-9c54-e97433eabe71">
+<input checked="checked" id="b37676e3-7e54-4995-a645-dab0230aabda" name="0c661fd6-d26a-4b62-8cb5-3262ed814f8e" type="radio">
+</input><label class="tabbed-label" for="b37676e3-7e54-4995-a645-dab0230aabda">
 1. <strong>Questions about RELATIONSHIPS between variables</strong></label><div class="tabbed-content docutils">
 <p>Example: Do airline closures affect how VCs monitor portfolio companies?</p>
 <ul class="simple">
@@ -778,8 +777,8 @@
 </ul>
 <p>Model: You’ll probably start with regression or logit</p>
 </div>
-<input id="686ced56-2021-4b53-8cd0-59e94aa39e26" name="320ce3bc-3f55-49b8-8582-f872d098410c" type="radio">
-</input><label class="tabbed-label" for="686ced56-2021-4b53-8cd0-59e94aa39e26">
+<input id="83ec693d-ac76-4fd8-b9df-40a04528ed3b" name="0c661fd6-d26a-4b62-8cb5-3262ed814f8e" type="radio">
+</input><label class="tabbed-label" for="83ec693d-ac76-4fd8-b9df-40a04528ed3b">
 1. 2. <strong>Questions about PREDICTING some outcome variable</strong></label><div class="tabbed-content docutils">
 <p>Example: Which loans will default?</p>
 <ul class="simple">
@@ -788,8 +787,8 @@
 <p>Model: Probably something more complex (depends on question)</p>
 </div>
 </div>
-</section>
-<section id="why-should-i-think-about-the-type-of-question">
+</div>
+<div class="section" id="why-should-i-think-about-the-type-of-question">
 <h2><span class="section-number">5.1.2.2. </span>Why should I think about the type of question?<a class="headerlink" href="#why-should-i-think-about-the-type-of-question" title="Permalink to this headline">¶</a></h2>
 <p>The type of question is a good thing to fix in your head, because it dictates what you care about when you pick and estimate your models.</p>
 <ol class="simple">
@@ -806,8 +805,8 @@
 <li><p>Prediction questions are <span class="math notranslate nohighlight">\(\hat{y}\)</span> questions</p></li>
 </ul>
 </div>
-</section>
-<section id="pick-your-model-s">
+</div>
+<div class="section" id="pick-your-model-s">
 <h2><span class="section-number">5.1.2.3. </span>Pick your model(s)<a class="headerlink" href="#pick-your-model-s" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-a-model-is-an-idealized-representation-of-a-system admonition">
 <p class="admonition-title"><strong>A model is an idealized representation of a system</strong></p>
@@ -845,8 +844,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="estimate-your-model">
+</div>
+<div class="section" id="estimate-your-model">
 <h2><span class="section-number">5.1.2.4. </span>Estimate your model<a class="headerlink" href="#estimate-your-model" title="Permalink to this headline">¶</a></h2>
 <p>We will talk in depth about a few models in class, but generally, these three steps always apply:</p>
 <ol class="simple">
@@ -868,8 +867,8 @@
 </li>
 <li><p>Estimate (“fit”) the model by minimizing the loss.</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

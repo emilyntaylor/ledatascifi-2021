@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4.1. Scraping Data &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -734,22 +733,22 @@
         
               <div>
                 
-  <section id="scraping-data">
+  <div class="section" id="scraping-data">
 <h1><span class="section-number">4.1. </span>Scraping Data<a class="headerlink" href="#scraping-data" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>Skills we will develop</p></li>
 <li><p>Overview of different ways to get data</p></li>
 <li><p>Overview of python packages we can use</p></li>
 </ol>
-<section id="what-skills-do-i-need-to-learn-to-be-a-master-hacker-wo-man">
+<div class="section" id="what-skills-do-i-need-to-learn-to-be-a-master-hacker-wo-man">
 <h2><span class="section-number">4.1.1. </span>What skills do I need to learn to be a master Hacker(wo)man?<a class="headerlink" href="#what-skills-do-i-need-to-learn-to-be-a-master-hacker-wo-man" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Get the data: How to open/read a webpage, and pass specific queries to a server to control the content the server gives you</p></li>
 <li><p>How to parse a (single) page, to find specific elements of interest (like tables, specific text, URLs)</p></li>
 <li><p>Doing that for a large number of webpages (building a “scraper” or “crawler” or “spider”)</p></li>
 </ol>
-</section>
-<section id="ways-to-get-data-from-the-web">
+</div>
+<div class="section" id="ways-to-get-data-from-the-web">
 <h2><span class="section-number">4.1.2. </span>Ways to get data from the web<a class="headerlink" href="#ways-to-get-data-from-the-web" title="Permalink to this headline">¶</a></h2>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -836,8 +835,8 @@
 </ol>
 </div></blockquote>
 </div>
-</section>
-<section id="useful-packages-tricks-and-tips">
+</div>
+<div class="section" id="useful-packages-tricks-and-tips">
 <h2><span class="section-number">4.1.3. </span>Useful packages, tricks, and tips<a class="headerlink" href="#useful-packages-tricks-and-tips" title="Permalink to this headline">¶</a></h2>
 <p>Web scraping packages are always developing and evolving.</p>
 <table class="colwidths-auto table">
@@ -870,14 +869,14 @@
 </tr>
 </tbody>
 </table>
-<section id="my-suggestion">
+<div class="section" id="my-suggestion">
 <h3><span class="section-number">4.1.3.1. </span>My suggestion<a class="headerlink" href="#my-suggestion" title="Permalink to this headline">¶</a></h3>
 <p>This is subject to change, but <strong>I think you should pick ONE opening and ONE parsing module and stick with it <em>for now</em></strong>. <code class="docutils literal notranslate"><span class="pre">requests_html</span></code> is a pretty good option that opens pages and can parse them, and it allows you to use <code class="docutils literal notranslate"><span class="pre">lxml</span></code>, or <code class="docutils literal notranslate"><span class="pre">pyquery</span></code> within it.</p>
 <p>You can change and try other stuff as you go, but get as familiar with one package as you can (in a cheap/efficient way).</p>
 <p>Now to contradict myself: Some of the packages above can’t do things others can, or do them much slower, or the code is hard to write, read, and debug. Sometimes, you’re holding a hammer but you need a screwdriver. What I’m saying is, if another package can easily do the job, use it. (Just realize that learning a new package comes with a fixed cost, so be sure you need that screwdriver before grabbing it.)</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

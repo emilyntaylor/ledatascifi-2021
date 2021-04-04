@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.4.3. Dealing with Outliers &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -739,9 +738,9 @@
         
               <div>
                 
-  <section id="dealing-with-outliers">
+  <div class="section" id="dealing-with-outliers">
 <h1><span class="section-number">3.4.3. </span>Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">¶</a></h1>
-<section id="options-for-dealing-with-them">
+<div class="section" id="options-for-dealing-with-them">
 <h2><span class="section-number">3.4.3.1. </span>Options for dealing with them:<a class="headerlink" href="#options-for-dealing-with-them" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Fix the data: Look at the data and correct it. Can be costly or impossible.</p></li>
@@ -754,8 +753,8 @@
 </ul>
 </li>
 </ol>
-</section>
-<section id="finding-outliers">
+</div>
+<div class="section" id="finding-outliers">
 <h2><span class="section-number">3.4.3.2. </span>Finding outliers<a class="headerlink" href="#finding-outliers" title="Permalink to this headline">¶</a></h2>
 <p>How can we find outliers?</p>
 <ol class="simple">
@@ -1370,8 +1369,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="winsorizing">
+</div>
+<div class="section" id="winsorizing">
 <h2><span class="section-number">3.4.3.3. </span>Winsorizing<a class="headerlink" href="#winsorizing" title="Permalink to this headline">¶</a></h2>
 <p>In this example:</p>
 <ol class="simple">
@@ -1388,7 +1387,7 @@
 </ul>
 </li>
 </ol>
-<section id="code">
+<div class="section" id="code">
 <h3><span class="section-number">3.4.3.3.1. </span>Code:<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.mstats</span> <span class="kn">import</span> <span class="n">winsorize</span>
 
@@ -1403,8 +1402,8 @@
 <span class="n">df</span><span class="p">[</span><span class="n">some_list_of_vars</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">some_group</span><span class="p">)[</span><span class="n">some_list_of_vars</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">winsorize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">limits</span><span class="o">=</span><span class="p">[</span><span class="o">.</span><span class="mi">01</span><span class="p">,</span><span class="o">.</span><span class="mi">99</span><span class="p">]))</span>
 </pre></div>
 </div>
-</section>
-<section id="an-example">
+</div>
+<div class="section" id="an-example">
 <h3><span class="section-number">3.4.3.3.2. </span>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1477,9 +1476,9 @@
             </tr>
     </tbody></table></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

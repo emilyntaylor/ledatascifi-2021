@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4.2. Opening + Parsing a Webpage &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -751,7 +750,7 @@
         
               <div>
                 
-  <section id="opening-parsing-a-webpage">
+  <div class="section" id="opening-parsing-a-webpage">
 <h1><span class="section-number">4.2. </span>Opening + Parsing <em>a</em> Webpage<a class="headerlink" href="#opening-parsing-a-webpage" title="Permalink to this headline">¶</a></h1>
 <p>This page is about the first two skills of the three skills needed to become a master Hacker(wo)man:</p>
 <ol class="simple">
@@ -760,7 +759,7 @@
 <li><p>Doing that for a large number of webpages (building a “scraper” or “crawler” or “spider”)</p></li>
 </ol>
 <p>So let’s start building up those skills through demos and practice!</p>
-<section id="skill-1-retrieving-urls-and-sending-manual-api-queries">
+<div class="section" id="skill-1-retrieving-urls-and-sending-manual-api-queries">
 <h2><span class="section-number">4.2.1. </span>Skill 1: Retrieving URLs and sending manual API queries<a class="headerlink" href="#skill-1-retrieving-urls-and-sending-manual-api-queries" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -768,7 +767,7 @@
 <p>For example: <a class="reference external" href="https://www.google.com/search?client=firefox-b-1-d&amp;q=gme+stock_price">https://www.google.com/search?client=firefox-b-1-d&amp;q=gme+stock_price</a></p>
 <p>We can leverage websites that do that to programmatically run searches and collect data!</p>
 </div>
-<section id="walkthrough">
+<div class="section" id="walkthrough">
 <h3><span class="section-number">4.2.1.1. </span>Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://nbviewer.jupyter.org/github/nealcaren/ScrapingData/blob/master/Notebooks/5_APIs.ipynb">Go through the Neal Caren “First API” example</a></p>
 <ul class="simple">
@@ -781,12 +780,12 @@
 </ul>
 </li>
 </ul>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p><em>For your reference: Sometimes a webpage is “hiding” the way to run queries like this API. You run a search and the URL doesn’t look obviously like a search. But often, inside that page is a “backdoor” to an API you can search just like the above example. <a class="reference external" href="https://nbviewer.jupyter.org/github/nealcaren/ScrapingData/blob/master/Notebooks/Bonus_Undocument_APIs.ipynb">This</a> tutorial shows one example of this and more importantly, how the author found the API.</em></p>
-</aside>
-</section>
-<section id="practice-exchange-rates">
+</div>
+</div>
+<div class="section" id="practice-exchange-rates">
 <h3><span class="section-number">4.2.1.2. </span>Practice: Exchange rates<a class="headerlink" href="#practice-exchange-rates" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Start with <code class="docutils literal notranslate"><span class="pre">url</span> <span class="pre">=</span> <span class="pre">'https://api.exchangeratesapi.io/latest?base=NOK'</span> </code></p></li>
@@ -797,9 +796,9 @@
 <li><p>Q4: Bonus: Get a time series of EURJPY from 2018 through 2019.</p></li>
 <li><p>Q5: Bonus: Rewrite our code for Q1-Q4 using <code class="docutils literal notranslate"><span class="pre">requests_html</span></code> to the extent possible. If and when you succeed, email your solution to me!</p></li>
 </ul>
-</section>
-</section>
-<section id="skill-2-how-to-parse-a-single-page">
+</div>
+</div>
+<div class="section" id="skill-2-how-to-parse-a-single-page">
 <h2><span class="section-number">4.2.2. </span>Skill 2: How to parse a (single) page<a class="headerlink" href="#skill-2-how-to-parse-a-single-page" title="Permalink to this headline">¶</a></h2>
 <p>You might parse a page to</p>
 <ul class="simple">
@@ -835,15 +834,15 @@
 </div>
 </div></blockquote>
 <p>Elements can nest inside elements (a paragraph within the body of the page, the title inside the header, the rows inside the table with columns inside them).</p>
-<section id="practice-picking-elements-of-a-page">
+<div class="section" id="practice-picking-elements-of-a-page">
 <h3><span class="section-number">4.2.2.1. </span>Practice: Picking elements of a page<a class="headerlink" href="#practice-picking-elements-of-a-page" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://flukeout.github.io/">Let’s play a game</a> about finding and selecting elements using the html tags.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This will help on the next practice problem!</p>
 </div>
-</section>
-<section id="practice-get-a-list-of-wiki-pages-for-s-p500-firms">
+</div>
+<div class="section" id="practice-get-a-list-of-wiki-pages-for-s-p500-firms">
 <h3><span class="section-number">4.2.2.2. </span>Practice: Get a list of wiki pages for S&amp;P500 firms<a class="headerlink" href="#practice-get-a-list-of-wiki-pages-for-s-p500-firms" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Revisit the S&amp;P 500 wiki: <code class="docutils literal notranslate"><span class="pre">pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')</span></code></p></li>
@@ -854,13 +853,13 @@
 <p class="admonition-title">Tip</p>
 <p>This practice will help on the homework!</p>
 </div>
-</section>
-<section id="extra-resources">
+</div>
+<div class="section" id="extra-resources">
 <h3><span class="section-number">4.2.2.3. </span>Extra resources<a class="headerlink" href="#extra-resources" title="Permalink to this headline">¶</a></h3>
 <p>I really, really like the tutorials Greg Reda wrote (<a class="reference external" href="http://www.gregreda.com/2013/03/03/web-scraping-101-with-python/">here</a> and <a class="reference external" href="http://www.gregreda.com/2013/04/29/more-web-scraping-with-python/">here</a>). See the caveat about <code class="docutils literal notranslate"><span class="pre">urllib2</span></code> above, but otherwise this code works. Greg uses <code class="docutils literal notranslate"><span class="pre">urllib</span></code> to open and <code class="docutils literal notranslate"><span class="pre">beautifulsoup</span></code> to parse, but if you want to, you should be able to rewrite his code using <code class="docutils literal notranslate"><span class="pre">requests_html</span></code> pretty easily. When you succeed, please email me!</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

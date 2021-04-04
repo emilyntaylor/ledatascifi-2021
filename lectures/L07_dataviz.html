@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -85,7 +84,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -122,7 +121,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -144,7 +143,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -166,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -793,7 +792,7 @@
 <li><p>30 minutes of plot discussion / demo</p></li>
 <li><p>5 minutes of wrap up</p></li>
 </ul>
-<section id="hello-today">
+<div class="section" id="hello-today">
 <h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>Before class:</p>
@@ -806,7 +805,7 @@
 <li><p>Plotting with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (<code class="docutils literal notranslate"><span class="pre">df.plot()</span></code>) and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p></li>
 </ol>
 <p><em>I’m going to record, but remember participation credits</em></p>
-<section id="assignments">
+<div class="section" id="assignments">
 <h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
 <p>Assignment 1 grades: 80% avg so far - great!</p>
 <ul class="simple">
@@ -828,18 +827,18 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="and-now">
+</div>
+<div class="section" id="and-now">
 <h2>“And now…”<a class="headerlink" href="#and-now" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="data-viz-is-not-this">
+</div>
+<div class="section" id="data-viz-is-not-this">
 <h2>Data Viz is not this…<a class="headerlink" href="#data-viz-is-not-this" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="https://media.giphy.com/media/pi1u9o9M436Lu/giphy.gif" /></p>
-</section>
-<section id="it-s-this">
+</div>
+<div class="section" id="it-s-this">
 <h2><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04f-betterplots.html#interactive-plots-plotly">It’s this</a><a class="headerlink" href="#it-s-this" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="quick-discussion-before-we-get-into-it">
+</div>
+<div class="section" id="quick-discussion-before-we-get-into-it">
 <h2>Quick discussion before we get into it<a class="headerlink" href="#quick-discussion-before-we-get-into-it" title="Permalink to this headline">¶</a></h2>
 <p>Plot to explore data, discover trends/comps/relationship, present results</p>
 <p>PLOT A LOT! A LOT! A LOT!</p>
@@ -847,7 +846,7 @@
 <li><p>Data viz (and modeling) are iterative: you learn what’s worth looking at only as you go</p></li>
 <li><p>Go to <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/02e_eda_golden.html#eda-of-compustat-firm-accounting-variables">Pandas EDA page</a> &gt; A mystery!</p></li>
 </ul>
-<section id="plot">
+<div class="section" id="plot">
 <h3>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>To find relationships that differ by groups (<code class="docutils literal notranslate"><span class="pre">sns</span></code> options: hue, col, row; <code class="docutils literal notranslate"><span class="pre">sns.catplot</span></code>, <code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code>)</p></li>
@@ -861,9 +860,9 @@
 <ul class="simple">
 <li><p>B/c summary stats don’t show relationships (3.3.4.3) (<code class="docutils literal notranslate"><span class="pre">sns</span></code>: pairplot &gt; heatmap &gt; lmplot + jointplot)</p></li>
 </ul>
-</section>
-</section>
-<section id="quickstart">
+</div>
+</div>
+<div class="section" id="quickstart">
 <h2>Quickstart:<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>              <span class="c1"># quick and dirty plots</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -872,16 +871,16 @@
 </pre></div>
 </div>
 <p>Key links: <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04d-whichplot.html">this</a> and the links within</p>
-</section>
-<section id="student-demos">
+</div>
+<div class="section" id="student-demos">
 <h2>Student Demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h2>
 <p>Copy the last part of the <code class="docutils literal notranslate"><span class="pre">02h_exercises</span></code> into your code</p>
 <ul class="simple">
 <li><p>Morning: Zhongrui (&#64;zhz221) and Chengming (&#64;chw221)</p></li>
 <li><p>Afternoon: Blaise (&#64;blaisemilanek) and Caitlin (&#64;cak320)</p></li>
 </ul>
-</section>
-<section id="now-let-s-practice">
+</div>
+<div class="section" id="now-let-s-practice">
 <h2>Now let’s practice!<a class="headerlink" href="#now-let-s-practice" title="Permalink to this headline">¶</a></h2>
 <p>Explore CCM variables</p>
 <ul class="simple">
@@ -905,8 +904,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="takeaway-tips">
+</div>
+<div class="section" id="takeaway-tips">
 <h2>Takeaway tips<a class="headerlink" href="#takeaway-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><strong>Start with simple graphs</strong>, and then build in and layer on “complications” and features.</p></li>
@@ -915,20 +914,20 @@
 <li><p><a class="reference external" href="https://www.data-to-viz.com">What chart should I use (with <code class="docutils literal notranslate"><span class="pre">sns</span></code> examples)</a> and more help on <a class="reference external" href="https://python-graph-gallery.com">how can I make it</a></p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> tutorial page is excellent: <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">https://seaborn.pydata.org/tutorial.html</a></p></li>
 </ol>
-</section>
-<section id="next-class">
+</div>
+<div class="section" id="next-class">
 <h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
 <p>More graphing!</p>
-<section id="id1">
+<div class="section" id="id1">
 <h3>Student demos<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Task: I’ll email tonight</p></li>
 <li><p>Morning: Andrew (&#64;akz220) and Bai Hao (&#64;baihao44)</p></li>
 <li><p>Afternoon: Carly (&#64;carlydiscolo) and	Connor (&#64;ConnorKressler)</p></li>
 </ul>
-</section>
-</section>
-<section id="summary">
+</div>
+</div>
+<div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>We covered</p>
 <ul class="simple">
@@ -943,11 +942,11 @@
 <li><p>The key plot functions to get started</p></li>
 </ul>
 <p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
-<section id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
 <h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

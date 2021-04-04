@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.3. Good Data is Normalized &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -87,7 +86,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p>
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   About the class
  </span>
@@ -124,7 +123,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -146,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -168,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Textbook
  </span>
@@ -717,7 +716,7 @@
         
               <div>
                 
-  <section id="good-data-is-normalized">
+  <div class="section" id="good-data-is-normalized">
 <h1><span class="section-number">2.3. </span>Good Data is Normalized<a class="headerlink" href="#good-data-is-normalized" title="Permalink to this headline">¶</a></h1>
 <p><strong>Normalized data means the dataset has distinct “Keys” + variables in the dataset are the Key’s Unit-Level</strong></p>
 <hr class="docutils" />
@@ -751,7 +750,7 @@
 </ol>
 <p>If you have distinct keys in your dataset, and all variables apply to the unit of the key, your dataset is said to be <em>“normalized”</em>. Storing normalized data means your data will be easier to understand and it will be harder to make costly mistakes. (See the example below)</p>
 <p>I doubt you will ever run a serious regression or analysis on completely normalized data. So at some point you will combine the datasets. Do your best to delay that (<strong>4.B</strong>).</p>
-<section id="example-bad-and-good-data">
+<div class="section" id="example-bad-and-good-data">
 <h2><span class="section-number">2.3.1. </span>Example: Bad and Good Data<a class="headerlink" href="#example-bad-and-good-data" title="Permalink to this headline">¶</a></h2>
 <p>So, as a trivial example, here is a bad firm-year dataset:</p>
 <table class="colwidths-auto table">
@@ -894,8 +893,8 @@
 </tbody>
 </table>
 <p>Now, the physical structure of each dataset communicates its logical structure: Every firm-year has a profit level, and each firm has a founding year. <strong>In fact, these databases are self-documenting! (Rule 6.C) Isn’t that nice!?</strong></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
