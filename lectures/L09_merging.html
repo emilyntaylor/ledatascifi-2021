@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -796,7 +797,7 @@
                 
   <p>Teaching notes</p>
 <p>This year:</p>
-<div class="section" id="hello-today">
+<section id="hello-today">
 <h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>Before class:</p>
@@ -815,21 +816,21 @@
 </li>
 </ol>
 <p><em>I’m going to record, but remember participation credits</em></p>
-<div class="section" id="today">
+<section id="today">
 <h2>Today<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Finishing up visualizations</p></li>
 <li><p>Merging</p></li>
 <li><p>Missing values</p></li>
 </ol>
-</div>
-<div class="section" id="viz">
+</section>
+<section id="viz">
 <h2>Viz<a class="headerlink" href="#viz" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="warmup-thinking-about-viz">
+<section id="warmup-thinking-about-viz">
 <h3>Warmup - thinking about viz<a class="headerlink" href="#warmup-thinking-about-viz" title="Permalink to this headline">¶</a></h3>
 <p>How would you improve the catplot/pandas count of <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/03/04e-visualEDA.html#distributions">industries on 3.3.4 of the website</a></p>
-</div>
-<div class="section" id="good-visuals">
+</section>
+<section id="good-visuals">
 <h3>Good visuals<a class="headerlink" href="#good-visuals" title="Permalink to this headline">¶</a></h3>
 <p>3.3.5 and the <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/about/resources.html#resources-tutorials-and-data">resource page’s Visualization references</a></p>
 <p>Check out</p>
@@ -866,16 +867,16 @@
 </ol>
 <p>This week: 1-3</p>
 <p>Next three weks: 4-5</p>
-</div>
-</div>
-<div class="section" id="merging">
+</section>
+</section>
+<section id="merging">
 <h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Parameters of the merge function+ practice</p></li>
 <li><p>Tips / best practices</p></li>
 </ol>
-</div>
-<div class="section" id="the-merge-function">
+</section>
+<section id="the-merge-function">
 <h2>The merge function<a class="headerlink" href="#the-merge-function" title="Permalink to this headline">¶</a></h2>
 <p>In your notebook:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -890,8 +891,8 @@
 </pre></div>
 </div>
 <p>Let use shift+tab to talk about the parameters. (Except how is next slide)</p>
-</div>
-<div class="section" id="how-left-v-right-v-inner-v-outer">
+</section>
+<section id="how-left-v-right-v-inner-v-outer">
 <h2><code class="docutils literal notranslate"><span class="pre">how</span></code> : left v. right v. inner v. outer<a class="headerlink" href="#how-left-v-right-v-inner-v-outer" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
@@ -916,8 +917,8 @@
 </table>
 <p>Let’s practice on our left and right datasets</p>
 <p>Reading: Tips, Categories of Joins</p>
-</div>
-<div class="section" id="merging-tips">
+</section>
+<section id="merging-tips">
 <h2>Merging tips<a class="headerlink" href="#merging-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><strong>Pick the “keys” you’ll merge on</strong></p>
@@ -930,8 +931,8 @@
 <li><p><strong>Always specify <code class="docutils literal notranslate"><span class="pre">how</span></code>, <code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">indicator</span></code>, and <code class="docutils literal notranslate"><span class="pre">validate</span></code> inside <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code></strong></p></li>
 <li><p><strong>After the merge</strong>, check that it did what you expected, and give the resulting dataframe a <em>good</em> name. <strong>Don’t name it “merged”!!!</strong></p></li>
 </ol>
-</div>
-<div class="section" id="missing-values">
+</section>
+<section id="missing-values">
 <h2>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
 <p>These pandas functions can be very useful:</p>
 <ul class="simple">
@@ -973,7 +974,7 @@
 <li><p>Carry missing values forward without carrying values from firm 1 to firm 2</p></li>
 <li><p>Fill missing values with the average for firms on that date</p></li>
 </ul>
-<div class="section" id="which-option-should-i-choose-to-deal-with-my-missing-values">
+<section id="which-option-should-i-choose-to-deal-with-my-missing-values">
 <h3>Which option should I choose to deal with my missing values?<a class="headerlink" href="#which-option-should-i-choose-to-deal-with-my-missing-values" title="Permalink to this headline">¶</a></h3>
 <p><strong>You should focus on the whys and hows of dealing with missing data rather than mechanics.</strong></p>
 <p>Example: With firm level data that investment analysts deal with, the most common approach is</p>
@@ -982,21 +983,21 @@
 <li><p>for each test you run, use all observations that have no missing values for the variables of interest</p></li>
 </ul>
 <p>I rarely impute missing data</p>
-</div>
-</div>
-<div class="section" id="next-class">
+</section>
+</section>
+<section id="next-class">
 <h2>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h2>
 <p>Data wrangling outro</p>
-<div class="section" id="student-demos">
+<section id="student-demos">
 <h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Task: I’ll email after class</p></li>
 <li><p>Morning: Madison (&#64;madisonlsmith) and Linh (&#64;Linhphung411)</p></li>
 <li><p>Afternoon: Fernando (&#64;fernandotamayog) and Deven (&#64;dea222)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="summary">
+</section>
+</section>
+<section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>We covered</p>
 <ul class="simple">
@@ -1005,11 +1006,11 @@
 <li><p>Missing values</p></li>
 </ul>
 <p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
-<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+<section id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
 <h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

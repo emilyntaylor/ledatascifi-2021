@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>2.5. Applying the golden rules to our bda project folder &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -721,16 +722,16 @@
         
               <div>
                 
-  <div class="section" id="applying-the-golden-rules-to-our-bda-project-folder">
+  <section id="applying-the-golden-rules-to-our-bda-project-folder">
 <h1><span class="section-number">2.5. </span>Applying the golden rules to our bda project folder<a class="headerlink" href="#applying-the-golden-rules-to-our-bda-project-folder" title="Permalink to this headline">¶</a></h1>
 <p>Let’s apply those rules to our cursed analysis of character death in Game of Thrones and see if this makes the project easier to replicate (in terms of accuracy and time required).</p>
 <p><em>(Note, there are other ways to efficiently divide up analysis than what I propose here that have merit! Do not take this <strong>exact</strong> scheme as “gospel”.)</em></p>
-<div class="section" id="folders-separated-by-function-part-1">
+<section id="folders-separated-by-function-part-1">
 <h2><span class="section-number">2.5.1. </span>Folders separated by function - part 1<a class="headerlink" href="#folders-separated-by-function-part-1" title="Permalink to this headline">¶</a></h2>
 <p>I’ve split the project into two sub-directories: “build” (whose function is to build the sample from the raw data inputs) and “analysis”. These are two-sub tasks of any data project, and here, I’ve chosen to treat them as different functions and thus they get different folders (<strong>Rule 3.A</strong>).</p>
 <p><img alt="" src="../../_images/dir-top.png" /></p>
-</div>
-<div class="section" id="folders-separated-by-function-part-2">
+</section>
+<section id="folders-separated-by-function-part-2">
 <h2><span class="section-number">2.5.2. </span>Folders separated by function - part 2<a class="headerlink" href="#folders-separated-by-function-part-2" title="Permalink to this headline">¶</a></h2>
 <p>The build folder takes “inputs”, which are processed by files inside “code”, and places the analysis sample (now explicitly created!) in “output”. Notice the inputs and outputs are clearly separated! (<strong>Rule 3.B</strong>) Temp files are created along the way, but are not “output”.</p>
 <p><img alt="" src="../../_images/dir-build.png" /></p>
@@ -742,8 +743,8 @@
 <span class="n">execfile</span><span class="p">(</span><span class="n">export_data</span><span class="o">.</span><span class="n">py</span><span class="p">)</span> 
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>1.7. Debugging - Making code work &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -770,9 +771,9 @@
         
               <div>
                 
-  <div class="section" id="debugging-making-code-work">
+  <section id="debugging-making-code-work">
 <h1><span class="section-number">1.7. </span>Debugging - Making code work<a class="headerlink" href="#debugging-making-code-work" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="bugs">
+<section id="bugs">
 <h2><span class="section-number">1.7.1. </span>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h2>
 <p>Perhaps the most famous early case of a computer bug was reported by <a class="reference external" href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>, who was absolutely a computer science legend and pioneer, and certainly also a <a class="reference external" href="https://www.youtube.com/watch?v=6QIw1BQIvT4">bad mama jama</a>. You should definitely go down the wiki rabbit hole on Grace’s life sometime.</p>
 <p><img alt="" src="../../_images/bug.jpg" /></p>
@@ -790,19 +791,19 @@
 <li><p>Fix it (duh) and test it (the existence of the bug should disabuse you of your coding invincibility!)</p></li>
 </ol>
 <p><em><strong>Advice that could save (or cost) you thousands:</strong></em> Those steps are general, and work for other things besides code, like  plumbing and electrical work on your parent’s house.</p>
-<div class="section" id="read-the-error-codes">
+<section id="read-the-error-codes">
 <h3><span class="section-number">1.7.1.1. </span>Read the error codes!<a class="headerlink" href="#read-the-error-codes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><a class="reference external" href="https://www.tutorialsteacher.com/python/error-types-in-python">This website-tutorialsteacher</a> has a nice page listing the most common error types. If you get an error and aren’t sure what it means, refer to this link as a starting point.</p>
 </div>
 <p>Really, they tend to be informative! You can google them for more info, but even without Google, they often point directly at the issue <em>and</em> location.</p>
-</div>
-<div class="section" id="debug">
+</section>
+<section id="debug">
 <h3><span class="section-number">1.7.1.2. </span><code class="docutils literal notranslate"><span class="pre">%debug</span></code><a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html#Debugging:-When-Reading-Tracebacks-Is-Not-Enough">Covered in nice detail here</a>.</p>
-</div>
-<div class="section" id="flipping-switches-divide-and-conquer-or-find-the-bug">
+</section>
+<section id="flipping-switches-divide-and-conquer-or-find-the-bug">
 <h3><span class="section-number">1.7.1.3. </span>Flipping switches / divide and conquer / or: find the bug<a class="headerlink" href="#flipping-switches-divide-and-conquer-or-find-the-bug" title="Permalink to this headline">¶</a></h3>
 <p>After slaving over your computer and a piece of paper (you smartly planned out your code before you went in head first), you’ve found a clever solution to your problem. Your code is beautiful and elegant, like this:</p>
 <div class="cell docutils container">
@@ -856,8 +857,8 @@ He spends all day taking calls from people with computer problems, typically men
 </div>
 <p>At least we know the issue isn’t in the first two lines. We can proceed and look elsewhere.</p>
 <p>Luckily, python error statements tend to be informative enough. Above, we know the issue is in line 4. But in more sophisticated settings, where the lines above aren’t <code class="docutils literal notranslate"><span class="pre">2+2</span></code> but chunks of code, and the error isn’t simply due to syntax or namespace issues… the on/off method can be useful. Why? Because many “errors” can exist even when the code executes.</p>
-</div>
-<div class="section" id="print-statements">
+</section>
+<section id="print-statements">
 <h3><span class="section-number">1.7.1.4. </span>Print statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h3>
 <p>Another ugly, possibly brutish method of debugging is: put print statements all over your code.</p>
 <div class="cell docutils container">
@@ -897,9 +898,9 @@ hey
 </div>
 <p>In this example, we don’t actually need print statements to realize that <code class="docutils literal notranslate"><span class="pre">a</span></code> is an <code class="docutils literal notranslate"><span class="pre">int</span></code> type and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a <code class="docutils literal notranslate"><span class="pre">str</span></code> type because the error code is so obvious.</p>
 <p>Nevertheless…</p>
-</div>
-</div>
-<div class="section" id="seriously-print-your-data-and-objects-often">
+</section>
+</section>
+<section id="seriously-print-your-data-and-objects-often">
 <h2><span class="section-number">1.7.2. </span>Seriously… print your data and objects OFTEN!<a class="headerlink" href="#seriously-print-your-data-and-objects-often" title="Permalink to this headline">¶</a></h2>
 <p><strong>Suppose you have a large dataset you want to explore. What can you do to look at it?</strong></p>
 <ol class="simple">
@@ -914,13 +915,13 @@ hey
 </ul>
 <p>Then you’d simply execute the code in Spyder up to the point you were at, and continue.</p>
 <p>Much of this class will require delivery of <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> files, and I would recommended using Jupyter exclusively at the beginning. However, if you personally prefer Spyder for bigger projects later on, feel free to use Spyder until the project is ready for write up (at which point you copy the code into a <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file and add Markdown elements to build the report).</p>
-<div class="section" id="no-seriously-look-at-your-data-a-lot">
+<section id="no-seriously-look-at-your-data-a-lot">
 <h3><span class="section-number">1.7.2.1. </span>No, seriously, look at your data a lot!<a class="headerlink" href="#no-seriously-look-at-your-data-a-lot" title="Permalink to this headline">¶</a></h3>
 <p>This isn’t even a “debugging” point per se.</p>
 <p>You know a 6 is a 6. But we will be handling increasingly large datasets, and it’s easy to make rather large changes without knowing exactly what you have done, … or not done … , if you don’t see into the object. Are you sure that object is exactly what you think it is, containing exactly what you think it does? Thus, the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement and other ways of “glancing into” datasets are crucial. Even when you’ve all become pythonic pros, you should tend towards examining your objects “too much”.</p>
-</div>
-</div>
-<div class="section" id="are-you-still-stuck">
+</section>
+</section>
+<section id="are-you-still-stuck">
 <h2><span class="section-number">1.7.3. </span>Are you still stuck?<a class="headerlink" href="#are-you-still-stuck" title="Permalink to this headline">¶</a></h2>
 <p>It’ll happen! We will try to build some ambitious code this semester! (Imagine trying to replicate the “simple program” we saw last class in Excel!) Coding complicated analysis is iterative and debugging can be <a class="reference external" href="https://media.giphy.com/media/92S5gReZGnDgY/giphy.gif">as tough as having your IT firm audited</a>.</p>
 <p>So if you’ve tried the above, what can you do?</p>
@@ -930,20 +931,20 @@ hey
 <li><p>Finally, clearing your head and getting a mental break might help you spot the problem:</p></li>
 </ul>
 <p><img alt="" src="https://media.giphy.com/media/h6cFYO8miNhok/giphy.gif" />.</p>
-</div>
-<div class="section" id="clear-output-and-rerun-from-the-start">
+</section>
+<section id="clear-output-and-rerun-from-the-start">
 <h2><span class="section-number">1.7.4. </span>Clear output and rerun from the start!<a class="headerlink" href="#clear-output-and-rerun-from-the-start" title="Permalink to this headline">¶</a></h2>
 <p>Code must run from beginning to end and produce the same thing every time</p>
 <ul class="simple">
 <li><p>Restart the kernal and clear output</p></li>
 <li><p>Run all cells</p></li>
 </ul>
-</div>
-<div class="section" id="did-you-follow-these-tips-and-fix-your-code">
+</section>
+<section id="did-you-follow-these-tips-and-fix-your-code">
 <h2><span class="section-number">1.7.5. </span>Did you follow these tips and fix your code?<a class="headerlink" href="#did-you-follow-these-tips-and-fix-your-code" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="https://media.giphy.com/media/5tov263RmYEpPYmcuB/giphy.gif" /></p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLgqMhkNZHFJdeew7q2aAk5crzNdMss_NZ4vC4LKluUuo_pg/viewform?embedded=true" width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
-</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLgqMhkNZHFJdeew7q2aAk5crzNdMss_NZ4vC4LKluUuo_pg/viewform?embedded=true" width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></section>
+</section>
 
     <script type="text/x-thebe-config">
     {

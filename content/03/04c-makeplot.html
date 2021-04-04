@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>3.3.2. Making a Plot &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -731,7 +732,7 @@
         
               <div>
                 
-  <div class="section" id="making-a-plot">
+  <section id="making-a-plot">
 <h1><span class="section-number">3.3.2. </span>Making a Plot<a class="headerlink" href="#making-a-plot" title="Permalink to this headline">¶</a></h1>
 <p>To start plotting, add these to your import statements at the top of your file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -739,7 +740,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># sometimes we want to tweak plots</span>
 </pre></div>
 </div>
-<div class="section" id="general-tips">
+<section id="general-tips">
 <h2><span class="section-number">3.3.2.1. </span>General tips<a class="headerlink" href="#general-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><strong>Start with simple graphs</strong>, and then build in and layer on “complications” and features.</p></li>
@@ -748,8 +749,8 @@
 <li><p><a class="reference external" href="https://www.data-to-viz.com">What chart should I use (with <code class="docutils literal notranslate"><span class="pre">sns</span></code> examples)</a> and more help on <a class="reference external" href="https://python-graph-gallery.com">how can I make it</a></p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> tutorial page is excellent: <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">https://seaborn.pydata.org/tutorial.html</a></p></li>
 </ol>
-</div>
-<div class="section" id="syntax-tips">
+</section>
+<section id="syntax-tips">
 <h2><span class="section-number">3.3.2.2. </span>Syntax tips<a class="headerlink" href="#syntax-tips" title="Permalink to this headline">¶</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, I usually use this syntax that looks something like for graphing. (Delete the “&lt;” and “&gt;” and replace the inside with what you need.) Obviously, you’ll see many examples in this chapter that deviate from this. Usually this is because you don’t need to explicitly declare “data”, or because “x” is just assumed as all variables in the dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.&lt;</span><span class="n">function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">dataframe</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">optional</span> <span class="n">data</span> <span class="n">functions</span><span class="p">],</span>
@@ -769,8 +770,8 @@
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tips-on-plotting-workflow">
+</section>
+<section id="tips-on-plotting-workflow">
 <h2><span class="section-number">3.3.2.3. </span>Tips on plotting workflow<a class="headerlink" href="#tips-on-plotting-workflow" title="Permalink to this headline">¶</a></h2>
 <p>Generally, to plot in Python:</p>
 <ol class="simple">
@@ -791,8 +792,8 @@
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="i-swear-the-syntax-is-correct">
+</section>
+<section id="i-swear-the-syntax-is-correct">
 <h2><span class="section-number">3.3.2.4. </span>“I swear the syntax is correct!”<a class="headerlink" href="#i-swear-the-syntax-is-correct" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -804,8 +805,8 @@
 <li><p><strong>Keep your data in “tidy form” (aka <a class="reference internal" href="02b_pandasVocab.html"><span class="doc std std-doc">tall data aka long data</span></a>.</strong> <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> expects data shaped like this. Long data is generally better for data analysis and visualization (even aside from Seaborn’s assumptions)</p></li>
 <li><p><em>The exception: Pandas.</em> If you want to plot using a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> plot function, you <em>might</em> have to reshape (temporarily) your data to the wider “output shape” that corresponds to the graph type you’re generating.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

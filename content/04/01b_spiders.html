@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>4.3. Skill 3: Building a spider &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -743,10 +744,10 @@
         
               <div>
                 
-  <div class="section" id="skill-3-building-a-spider">
+  <section id="skill-3-building-a-spider">
 <h1><span class="section-number">4.3. </span>Skill 3: Building a spider<a class="headerlink" href="#skill-3-building-a-spider" title="Permalink to this headline">¶</a></h1>
 <p>So, now, we can use python to open a page, pass an API query, and parse a page for the elements we’re interested in.</p>
-<div class="section" id="one-api-hit-is-cool-but-do-you-know-whats-really-cool">
+<section id="one-api-hit-is-cool-but-do-you-know-whats-really-cool">
 <h2><span class="section-number">4.3.1. </span>One API hit is cool, but  do you know whats really cool?<a class="headerlink" href="#one-api-hit-is-cool-but-do-you-know-whats-really-cool" title="Permalink to this headline">¶</a></h2>
 <p>One million API hits.</p>
 <p><img alt="" src="https://media.giphy.com/media/sEULHciNa7tUQ/giphy.gif" /></p>
@@ -761,8 +762,8 @@
 <p class="admonition-title">The trick they don’t want you to know</p>
 <p><strong>When your job falls into the first camp - you want to loop over a list of URLs - a good way to do that is</strong>: Define a function to do one search, then call that for each search in a list of searches.</p>
 </div>
-</div>
-<div class="section" id="a-silly-spider">
+</section>
+<section id="a-silly-spider">
 <h2><span class="section-number">4.3.2. </span>A silly spider<a class="headerlink" href="#a-silly-spider" title="Permalink to this headline">¶</a></h2>
 <p>For example:</p>
 <div class="cell docutils container">
@@ -822,8 +823,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-main-web-scraping-problems-and-workarounds">
+</section>
+<section id="the-main-web-scraping-problems-and-workarounds">
 <h2><span class="section-number">4.3.3. </span>The main web scraping problems (and workarounds)<a class="headerlink" href="#the-main-web-scraping-problems-and-workarounds" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="01_Intro_to_scraping.html"><span class="doc std std-doc"><em>Also, check out the table from a few pages ago on useful packages and tips.</em></span></a></p>
 <details class="sphinx-bs dropdown card mb-3">
@@ -901,7 +902,7 @@ Issue 3: So… I’m downloading a loooot of files<div class="summary-down docut
 <p class="card-text">To find the 2008 10-K, you’d open up a master list of documents which contains variables with enough info to assemble the path to each file, and info about each file. Then you can <code class="docutils literal notranslate"><span class="pre">query(&quot;form='10-K'</span> <span class="pre">&amp;</span> <span class="pre">fyear=2008&quot;)</span></code>, assemble the filename, and run your code.</p>
 <p class="card-text">This master list must either be assembled before you run your spider (like in Assignment 5), as you run the spider (collect the info and save it as you go), or after the download you run some code one time to assemble it (either using their paths a la <code class="docutils literal notranslate"><span class="pre">/gvkey_10145/10-ks/2008/934573495-923875934.txt</span></code>, or open every single file to extract the info about the document).</p>
 </div>
-</details><div class="section" id="summary">
+</details><section id="summary">
 <h3><span class="section-number">4.3.3.1. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>You can combine all this discussion into a “general structure” for spiders. For each page you want to visit, you need to know</p>
 <ol class="simple">
@@ -927,13 +928,13 @@ Issue 3: So… I’m downloading a loooot of files<div class="summary-down docut
 </pre></div>
 </div>
 <p>This structure is pretty adaptable depending on the nature of the problem and the input data you have that yields the list of URLs to visit.</p>
-</div>
-<div class="section" id="would-you-like-another-tutorial-to-try">
+</section>
+<section id="would-you-like-another-tutorial-to-try">
 <h3><span class="section-number">4.3.3.2. </span>Would you like another tutorial to try?<a class="headerlink" href="#would-you-like-another-tutorial-to-try" title="Permalink to this headline">¶</a></h3>
 <p>Again, Greg Reda has a nice <a class="reference external" href="https://nbviewer.jupyter.org/github/nealcaren/ScrapingData/blob/master/Notebooks/Bonus_Downloading.ipynb">walkthrough</a> discussing building a robust code to download a list, and incorporates many of the elements in code we’ve talked about.</p>
-</div>
-</div>
-<div class="section" id="credits">
+</section>
+</section>
+<section id="credits">
 <h2><span class="section-number">4.3.4. </span>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>STAT545, as always</p></li>
@@ -945,8 +946,8 @@ Issue 3: So… I’m downloading a loooot of files<div class="summary-down docut
 <dd><p><em>I’ve done well over a million API hits in the name of science.</em></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>5.2.4. Interpreting regression coefficients &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -88,7 +89,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -125,7 +126,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -147,7 +148,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -169,7 +170,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -748,7 +749,7 @@
         
               <div>
                 
-  <div class="section" id="interpreting-regression-coefficients">
+  <section id="interpreting-regression-coefficients">
 <h1><span class="section-number">5.2.4. </span>Interpreting regression coefficients<a class="headerlink" href="#interpreting-regression-coefficients" title="Permalink to this headline">¶</a></h1>
 <p>Revisiting the regression objectives: After this page,</p>
 <ol start="4">
@@ -774,7 +775,7 @@ y = a+b_1*X_1+b_2*X_2+...+b_N*X_N+u
 <li><p><strong>holding all other X constant</strong>.”</p></li>
 </ol>
 </div>
-<div class="section" id="if-x-is-a-continuous-variable">
+<section id="if-x-is-a-continuous-variable">
 <h2><span class="section-number">5.2.4.1. </span>If X is a continuous variable<a class="headerlink" href="#if-x-is-a-continuous-variable" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
@@ -799,10 +800,10 @@ y = a+b_1*X_1+b_2*X_2+...+b_N*X_N+u
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This table should help you see why log transformations are useful: They give you model <em><strong>proportional</strong></em> relationships. That is, instead of focusing on 1 unit changes (i.e. “linear” changes), they model (using percent changes in X and/or Y!</p>
+<p>This table should help you see why log transformations are useful: They model <em><strong>proportional</strong></em> relationships. That is, instead of focusing on 1 unit changes (i.e. “linear” changes), they model (using percent changes in X and/or Y!</p>
 </div>
-</div>
-<div class="section" id="if-x-is-a-binary-variable">
+</section>
+<section id="if-x-is-a-binary-variable">
 <h2><span class="section-number">5.2.4.2. </span>If X is a binary variable<a class="headerlink" href="#if-x-is-a-binary-variable" title="Permalink to this headline">¶</a></h2>
 <p>This is a categorical or qualitative variable with two values (aka “dummy”). E.g. gender in Census data, and <code class="docutils literal notranslate"><span class="pre">&quot;ideal&quot;</span></code> above.</p>
 <p>Usually, we encode one value as zero, and the other as one before we include it in the regression. This makes interpretation simple, as it just follows from the previous table, since a “1 unit change in X” simply means changing from the baseline group encoded as zero to the other group encoded as one.</p>
@@ -821,8 +822,8 @@ y = a+b_1*X_1+b_2*X_2+...+b_N*X_N+u
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="if-x-is-a-categorical-variable">
+</section>
+<section id="if-x-is-a-categorical-variable">
 <h2><span class="section-number">5.2.4.3. </span>If X is a categorical variable<a class="headerlink" href="#if-x-is-a-categorical-variable" title="Permalink to this headline">¶</a></h2>
 <p>Suppose X has three categories, and let’s just call them 0, 1, and 2. To run this regression, first create two variables: <span class="math notranslate nohighlight">\(X_1\)</span> and <span class="math notranslate nohighlight">\(X_2\)</span>, which are binary variables indicating if an observation’s value of X equals the subscript. So:</p>
 <table class="colwidths-auto table">
@@ -984,8 +985,8 @@ Name: lprice, dtype: float64
 </div>
 </div>
 </div>
-<img src=https://media.giphy.com/media/3o7buiQeyYFamzRoR2/source.gif width="400"></div>
-<div class="section" id="if-x-is-an-interaction-term">
+<img src=https://media.giphy.com/media/3o7buiQeyYFamzRoR2/source.gif width="400"></section>
+<section id="if-x-is-an-interaction-term">
 <h2><span class="section-number">5.2.4.4. </span>If X is an interaction term<a class="headerlink" href="#if-x-is-an-interaction-term" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="02b_mechanics.html#including-interaction-terms">Previously,</a> we estimated
 $<span class="math notranslate nohighlight">\(
@@ -1003,8 +1004,8 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Graphically, the difference in the slope of those cut quality-price relationships for small/large diamonds is <span class="math notranslate nohighlight">\(\beta_2\)</span></p></li>
 <li><p>Economically, you might say that the value of a better cut is even more valuable forlarger diamonds</p></li>
 </ul>
-</div>
-<div class="section" id="if-other-controls-are-included">
+</section>
+<section id="if-other-controls-are-included">
 <h2><span class="section-number">5.2.4.5. </span>If other controls are included<a class="headerlink" href="#if-other-controls-are-included" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1028,15 +1029,15 @@ y = a +\hat{0.5} W + \hat{-0.1} H
 <p>This regression implies that, for a given weight (holding weight fixed), taller players average fewer tackles. In other words, skinny football players get fewer tackles.</p>
 <p><strong>Also remember that predictors often change together!</strong></p>
 <p>For example, taller players are likely to be heavier. So if a 1 inch increase typically comes with a weight gain, the <em>total impact</em> of height on tackles (i.e. <em>not</em> holding all other factors constant) will include the estimated impact of weight.</p>
-</div>
-<div class="section" id="if-other-categorical-controls-are-included">
+</section>
+<section id="if-other-categorical-controls-are-included">
 <h2><span class="section-number">5.2.4.6. </span>If other categorical controls are included<a class="headerlink" href="#if-other-categorical-controls-are-included" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you estimate <span class="math notranslate nohighlight">\(profits=a+b*investment+c*X+u\)</span>, and you want to focus on <span class="math notranslate nohighlight">\(b\)</span> to capture how investments translate to profits. You’ve added some control variables X, but you’re still worried that this regression will get the relationship wrong, because different industries have different profit margins for reasons that have nothing to do with investment levels.</p>
 <p>In other words, you want to “control for industry”. So you estimate <span class="math notranslate nohighlight">\(profits=a+b*investment+c*X+d*C(gsector)+u\)</span>, by including the firm’s industry as a categorical control.</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This is often called including “industry <strong>fixed effects</strong> “.</p>
-</div>
+</aside>
 <p>What does <span class="math notranslate nohighlight">\(b\)</span> mean now? Well, the lessons above apply: It is the relationship between investment and profits, but now we capture the average profit level (across all firms in an industry over all years of our sample). So we are holding the industry profit level (again, over the whole time period of analysis) fixed.</p>
 <blockquote class="epigraph">
 <div><p>Intuitively, you can think of <span class="math notranslate nohighlight">\(b\)</span> in this model as “comparing firms in the same industry” or “controlling for industry factors”.</p>
@@ -1093,8 +1094,8 @@ Notes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="comparing-the-size-of-two-coefficients">
+</section>
+<section id="comparing-the-size-of-two-coefficients">
 <h2><span class="section-number">5.2.4.7. </span>Comparing the size of two coefficients<a class="headerlink" href="#comparing-the-size-of-two-coefficients" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="02b_mechanics.html#our-first-regression-with-statsmodels">Earlier</a>, we estimated that <span class="math notranslate nohighlight">\(\log price = \hat{8.41} + \hat{1.69} \log carat + \hat{0.10} ideal\)</span>.</p>
 <p>So… I have questions:</p>
@@ -1177,8 +1178,8 @@ dtype: float64
 <p class="card-text">So what that last line shows is that if we divide the variable by its standard deviation, the coefficient will change by an offsetting amount.</p>
 <p class="card-text">If a variable has a small standard deviation (e.g. 0.10), dividing the variable by 0.10 before running the regression will reduce the coefficient by 90%.</p>
 </div>
-</details></div>
-</div>
+</details></section>
+</section>
 
     <script type="text/x-thebe-config">
     {

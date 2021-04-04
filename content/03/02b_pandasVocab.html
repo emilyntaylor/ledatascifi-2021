@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>3.2.2. Pandas Vocab and the Shape of Data &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -733,7 +734,7 @@
         
               <div>
                 
-  <div class="section" id="pandas-vocab-and-the-shape-of-data">
+  <section id="pandas-vocab-and-the-shape-of-data">
 <h1><span class="section-number">3.2.2. </span>Pandas Vocab and the Shape of Data<a class="headerlink" href="#pandas-vocab-and-the-shape-of-data" title="Permalink to this headline">¶</a></h1>
 <p>Pandas is a library that helps you work with data!</p>
 <p>At the top of your python code, load Pandas like this:</p>
@@ -741,7 +742,7 @@
 </pre></div>
 </div>
 <p>Now you can use pandas throughout your file via the <code class="docutils literal notranslate"><span class="pre">pd</span></code> object.</p>
-<div class="section" id="pandas-vocab">
+<section id="pandas-vocab">
 <h2><span class="section-number">3.2.2.1. </span>Pandas Vocab<a class="headerlink" href="#pandas-vocab" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The key object in the pandas library is that you put data into <strong>dataframes</strong>, which are like Excel spreadsheets</p></li>
@@ -754,14 +755,14 @@
 <li><p>If you create an object with a single variable, pandas might store it as a <strong>series</strong> object</p></li>
 <li><p><strong>“Wide data”</strong> vs. <strong>“Long data”</strong>: See the <a class="reference external" href="#The-shape-of-data">next section</a></p></li>
 </ul>
-</div>
-<div class="section" id="the-shape-of-data">
+</section>
+<section id="the-shape-of-data">
 <h2><span class="section-number">3.2.2.2. </span>The shape of data<a class="headerlink" href="#the-shape-of-data" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em><strong>The fundamental principle of database design is that the physical structure of a database should communicate its logical structure</strong></em></p>
 </div></blockquote>
 <p>Data can be logically stored in many ways. Let’s start by showing one dataset, and three ways it can be stored.</p>
-<div class="section" id="wide-vs-long-or-tall-data">
+<section id="wide-vs-long-or-tall-data">
 <h3><span class="section-number">3.2.2.2.1. </span>Wide vs. Long (or Tall) Data<a class="headerlink" href="#wide-vs-long-or-tall-data" title="Permalink to this headline">¶</a></h3>
 <p>Here is a <strong>long dataset</strong> - the “key” or “index” is the <em>combination of year and firm</em>:</p>
 <table class="colwidths-auto table">
@@ -895,8 +896,8 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="which-shape-should-i-use">
+</section>
+<section id="which-shape-should-i-use">
 <h3><span class="section-number">3.2.2.2.2. </span>Which shape should I use?<a class="headerlink" href="#which-shape-should-i-use" title="Permalink to this headline">¶</a></h3>
 <p><strong>A, nuanced:</strong> It depends on what you’re using the data for!</p>
 <ul class="simple">
@@ -909,9 +910,9 @@
 </li>
 <li><p>Seaborn likes plotting long data, while pandas likes plotting wide data</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

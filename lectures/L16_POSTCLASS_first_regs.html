@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Clean the data and create variables you want &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -84,7 +85,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -121,7 +122,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -143,7 +144,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -165,7 +166,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -747,7 +748,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="clean-the-data-and-create-variables-you-want">
+<section id="clean-the-data-and-create-variables-you-want">
 <h1>Clean the data and create variables you want<a class="headerlink" href="#clean-the-data-and-create-variables-you-want" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -770,8 +771,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="statsmodels">
+</section>
+<section id="statsmodels">
 <h1>Statsmodels<a class="headerlink" href="#statsmodels" title="Permalink to this headline">¶</a></h1>
 <p>Psuedocode:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm_ols</span><span class="p">(</span><span class="o">&lt;</span><span class="n">formula</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">data</span><span class="o">=&lt;</span><span class="n">dataframe</span><span class="o">&gt;</span><span class="p">)</span>
@@ -918,8 +919,8 @@ Notes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sk-learn-scikit-learn">
+</section>
+<section id="sk-learn-scikit-learn">
 <h1>Sk-learn (scikit-learn)<a class="headerlink" href="#sk-learn-scikit-learn" title="Permalink to this headline">¶</a></h1>
 <p>Let’s replicate all the sm regressions inside sklearn</p>
 <p>Psuedocode:</p>
@@ -1043,8 +1044,8 @@ it matches statsmodel regression #4 above!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotting-the-regression-lines">
+</section>
+<section id="plotting-the-regression-lines">
 <h1>Plotting the regression lines<a class="headerlink" href="#plotting-the-regression-lines" title="Permalink to this headline">¶</a></h1>
 <p>First with sm. After fitting the model, <code class="docutils literal notranslate"><span class="pre">y_pred</span> <span class="pre">=</span> <span class="pre">result.predict()</span></code> gets the fitted values.</p>
 <p>The “trick” to notice is that y_pred only has values where X is defined. If X is missing, no y value is predicted, and instead of creating a missing value for y in that spot, it just doesn’t create any value. So that means y_pred is a shorter vector than X (X has a bunch of elements that exist even though they are blank). And you can’t plot y and X if y and X are different lengths. This is why <code class="docutils literal notranslate"><span class="pre">.dropna()</span></code> is in the plot funciton below for the X vector!</p>
@@ -1100,7 +1101,7 @@ it matches statsmodel regression #4 above!
 <img alt="../_images/L16_POSTCLASS_first_regs_11_1.png" src="../_images/L16_POSTCLASS_first_regs_11_1.png" />
 </div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

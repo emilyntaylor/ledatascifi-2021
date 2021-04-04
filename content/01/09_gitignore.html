@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>1.10. Gitignore files &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -731,7 +732,7 @@
         
               <div>
                 
-  <div class="section" id="gitignore-files">
+  <section id="gitignore-files">
 <h1><span class="section-number">1.10. </span>Gitignore files<a class="headerlink" href="#gitignore-files" title="Permalink to this headline">¶</a></h1>
 <p>Your analysis will create many files that you might not want to sync to the remote repo on <a class="reference external" href="http://GitHub.com">GitHub.com</a>. The remote repo is “public” facing, so the goal is to have a clean remote repo without miscellaneous files.</p>
 <p>Common versions of files you might not want on the remote repo:</p>
@@ -741,7 +742,7 @@
 <li><p>temporary data files (such as mid point saves, data files you examined to check)</p></li>
 </ul>
 <p>So how do we prevent git from syncing these files? The <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file!</p>
-<div class="section" id="how-to-create-and-edit-a-gitignore-file">
+<section id="how-to-create-and-edit-a-gitignore-file">
 <h2><span class="section-number">1.10.1. </span>How to create and edit a gitignore file<a class="headerlink" href="#how-to-create-and-edit-a-gitignore-file" title="Permalink to this headline">¶</a></h2>
 <p>There are several ways to create one:</p>
 <ol class="simple">
@@ -750,8 +751,8 @@
 <li><p>In GitHub desktop, choose the “Repository” menu, then “Repository settings”, then “ignored files” and type in what you’ll ignore.</p></li>
 </ol>
 <p>Editting it: Any text editor!</p>
-</div>
-<div class="section" id="syntax">
+</section>
+<section id="syntax">
 <h2><span class="section-number">1.10.2. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <p>Each line lists a file(s) or folder(s) that shouldn’t be tracked. Wildcards are allowed. For example,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">ipynb_checkpoints</span>
@@ -759,8 +760,8 @@
 </pre></div>
 </div>
 <p>should prevent the checkpoints Jupyter Lab makes from being synced.</p>
-</div>
-<div class="section" id="i-have-a-file-in-gitignore-but-it-s-on-the-remote-repo">
+</section>
+<section id="i-have-a-file-in-gitignore-but-it-s-on-the-remote-repo">
 <h2><span class="section-number">1.10.3. </span>I have a file in gitignore, but it’s on the remote repo!<a class="headerlink" href="#i-have-a-file-in-gitignore-but-it-s-on-the-remote-repo" title="Permalink to this headline">¶</a></h2>
 <p>That’s because it was already on the remote repo when you added it to the gitignore; The gitignore file simply tells git to “not sync” those files any more. It doesn’t mean “delete these files from the remote repo”.</p>
 <p>There are a few ways to delete the extra files in the remote repo. The simplest: Go to the repo on <a class="reference external" href="http://Github.com">Github.com</a> and delete them individually.</p>
@@ -772,12 +773,12 @@
 </pre></div>
 </div>
 <p>I suggest making a backup copy of the folder on your computer before doing that until you confirm it worked as you intended.</p>
-</div>
-<div class="section" id="more-resources">
+</section>
+<section id="more-resources">
 <h2><span class="section-number">1.10.4. </span>More resources<a class="headerlink" href="#more-resources" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://git-scm.com/docs/gitignore">The manual for git</a> describes how to use these files in much more detail.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

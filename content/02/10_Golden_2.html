@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>2.1. A case study in bad research &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -86,7 +87,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -123,7 +124,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -145,7 +146,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -167,7 +168,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -721,18 +722,18 @@
         
               <div>
                 
-  <div class="section" id="a-case-study-in-bad-research">
+  <section id="a-case-study-in-bad-research">
 <h1><span class="section-number">2.1. </span>A case study in bad research<a class="headerlink" href="#a-case-study-in-bad-research" title="Permalink to this headline">¶</a></h1>
 <p>We start with an absolutely essential question: <strong>Are characters in Game of Thrones more likely to die when they head north or south?</strong></p>
-<div class="section" id="one-folder-a-common-data-science-project">
+<section id="one-folder-a-common-data-science-project">
 <h2><span class="section-number">2.1.1. </span>One folder: A “common” data science project<a class="headerlink" href="#one-folder-a-common-data-science-project" title="Permalink to this headline">¶</a></h2>
 <p>So I collected the text of the Game of Thrones books (currently 5, COME ON GEORGE). I <em>also</em> collected data on the names of characters so I can identify them in the text. I <em>also</em> collected data that maps the names of places to latitudes on the map. I have just about everything I need. I put these files in a folder, write some code to deal with data, and some code to produce output.</p>
 <p><em>There were definitely intermediate steps, but I don’t remember exactly.</em> Luckily, this project wasn’t “interactive, point-and-click in Excel” analysis. It was written in code! So it’s oooooobviously reproducible.</p>
 <p>Let’s all look at the folder and try to figure it out? <strong>What do you think each file is, and how is the analysis conducted  from data-to-draft?</strong></p>
 <p><img alt="" src="../../_images/bad-directory.png" /></p>
 <p>And no, this isn’t a joke - I’ve definitely seen “professional” researchers with project organized like this in one way or another.</p>
-</div>
-<div class="section" id="what-are-the-possible-issues-with-this">
+</section>
+<section id="what-are-the-possible-issues-with-this">
 <h2><span class="section-number">2.1.2. </span>What are the possible issues with this?<a class="headerlink" href="#what-are-the-possible-issues-with-this" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Which data file(s) are the real input?</p></li>
@@ -744,8 +745,8 @@
 <li><p>Oh god, I just noticed two location files. I guess they are from different sources… but which is used by which files?</p></li>
 </ol>
 <p>So, let’s see if we can’t improve this whole situation.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

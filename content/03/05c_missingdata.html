@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>3.4.2. Dealing with Missing Data &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -88,7 +89,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <p>
  <span class="caption-text">
   About the class
  </span>
@@ -125,7 +126,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Schedule, tips, resources
  </span>
@@ -147,7 +148,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Assignments and participation
  </span>
@@ -169,7 +170,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Textbook
  </span>
@@ -723,7 +724,7 @@
         
               <div>
                 
-  <div class="section" id="dealing-with-missing-data">
+  <section id="dealing-with-missing-data">
 <h1><span class="section-number">3.4.2. </span>Dealing with Missing Data<a class="headerlink" href="#dealing-with-missing-data" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">df.isnull().sum</span></code> will report missing values by variable.</p></li>
@@ -735,7 +736,7 @@
 <p>For example, with firm level data that investment analysts deal with, the most common approach is to keep all valid data, and for each test you run, use all observations that have no missing values for the variables of interest. In the slides, this is called “Complete-Case Analysis”.</p>
 <p>It is less common in my field of research to impute missing values. However, “Deductive imputation” is common when the cost of doing so isn’t high.</p>
 <p>In general, when you can confidently deduce a value (my height this year is the same as last year because I’m a fully grown adult (mostly)), go ahead.  That is valid data.</p>
-<div class="section" id="options">
+<section id="options">
 <h2><span class="section-number">3.4.2.1. </span>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <p>These pandas functions can be very useful:</p>
 <ul class="simple">
@@ -745,8 +746,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">interpolate</span></code> - e.g. use values in surrounding time periods to fill in gaps</p></li>
 <li><p>Deduce. Suppose PPE this year is missing. <span class="math notranslate nohighlight">\(PPE_t = PPE_{t-1} + CAPX_t - DP_t \)</span></p></li>
 </ul>
-</div>
-<div class="section" id="practice">
+</section>
+<section id="practice">
 <h2><span class="section-number">3.4.2.2. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 <p>Play around with each of those functions on this dataframe:</p>
 <div class="cell docutils container">
@@ -785,8 +786,8 @@
 <li><p>Carry missing values forward without carrying values from firm 1 to firm 2</p></li>
 <li><p>Fill missing values with the average for firms on that date</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
