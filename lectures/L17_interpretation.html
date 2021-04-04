@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clean the data and create variables you want &#8212; LeDataSciFi-2021</title>
+    <title>Today is about INTERPRETING COEFFICIENTS &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -700,17 +700,24 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Clean the data and create variables you want
+   Today is about INTERPRETING COEFFICIENTS
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-the-data-and-create-variables-you-want">
+     Clean the data and create variables you want
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statsmodels">
+     Statsmodels
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statsmodels">
-   Statsmodels
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#today">
-   Today:
+  <a class="reference internal nav-link" href="#today-work-in-groups-refer-to-the-lectures">
+   Today. Work in groups. Refer to the lectures.
   </a>
  </li>
 </ul>
@@ -724,7 +731,23 @@
         
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="today-is-about-interpreting-coefficients">
+<h1>Today is about INTERPRETING COEFFICIENTS<a class="headerlink" href="#today-is-about-interpreting-coefficients" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Check out <code class="docutils literal notranslate"><span class="pre">L16_POSTCLASS.ipynb</span></code> for a cleaned summation of last Wednesday’s “how to” on <strong>doing</strong> regressions.</p></li>
+<li><p>Today:</p>
+<ol class="simple">
+<li><p>25 min reading groups: Talk through the regression pages and examples and assemble your own notes. Each group will email their’s to Jason/me for participation. (Effort grading.)</p></li>
+<li><p>10 min: class builds joint “big takeaways and nuanced observations”</p></li>
+<li><p>5 min: Interp models 1-2 as class as practice.</p></li>
+<li><p>20 min reading groups: Work through remaining problems below.</p></li>
+<li><p>10 min: wrap up</p></li>
+</ol>
+</li>
+</ol>
+<p>Assignment:</p>
+<hr class="docutils" />
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span> <span class="k">as</span> <span class="n">sm_ols</span>
@@ -744,7 +767,7 @@
 </div>
 </div>
 <div class="section" id="clean-the-data-and-create-variables-you-want">
-<h1>Clean the data and create variables you want<a class="headerlink" href="#clean-the-data-and-create-variables-you-want" title="Permalink to this headline">¶</a></h1>
+<h2>Clean the data and create variables you want<a class="headerlink" href="#clean-the-data-and-create-variables-you-want" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fannie_mae</span> <span class="o">=</span> <span class="p">(</span><span class="n">fannie_mae</span>
@@ -769,7 +792,7 @@
 </div>
 </div>
 <div class="section" id="statsmodels">
-<h1>Statsmodels<a class="headerlink" href="#statsmodels" title="Permalink to this headline">¶</a></h1>
+<h2>Statsmodels<a class="headerlink" href="#statsmodels" title="Permalink to this headline">¶</a></h2>
 <p>As before, the psuedocode:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm_ols</span><span class="p">(</span><span class="o">&lt;</span><span class="n">formula</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">data</span><span class="o">=&lt;</span><span class="n">dataframe</span><span class="o">&gt;</span><span class="p">)</span>
 <span class="n">result</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -873,8 +896,10 @@ Standard errors in parentheses.
 </div>
 </div>
 </div>
-<div class="section" id="today">
-<h1>Today:<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="today-work-in-groups-refer-to-the-lectures">
+<h1>Today. Work in groups. Refer to the lectures.<a class="headerlink" href="#today-work-in-groups-refer-to-the-lectures" title="Permalink to this headline">¶</a></h1>
+<p>You might need to print out a few individual regressions with more decimals.</p>
 <ol class="simple">
 <li><p>Interpret coefs in model 1-4</p></li>
 <li><p>Interpret coefs in model 5</p></li>
