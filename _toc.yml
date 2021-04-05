@@ -175,6 +175,9 @@
         # sklearn mechanics for ONE model (regression, predict next day stock returns)
     
     
+# https://twitter.com/v_matzek/status/1376959879882043395    
+    
+    
 #    The ML objective --> key tradeoff --> Solutions to that tradeoff (list, hyperlinks to external resources, and link to the next page for mine)
 #    Model selection: A SHORT menu of models you can try (emphasis here is on thinking through the process of biz prob -> approach -> data -> set up code)
 #    "Leakage disasters"
