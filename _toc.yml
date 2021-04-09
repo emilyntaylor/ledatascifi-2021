@@ -184,13 +184,15 @@
         - file: "content/05/04e_pipelines"
           title: "Pipelines"
         - file: "content/05/04e1_preprocessing"
-          title: "Preprocessing"          
+          title: "Preprocessing"  
         - file: "content/05/04f_optimizing_a_model"
-          title: "Optimizing a Model" # see notes below
+          title: "Optimizing a Model" 
+# todo - finish, notes below
         - file: "content/05/04h_putting_together"
-          title: "All at Once" # see notes below
-          # boosting page?
-          # import smattering?
+          title: "All at Once" 
+# todo - finish, notes below          
+# boosting page?
+# import smattering?
 
 # #########################################################
 # o4f
