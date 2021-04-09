@@ -168,27 +168,156 @@
         - file: "content/05/03c_ModelEval" 
         - file: "content/05/03c1_OOS"  
         - file: "content/05/03d_whatToMax"   # need auc/roc
-        - file: "content/05/03e_whichModel"  # need lots more!
-        #- file: "content/05/03f_whichParams"  gridsearch
-        
-        # sklearn basics - the process of using it (pdsh)
-        # sklearn mechanics for ONE model (regression, predict next day stock returns)
-    
-    
-# https://twitter.com/v_matzek/status/1376959879882043395    
-    
-    
-#    The ML objective --> key tradeoff --> Solutions to that tradeoff (list, hyperlinks to external resources, and link to the next page for mine)
-#    Model selection: A SHORT menu of models you can try (emphasis here is on thinking through the process of biz prob -> approach -> data -> set up code)
-#    "Leakage disasters"
-#        yahoo download 200 days of returns for a firm, create returns, then create predictive model (simple lags). then evaluate OOS
-#        then do REAL exercise without future info - OOS will be WAY worse
-#    pipeline solution
+        - file: "content/05/03e_whichModel"  # need lots more!   
+# illustration here (not code focused )        
+# est stock return predictor and get predicted performance R2 in sample
+# say 2000-2006 returns
+# now get shitty OOS R2 when actually applied to 2007-2009      
+    - file: "content/05/04a_SKLearn"        
+      sections:
+        - file: "content/05/04b_best_practices" # add extra section for best practices
+          title: "Best Practice Pseudo Code"        
+        - file: "content/05/04c_onemodel"
+          title: "SKLearn Intro"                             
+        - file: "content/05/04d_crossval"
+          title: "Cross-Validation"
+        - file: "content/05/04e_pipelines"
+          title: "Pipelines"
+        - file: "content/05/04e1_preprocessing"
+          title: "Preprocessing"          
+        - file: "content/05/04f_optimizing_a_model"
+          title: "Optimizing a Model" # see notes below
+        - file: "content/05/04h_putting_together"
+          title: "All at Once" # see notes below
+          # boosting page?
+          # import smattering?
 
-#**The general rule is to never call fit on the test data**
-# putting this together
-    # import statements
-    # test, train = <decide how to split>
-    # pipeline = <data transforms, model estimation steps>
-    # set up cv (can set up iterable to do OOS! or TimeSeriesSplit, or Snows(?))
-    # scores = cross_validate(<>)    # i like this more than cross_val_scores (more info)
+# #########################################################
+# o4f
+
+# #             1. gridsearch to optimize pipeline parameters
+# #                 - set up grid (print pipe) moving grid around
+# #                 - local vs global max (graph)
+# #                 - saving best model to fit it
+# #                 - use best model on test split
+                                
+# #             L23 fir students has some good stuff
+
+# #########################################################
+
+
+# #         - file: "content/05/04g_leakage_disaster"
+# #           title: "leakage disaster"
+# # 
+# #    "Leakage disasters"
+# #        yahoo download 200 days of returns for a firm, create returns, then create predictive model (simple lags). then evaluate OOS
+# #        then do REAL exercise without future info - OOS will be WAY worse
+# #    pipeline solution
+
+# #########################################################
+
+# #         - file: "content/05/04h_putting_together"
+# #           title: "04h_putting_together"
+
+# #                 An example with:
+
+#                     # import lots of functions
+#                     # load data 
+#                     # split to test and train (link to split page/sk docs)
+                    
+#                     ## pre-modeling (on the training data only!)
+                    
+#                     # do lots of EDA
+#                     # look for missing values, which variables are what type, and outliers (copy from a6 prompt)
+#                     # figure out how you'd clean the data (imputation, scaling, encoding categorical vars)
+#                     # these lessons will go into the preprocessign portion of your pipeline 
+
+#                     ## optimize a series of models 
+
+#                     # set up pipeline to clean each type of variable (1 pipe per var type)
+#                     # combine those pipes into "preprocess" pipe
+#                     # set up cv (can set up iterable to do OOS! or TimeSeriesSplit, or Snows(?))
+#                     # set up scoring 
+
+#                     ## optimize candidate model type #1: (link to optimizing one model page   04d_optimizing_a_model)
+                    
+#                     #     set up pipeline (combines preprocessing, estimator)
+#                     #     set up hyper param grid
+#                     #     find optimal hyper params (e.g. gridsearchcv)
+#                     #     save pipeline with optimal params in place
+#                     #     (Note: you should spend time interrogating model predictions, plotting and printing
+#                     #     does the model struggle predicting certain obs? excel at some?)
+                   
+#                     ## optimize candidate model type #2
+                    
+#                     ...
+                    
+#                     ## optimize candidate model type #N
+
+#                     ## compare the N optimized models
+
+#                     # build list of models (each with own optimized hyperparams)
+#                     # for model in models:
+#                     #    cross_validate(model, X, y,...)
+#                     # pick the winner!
+
+
+# #########################################################
+
+# # gradient booksting from L24
+
+# #########################################################
+
+
+# # ## A bunch of import statements 
+
+# # Any code you write might use none of these, some of these, or all of them!
+
+# # # dataset loader
+# # from sklearn import datasets
+
+# # # model training and evalutation utilities 
+# # from sklearn.model_selection import train_test_split
+# # from sklearn.model_selection import cross_validate, GridSearchCV
+# # from sklearn.model_selection import StratifiedKFold # this is one way to generate folds
+# # from sklearn.model_selection import KFold
+
+# # # metrics
+# # from sklearn import metrics
+# # from sklearn.metrics import r2_score
+# # from sklearn.metrics import accuracy_score
+# # from sklearn.metrics import classification_report
+# # from sklearn.metrics import confusion_matrix
+
+# # # preprocessing and feature extraction
+# # from sklearn.pipeline import Pipeline, make_pipeline
+# # from sklearn.compose import ColumnTransformer, make_column_selector
+# # from sklearn import preprocessing
+# # from sklearn.preprocessing import StandardScaler, OneHotEncoder
+# # from sklearn.feature_extraction import DictVectorizer
+# # from sklearn.impute import SimpleImputer
+# # from df_after_transform import df_after_transform # df_after_transform.py must be in this folder
+
+# # # feature selection
+# # from sklearn.linear_model import ElasticNet, Lasso, Ridge
+# # from sklearn.feature_selection import SelectKBest, RFE, RFECV,
+
+# # # models
+# # from sklearn.svm import SVC
+# # from sklearn.neighbors import KNeighborsClassifier
+# # from sklearn.linear_model import LinearRegression
+# # from sklearn import linear_model
+# # from sklearn.linear_model import LogisticRegression
+# # from sklearn.tree import DecisionTreeClassifier
+# # from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+# # from sklearn.naive_bayes import GaussianNB
+
+# # # toy data
+# # X, y = datasets.load_iris(return_X_y=True)
+# # X.shape, y.shape
+
+
+
+
+
+
