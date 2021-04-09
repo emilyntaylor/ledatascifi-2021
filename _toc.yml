@@ -169,10 +169,7 @@
         - file: "content/05/03c1_OOS"  
         - file: "content/05/03d_whatToMax"   # need auc/roc
         - file: "content/05/03e_whichModel"  # need lots more!   
-# illustration here (not code focused )        
-# est stock return predictor and get predicted performance R2 in sample
-# say 2000-2006 returns
-# now get shitty OOS R2 when actually applied to 2007-2009      
+        - file: "content/05/03f_leakage"  
     - file: "content/05/04a_SKLearn"        
       sections:
         - file: "content/05/04b_best_practices" # add extra section for best practices
@@ -205,16 +202,6 @@
                                 
 # #             L23 fir students has some good stuff
 
-# #########################################################
-
-
-# #         - file: "content/05/04g_leakage_disaster"
-# #           title: "leakage disaster"
-# # 
-# #    "Leakage disasters"
-# #        yahoo download 200 days of returns for a firm, create returns, then create predictive model (simple lags). then evaluate OOS
-# #        then do REAL exercise without future info - OOS will be WAY worse
-# #    pipeline solution
 
 # #########################################################
 
