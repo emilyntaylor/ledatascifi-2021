@@ -183,24 +183,18 @@
         - file: "content/05/04e1_preprocessing"
           title: "Preprocessing"  
         - file: "content/05/04f_optimizing_a_model"
-          title: "Optimizing a Model" 
-# todo - finish, notes below
+          title: "Optimizing a Model"            
         - file: "content/05/04h_putting_together"
-          title: "All at Once" 
-# todo - finish, notes below          
-# boosting page?
+          title: "Many Models" 
+# how to implove models
+#   data processing (impute/delete, scaling, outliers)
+#   feature selection/reduction/combination
+#
+#       selectfrommodel,rfe,lasso,trees
+#   optimize model params 
+# gradient boosting
 # import smattering?
 
-# #########################################################
-# o4f
-
-# #             1. gridsearch to optimize pipeline parameters
-# #                 - set up grid (print pipe) moving grid around
-# #                 - local vs global max (graph)
-# #                 - saving best model to fit it
-# #                 - use best model on test split
-                                
-# #             L23 fir students has some good stuff
 
 
 # #########################################################
@@ -210,45 +204,8 @@
 
 # #                 An example with:
 
-#                     # import lots of functions
-#                     # load data 
-#                     # split to test and train (link to split page/sk docs)
-                    
-#                     ## pre-modeling (on the training data only!)
-                    
-#                     # do lots of EDA
-#                     # look for missing values, which variables are what type, and outliers (copy from a6 prompt)
-#                     # figure out how you'd clean the data (imputation, scaling, encoding categorical vars)
-#                     # these lessons will go into the preprocessign portion of your pipeline 
 
-#                     ## optimize a series of models 
 
-#                     # set up pipeline to clean each type of variable (1 pipe per var type)
-#                     # combine those pipes into "preprocess" pipe
-#                     # set up cv (can set up iterable to do OOS! or TimeSeriesSplit, or Snows(?))
-#                     # set up scoring 
-
-#                     ## optimize candidate model type #1: (link to optimizing one model page   04d_optimizing_a_model)
-                    
-#                     #     set up pipeline (combines preprocessing, estimator)
-#                     #     set up hyper param grid
-#                     #     find optimal hyper params (e.g. gridsearchcv)
-#                     #     save pipeline with optimal params in place
-#                     #     (Note: you should spend time interrogating model predictions, plotting and printing
-#                     #     does the model struggle predicting certain obs? excel at some?)
-                   
-#                     ## optimize candidate model type #2
-                    
-#                     ...
-                    
-#                     ## optimize candidate model type #N
-
-#                     ## compare the N optimized models
-
-#                     # build list of models (each with own optimized hyperparams)
-#                     # for model in models:
-#                     #    cross_validate(model, X, y,...)
-#                     # pick the winner!
 
 
 # #########################################################
@@ -307,6 +264,10 @@
 
 
 
+####################
 
-
-
+# l23 exercises 
+# 
+# reg with some vars, then Add 5 new continuous variables to your pipeline and see how the R2 changes
+#
+# implement rfecv - what vars should we choose? implement
