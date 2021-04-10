@@ -186,25 +186,9 @@
           title: "Optimizing a Model"            
         - file: "content/05/04h_putting_together"
           title: "Many Models" 
-# how to implove models
-#   data processing (impute/delete, scaling, outliers)
-#   feature selection/reduction/combination
-#
-#       selectfrommodel,rfe,lasso,trees
-#   optimize model params 
-# gradient boosting
+
 # import smattering?
-
-
-
-# #########################################################
-
-# #         - file: "content/05/04h_putting_together"
-# #           title: "04h_putting_together"
-
-# #                 An example with:
-
-
+#
 
 
 
