@@ -1,3 +1,14 @@
+###############################################################
+#
+# Don't use me! I'm... INSUFFICIENT. I was developed as an 
+# illustration of EDA lessons in the 2021 iteration. Want a 
+# higher grade version of me? Maybe something SUFFICIENT?
+#
+# Then try pandas-profiling: https://github.com/pandas-profiling/pandas-profiling
+#
+###############################################################
+
+
 def insufficient_but_starting_eda(df,cat_vars_list=None):
     '''
     
