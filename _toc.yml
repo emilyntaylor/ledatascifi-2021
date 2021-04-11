@@ -39,6 +39,11 @@
     title: "How to do your peer reviews"
   - file: content/assignments/asgn_5 
     title: "ASGN 5: Our first full data science assignment"
+  - file: content/assignments/project 
+    title: "Final projects"
+
+# This MD files can be copied into repo, but remove the dropdowns. And link to the website. 
+# PROPOSAL DUE APR 21 5pm. STATUS REPORT DUE APR 28. 
   
 - part: Textbook 
   numbered: true # will number the chapters and sections INSIDE the part(s) below
