@@ -186,15 +186,10 @@
           title: "Optimizing a Model"            
         - file: "content/05/04h_putting_together"
           title: "Many Models" 
+# import smattering? (from below)
+# gradient booksting from L24 2020
+    - file: "content/05/05_thefuture"        
 
-# import smattering?
-#
-
-
-
-# #########################################################
-
-# # gradient booksting from L24
 
 # #########################################################
 
