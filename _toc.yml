@@ -7,6 +7,25 @@
 # title: A special title  
 #
 # Learn more at https://jupyterbook.org/customize/toc.html
+#
+#################################################
+# next year
+#
+# see comments below for tweaks and additions
+# more exercises for sure
+#
+# remove most (all) survey links, very little feedback received
+#
+# add 5.5: finance applications. 
+# should have pages with "canonical asset pricing", a loan pricing model
+#
+# new data ideas:
+# lending club data?
+# GUSTAFSON ET AL SEA RISE - environmental 
+# night lights/parking lot photos
+# crypto something? robo advising? 
+# 
+#################################################
 
 - file: content/frontpage # the index must be a single file, no way around it!
 
